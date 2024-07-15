@@ -1,19 +1,16 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import dashboardHeader from './dashboardHeader';
+import DashboardHeader from './Components/dashboardHeader/dashboardHeader.jsx';
 import './App.css';
 
 const App = () => {
   return (
   <>
-    <div>Hi from the frontend!</div>
-
-    // Routing for buttons
     <Router>
     <div className="App">
-      <dashboardHeader />
+      <DashboardHeader />
       <Routes>
-      // Routes "landingPage" to landingPage
+      {/* Routes "landingPage" to landingPage */}
       <Route path="/landingPage" element={<landingPage />} />
       </Routes>
     </div>
