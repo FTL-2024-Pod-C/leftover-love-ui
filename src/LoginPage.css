@@ -22,7 +22,6 @@
 .login-header {
     display: flex;
     flex-direction: column;
-    
 }
 
 .centered-element {
@@ -37,5 +36,22 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    margin: 50px;
+   /*  margin: 50px; */
+}
+
+.sign-up {
+    display: flex;
+}
+
+.sign-up-btn{
+    text-decoration: underline;
+    appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
 }

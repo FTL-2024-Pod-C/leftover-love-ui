@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import LandingPage from './Pages/LandingPage';
 import Footer from './Components/Footer/Footer';
 import MeetTheCreatorsPage from './Pages/MeetTheCreatorsPage';
+import SignUpPage from './SignUpPage';
 import LoginPage from './LoginPage';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
           <Route path="/meet-the-creators" element={<MeetTheCreatorsPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
           {/* Other routes */}
         </Routes>
 

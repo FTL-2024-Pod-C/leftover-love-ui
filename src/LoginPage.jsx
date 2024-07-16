@@ -1,5 +1,6 @@
 import React from 'react'
 import './LoginPage.css'
+import { Link } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -31,7 +32,10 @@ const LoginPage = () => {
             label="Password" 
             variant="outlined"
         />
-        <h3>Not a member? Sign Up!</h3>
+        <div className='sign-up'>
+            <h3>Not a member?</h3>
+            <Link to="/sign-up" className='sign-up-btn'>Sign Up!</Link>
+        </div>
         {/* Placeholder Button */}
         <button className='button'>Log In</button>
     </form>
