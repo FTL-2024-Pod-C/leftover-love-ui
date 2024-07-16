@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DashboardHeader from '../dashboardHeader/dashboardHeader.jsx';
 import DashboardProfileSection from '../dashboardProfileSection/dashboardProfileSection.jsx';
 import FoodPantryDashboardButtons from '../foodPantryDashboardButtons/foodPantryDashboardButtons.jsx';
+import FoodAvailableHeader from '../foodAvailableHeader/foodAvailableHeader.jsx';
 import './foodPantryDashboard.css';
 
 const FoodPantryDashboard = () => {
@@ -26,6 +27,7 @@ const FoodPantryDashboard = () => {
             {/* Routes "landingPage" to landingPage */}
             <Route path="/landingPage" element={<landingPage />} />
             </Routes>
+            <FoodAvailableHeader />
         </div>
     </div>
     </Router>
