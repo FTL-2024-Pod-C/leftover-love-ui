@@ -1,0 +1,26 @@
+.creators {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    margin: 50px;
+}
+
+.creator {
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    background-color: #D9D9D9;
+    padding: 20px;
+    border-radius: 80px 80px 0 0;
+    width: 150px;
+    height: 500px;
+}
+
+.creator-img {
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+}
