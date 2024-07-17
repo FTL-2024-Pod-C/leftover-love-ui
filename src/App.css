@@ -4,12 +4,14 @@ body, html {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: white;
 }
+
 .app {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure app takes up at least the height of the viewport */
 }
-button {
+
+.button {
     background-color: #827D7D;
     border: none;
     border-radius: 50px;
