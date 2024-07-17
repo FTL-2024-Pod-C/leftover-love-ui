@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./foodCard.css";
+import "./FoodCard.css";
 
 const FoodCard = (props) => {
     // Handles adding/subtracting in field box

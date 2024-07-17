@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LandingPage from './Pages/LandingPage';
+import LandingPage from './Pages/LandingPage.jsx'
 import MeetTheCreatorsPage from './Pages/MeetTheCreatorsPage';
-import SignUpPage from './SignUpPage';
-import LoginPage from './LoginPage';
-import FoodPantryDashboard from './Components/foodPantryDashboard/foodPantryDashboard.jsx';
+import SignUpPage from './Pages/SignUpPage.jsx';
+import LoginPage from './Pages/LoginPage.jsx';
+import FoodPantryDashboard from './Pages/FoodPantryDashboard.jsx';
 
 const App = () => {
   return (
@@ -16,6 +16,8 @@ const App = () => {
           <Route path="/meet-the-creators" element={<MeetTheCreatorsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="/food-dashboard" element={<FoodPantryDashboard />} />
+          <Route path="/editProfilePage" element={<editProfilePage />} />
           {/* Other routes */}
         </Routes>
       </div>

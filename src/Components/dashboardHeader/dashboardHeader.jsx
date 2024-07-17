@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import "./dashboardHeader.css";
+import "./DashboardHeader.css";
 
 const DashboardHeader = () => {
     return (
