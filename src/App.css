@@ -1,0 +1,25 @@
+body, html {
+    margin: 0px;
+    height: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure app takes up at least the height of the viewport */
+}
+
+.button {
+    background-color: #827D7D;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
