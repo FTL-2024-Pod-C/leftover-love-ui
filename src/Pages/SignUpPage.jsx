@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './LoginPage.css'
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
@@ -51,7 +52,8 @@ const SignUpPage = () => {
             />
         </form>
         {/* Placeholder Button */}
-        <button className='button'>Create</button>
+        {/* <button className='button'>Create</button> */}
+        <Link to="/food-dashboard">Create</Link>
     </div>
     </>
   )

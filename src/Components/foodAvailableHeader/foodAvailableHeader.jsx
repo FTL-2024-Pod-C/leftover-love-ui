@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "./foodAvailableHeader.css";
+import "./FoodAvailableHeader.css";
 import TextField from '@mui/material/TextField';
 
 const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange}) => {

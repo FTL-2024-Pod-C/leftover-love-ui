@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "./foodPantryDashboardButtons.css";
+import "./FoodPantryDashboardButtons.css";
 
 const FoodPantryDashboardButtons = () => {
   return (
