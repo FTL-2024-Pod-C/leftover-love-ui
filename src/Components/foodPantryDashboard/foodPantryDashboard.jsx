@@ -5,6 +5,7 @@ import DashboardHeader from '../dashboardHeader/dashboardHeader.jsx';
 import DashboardProfileSection from '../dashboardProfileSection/dashboardProfileSection.jsx';
 import FoodPantryDashboardButtons from '../foodPantryDashboardButtons/foodPantryDashboardButtons.jsx';
 import FoodAvailableHeader from '../foodAvailableHeader/foodAvailableHeader.jsx';
+import FoodCard from '../foodCard/foodCard.jsx';
 import './foodPantryDashboard.css';
 
 const FoodPantryDashboard = () => {
@@ -28,6 +29,7 @@ const FoodPantryDashboard = () => {
             <Route path="/landingPage" element={<landingPage />} />
             </Routes>
             <FoodAvailableHeader />
+            <FoodCard />
         </div>
     </div>
     </Router>
