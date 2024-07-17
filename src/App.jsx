@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './Components/Header/Header';
 import LandingPage from './Pages/LandingPage';
-import Footer from './Components/Footer/Footer';
 import MeetTheCreatorsPage from './Pages/MeetTheCreatorsPage';
 import SignUpPage from './SignUpPage';
 import LoginPage from './LoginPage';
 
 const App = () => {
   return (
-    <BrowserRouter> {/* Use BrowserRouter instead of aliasing as Router */}
+    <BrowserRouter>
       <div className='app'>
         <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -19,11 +17,6 @@ const App = () => {
           <Route path="/sign-up" element={<SignUpPage />} />
           {/* Other routes */}
         </Routes>
-
-        {/* <Header />
-        <LandingPage />
-        <Footer /> */}
-
       </div>
     </BrowserRouter>
   );
