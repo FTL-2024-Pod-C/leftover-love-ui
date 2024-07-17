@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import MeetTheCreatorsPage from './Pages/MeetTheCreatorsPage';
 import SignUpPage from './SignUpPage';
 import LoginPage from './LoginPage';
+import FoodPantryDashboard from './Components/foodPantryDashboard/foodPantryDashboard.jsx';
 
 const App = () => {
   return (
