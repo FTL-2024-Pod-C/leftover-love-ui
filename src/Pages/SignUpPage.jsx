@@ -22,8 +22,12 @@ const SignUpPage = () => {
             </div>
         </div>
         <ButtonGroup variant="contained" aria-label="Basic button group">
-            <Button>Restaurant</Button>
-            <Button>Food Pantry</Button>
+            <Link to="/food-dashboard">
+                <button className="dashboardButton">Food Pantry</button>
+            </Link>
+            <Link to="/restaurant-dashboard">
+                <button className="dashboardButton">Restaurant</button>
+            </Link>
         </ButtonGroup>
         <form className='form'>
             <TextField
