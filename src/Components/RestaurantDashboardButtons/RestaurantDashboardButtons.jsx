@@ -13,7 +13,7 @@ const RestaurantDashboardButtons = () => {
         <Link to="/restaurantProfilePage">
             <button className="dashboardButton">View Profile</button>
         </Link>
-        <Link to="/updateListings">
+        <Link to="/update-listings">
             <button className="dashboardButton">Update Listings</button>
         </Link>
         <Link to="/donationHistory">

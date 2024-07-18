@@ -1,0 +1,29 @@
+.update-listings-page {
+    padding: 20px;
+}
+.update-listings-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+    background-color: #D9D9D9;
+}
+
+.updatelistings {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    padding-top: 10%;
+}
+
+.listing-form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 20px;
+}
