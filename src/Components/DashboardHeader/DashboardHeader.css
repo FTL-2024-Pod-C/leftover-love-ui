@@ -5,5 +5,18 @@
     width: 250%;
     padding: 20px;
     border-bottom: 2px solid #000;
+    color: #004715;
 }
 
+.logout-btn {
+    background-color: #004715;
+    color: #fdffdb;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

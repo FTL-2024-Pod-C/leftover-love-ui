@@ -1,28 +1,19 @@
 import React from 'react'
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import './UpdateListings.css'
+import { Link } from 'react-router-dom';
+import './AddListingPage.css'
+
+
 
 const UpdateListingsPage = () => {
+
   return (
     <>
-    <div className='update-listings-header'>
-        <h1>Update Listings</h1>
-        <div>
-        <IconButton>
-            <CloseIcon />
-        </IconButton>
-        </div>
-    </div>
-   
+    <Header />
 
     <div className='update-listings-page'>
-
-    
-
-<div className='updatelistings'>
+    <div className='updatelistings'>
     <img className='listing-img'
       src="https://via.placeholder.com/150"
       alt="Placeholder"
@@ -34,41 +25,58 @@ const UpdateListingsPage = () => {
             id="outlined-basic" 
             type="text" 
             label="Name of Item" 
-            variant="outlined"
+            margin="normal"
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
         />
         <TextField
             id="outlined-basic" 
             type="text" 
             label="Description" 
-            variant="outlined"
+            margin="normal"
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
         />
          <TextField
             id="outlined-basic" 
             type="text" 
             label="Quantity" 
-            variant="outlined"
+            margin="normal"
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
         />
          <TextField
             id="outlined-basic" 
             type="text" 
             label="Category" 
-            variant="outlined"
+            margin="normal"
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
         />
          <TextField
             id="outlined-basic" 
             type="text" 
             label="Best By" 
-            variant="outlined"
+            margin="normal"
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
         />
-        <Button variant="contained" color="primary">
-            Add Item
-        </Button>
+        <Link to="/restaurant-dashboard">
+        <button className='dashboardButton'>Add Listing</button>
+        </Link>
     </form>
 </div>
-
 </div>
-    
-
     </>
   )
 }
