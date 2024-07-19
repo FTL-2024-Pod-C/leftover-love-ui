@@ -14,7 +14,7 @@ const FoodPantryDashboard = () => {
         {/* leftColumn refers to the sidebar */}
         <div className="leftColumn">
             <DashboardProfileSection />
-            <Link to="/editProfilePage">Edit Profile</Link>
+            <Link to="/edit-profile-page">Edit Profile</Link>
             <FoodPantryDashboardButtons/>
         </div>
         <div className="rightColumn">

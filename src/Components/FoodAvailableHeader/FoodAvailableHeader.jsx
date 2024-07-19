@@ -20,7 +20,7 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange}) => {
                     value={searchInputValue}
                     onChange={handleOnSearchInputChange}
                 />
-                <Link to="/cartPage">
+                <Link to="/cart-page">
                     <button className="cartButton">Cart</button>
                 </Link>
             </div>

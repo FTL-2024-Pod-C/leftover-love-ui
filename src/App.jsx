@@ -7,6 +7,7 @@ import SignUpPage from './Pages/SignUpPage.jsx';
 import LoginPage from './Pages/LoginPage.jsx';
 import FoodPantryDashboard from './Pages/FoodPantryDashboard.jsx';
 import RestaurantDashboard from './Pages/RestaurantDashboard.jsx';
+import CartPage from './Pages/CartPage.jsx';
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/food-dashboard" element={<FoodPantryDashboard />} />
           <Route path="/restaurant-dashboard" element={<RestaurantDashboard />} />
-          <Route path="/editProfilePage" element={<editProfilePage />} />
+          <Route path="/edit-profile-page" element={<editProfilePage />} />
+          <Route path="/cart-page" element={<CartPage />} />
           {/* Other routes */}
         </Routes>
       </div>
