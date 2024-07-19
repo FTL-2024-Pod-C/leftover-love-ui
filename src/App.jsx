@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LandingPage from './Pages/LandingPage.jsx'
+import LandingPage from './Pages/LandingPage'
 import MeetTheCreatorsPage from './Pages/MeetTheCreatorsPage';
-import SignUpPage from './Pages/SignUpPage.jsx';
+import SignUpPage from './Pages/SignUpPage';
 import LoginPage from './Pages/LoginPage.jsx';
-import FoodPantryDashboard from './Pages/FoodPantryDashboard.jsx';
-import RestaurantDashboard from './Pages/RestaurantDashboard.jsx';
+import FoodPantryDashboard from './Pages/FoodPantryDashboard';
+import RestaurantDashboard from './Pages/RestaurantDashboard';
+import AddListingPage from './Pages/AddListingPage';
+import EditProfilePage from './Pages/EditProfilePage'
 
 const App = () => {
   return (
@@ -19,7 +21,8 @@ const App = () => {
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/food-dashboard" element={<FoodPantryDashboard />} />
           <Route path="/restaurant-dashboard" element={<RestaurantDashboard />} />
-          <Route path="/editProfilePage" element={<editProfilePage />} />
+          <Route path="/edit-profile" element={<EditProfilePage />} />
+          <Route path="/add-listing" element={<AddListingPage />} />
           {/* Other routes */}
         </Routes>
       </div>

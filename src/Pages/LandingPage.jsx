@@ -11,8 +11,10 @@ const LandingPage = () => {
     
     <div className='title'>
       <h1>Leftover Love</h1>
-      <h3>Description</h3>
-      <Link to="/meet-the-creators" className='button'>Meet the Creators</Link>
+      <h3>A digital platform empowering restaurants to turn surplus into sustenance for food pantries in need</h3>
+      <Link to="/meet-the-creators">
+        <button className='button'>Meet the Creators</button>
+      </Link>
     </div>
 
     <div className='impact'>
