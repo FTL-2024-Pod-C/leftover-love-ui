@@ -5,12 +5,22 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.donationHistoryItemTime{
+    color: #004715;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 25px;
+    margin-bottom: 0px;
+}
+
 .foodPantryBox {
     display: flex;
+    flex-direction: column;
     background-color: gray;
     border-radius: 8px;
     justify-content: space-between;
     margin: 20px;
+    padding-bottom: 20px;
 }
 
 .foodPantryName {

@@ -6,6 +6,7 @@ const DonationHistoryItem = () => {
   return (
   <>  
     <h1 className="donationHistoryHeader">Donation History</h1>
+    <h4 className="donationHistoryItemTime">1/23/24, 1:23PM</h4>
     <div className="foodPantryBox">
         <div className="donationHistoryItemBox">
             <div className="foodPantryInfo">
