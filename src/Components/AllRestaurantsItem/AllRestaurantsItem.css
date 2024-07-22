@@ -1,0 +1,45 @@
+.allRestaurantsHeader {
+    margin-left: 15px;
+    font-size: 30px;
+    color: #004715;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.restaurantBoxDetails {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 10px;
+    color: #004715;
+  }
+
+  .restaurantBoxName {
+    color: #004715;
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+
+  .restaurantBoxLocation {
+    color: #004715;
+    font-size: 15px;
+    margin-bottom: 0px;
+  }
+
+  .restaurantBoxContact {
+    color: #004715;
+    font-size: 15px;
+    margin-bottom: 0px;
+  }
+
+  .restaurantBox {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: gray;
+    margin: 10px 10px;
+  }
