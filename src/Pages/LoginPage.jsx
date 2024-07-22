@@ -5,18 +5,52 @@ import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import axios from "axios";
+import {useNavigate} from "react-router-dom"
+import {useState, useEffect} from "react";
+
+const DEV_BASE_URL = "http://localhost:3000"
 
 const LoginPage = () => {
+    const navigate = useNavigate();
     const users = [
     {
         label: 'Restaurant',
-        value: 'R',
+        value: 'restaurant',
     },
     {
         label: 'Food Pantry',
-        value: 'FP',
+        value: 'food',
     },
     ];
+
+    const [userType, setUserType] = useState('restaurant');
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleLogIn = async (e) => {
+        e.preventDefault();
+        try {
+            if (userType === "restaurant") {
+                const response = await axios.post(`${DEV_BASE_URL}/restaurants/restaurantlogin`, {username, password});
+                localStorage.setItem("token", response.data.token);
+                navigate(`/${userType}-dashboard`);
+            }
+            if (userType === "food") {
+                const response = await axios.post(`${DEV_BASE_URL}/foodpantries/foodpantrylogin`, {username, password});
+                localStorage.setItem("token", response.data.token);
+                navigate(`/${userType}-dashboard`);
+            }
+            
+        }
+        catch (error) {
+            alert("Login failed! Check credentials");
+        }
+    };
+
+    const handleUserTypeChange = (event) => {
+        setUserType(event.target.value);
+    }
 
   return (
    <>
@@ -43,11 +77,12 @@ const LoginPage = () => {
           id="outlined-select-user"
           select
           label="Choose User"
-          defaultValue="R"
+          value={userType}
           variant="filled"
         sx={{
             backgroundColor: '#ffffff',
         }}
+        onChange={handleUserTypeChange}
         >
         {users.map((option) => (
             <MenuItem key={option.value} value={option.value}>
@@ -66,6 +101,7 @@ const LoginPage = () => {
             sx={{
                 backgroundColor: '#ffffff',
             }}
+            onChange = {(e) => setUsername(e.target.value)}
         />
         <TextField
         required
@@ -77,6 +113,7 @@ const LoginPage = () => {
             sx={{
                 backgroundColor: '#ffffff',
             }}
+            onChange = {(e) => setPassword(e.target.value)}
         />
         <div className='sign-up'>
             <h3>Not a member?</h3>
@@ -84,7 +121,7 @@ const LoginPage = () => {
                 <button className='button'>Sign Up!</button>
             </Link>
         </div>
-        <button className='button'>Log In</button>
+        <button className='button' onClick = {handleLogIn}>Log In</button>
     </form>
    </div>
    </>

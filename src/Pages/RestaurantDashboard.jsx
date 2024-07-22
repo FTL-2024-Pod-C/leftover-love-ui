@@ -12,7 +12,7 @@ const RestaurantDashboard = () => {
         {/* leftColumn refers to the sidebar */}
         <div className="leftColumn">
             <DashboardProfileSection />
-            <RestaurantDashboardButtons/>
+            <RestaurantDashboardButtons />
         </div>
         <div className="rightColumn">
             <DashboardHeader />
