@@ -16,7 +16,7 @@ const RestaurantDashboardButtons = () => {
         <Link to="/add-listing">
             <button className="dashboardButton">Add Listing</button>
         </Link>
-        <Link to="/dontation-history">
+        <Link to="/donation-history">
             <button className="dashboardButton">Donation History</button>
         </Link>
         </div>
