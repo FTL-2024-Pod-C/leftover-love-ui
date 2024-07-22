@@ -1,64 +1,111 @@
 import React from 'react'
 import {useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
-import './LoginPage.css'
+import './SignUpPage.css'
+import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import Button from '@mui/material/Button';
-import axios from "react";
+// import Button from '@mui/material/Button';
+import axios from "axios";
+import {useNavigate} from "react-router-dom"
 
 const DEV_BASE_URL = "http://localhost:3000"
 
 const SignUpPage = () => {
-    const {userType, setUserType} = useState("");
+    const navigate = useNavigate();
+    const users = [
+    {
+        label: 'Restaurant',
+        value: 'restaurant',
+    },
+    {
+        label: 'Food Pantry',
+        value: 'food',
+    },
+    ];
+    
+    const [userType, setUserType] = useState('restaurant');
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
 
-    const handleSignUp = async () => {
+    const handleSignUp = async (e) => {
+        e.preventDefault();
+
         try {
             // if restaurant, post should go to restaurant endpoint
             // else food pantry
             if (userType === "restaurant") {
-                
+                console.log(name);
+                console.log(email);
+                console.log(username);
+                console.log(password);
+                console.log(userType);
                 // register the user
-                const response = axios.post(`${DEV_BASE_URL}/restaurants`, {name, email, username, password});
-
+                const response = await axios.post(`${DEV_BASE_URL}/restaurants`, {name, email, username, password});
+                console.log(response);
                 // login in the user
-                const loginResponse = axios.post(`${DEV_BASE_URL}/restaurants/restaurantlogin`);
+                const loginResponse = await axios.post(`${DEV_BASE_URL}/restaurants/restaurantlogin`, {name, email, username, password});
+                console.log(loginResponse);
                 
                 // store token in local storage as token
                 localStorage.setItem("token", loginResponse.data.token);
+                navigate(`/${userType}-dashboard`);
+            }
+            else if (userType === "food") {
+                const response = await axios.post(`${DEV_BASE_URL}/foodpantries`, {name, email, username, password});
+                console.log(response);
+                // login in the user
+                const loginResponse = await axios.post(`${DEV_BASE_URL}/foodpantries/foodpantrylogin`, {name, email, username, password});
+                console.log(loginResponse);
+                
+                // store token in local storage as token
+                localStorage.setItem("token", loginResponse.data.token);
+                navigate(`/${userType}-dashboard`);
             }
 
         }
         catch (error) {
+            console.log(error);
             alert("Registration failed. Try again!");
         }
+
+    }
+
+    const handleUserTypeChange = (event) => {
+        setUserType(event.target.value);
     }
     
     return (
     <>
     <div className='login'>
         <div className='login-header'>
-            <div className="right-aligned-element">
-                <IconButton>
-                <CloseIcon />
+
+        <div className="right-aligned-element">
+            <Link to="/">
+            <IconButton>
+                <CloseIcon 
+                sx={{
+                    color: '#ffffff',
+                }}
+                />
                 </IconButton>
+            </Link>
             </div>
+
             <div className="centered-element">
                 <h1>Sign Up!</h1>
             </div>
         </div>
-        <select className="userType">
+        {/* <select className="userType">
           <option value="">Select User Type</option>
           <option value="restaurant-user" onClick={() => setUserType("restaurant")}>Restaurant</option>
           <option value="food-pantry-user" onClick={() => setUserType("food")}>Food Pantry</option>
-        </select>
+        </select> */}
         {/* <ButtonGroup variant="contained" aria-label="Basic button group">
             <Link to="/food-dashboard">
                 <button className="dashboardButton">Food Pantry</button>
@@ -68,38 +115,83 @@ const SignUpPage = () => {
             </Link>
         </ButtonGroup> */}
         <form className='form'>
-            <TextField
-                id="outlined-basic" 
-                type="text" 
-                label="Name" 
-                variant="outlined"
-                onChange={(e) => setName(e.target.value)}
-            />
-            <TextField
-                id="outlined-basic" 
-                type="text" 
-                label="Email" 
-                variant="outlined"
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <TextField
-                id="outlined-basic" 
-                type="text" 
-                label="Username" 
-                variant="outlined"
-                onChange={(e) => setUsername(e.target.value)}
-            />
-            <TextField
-                id="outlined-basic" 
-                type="text" 
-                label="Password" 
-                variant="outlined"
-                onChange={(e) => setPassword(e.target.value)}
-            />
-        </form>
-        <Link to="/food-dashboard">
-            <button className="createProfile" onClick = {handleSignUp}>Create</button>
-        </Link>
+        <TextField
+        required
+          id="outlined-select-user"
+          select
+          label="Choose User"
+          value={userType}
+          variant="filled"
+        sx={{
+            backgroundColor: '#ffffff',
+        }}
+        onChange={handleUserTypeChange}
+        >
+        {users.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+
+        <TextField
+            required
+            id="outlined-basic-name" 
+            margin="normal"
+            type="text" 
+            label="Name" 
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
+            onChange={(e)=> setName(e.target.value)}
+        />
+        <TextField
+            required
+            id="outlined-basic-email" 
+            margin="normal"
+            type="text"
+            label="Email" 
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
+            onChange={(e)=> setEmail(e.target.value)}
+        />
+
+        <TextField
+        required
+            id="outlined-basic-username" 
+            margin="normal"
+            type="text" 
+            label="Create Username" 
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
+            onChange={(e)=> setUsername(e.target.value)}
+        />
+        <TextField
+        required
+            id="outlined-basic-password" 
+            margin="normal"
+            type="text"
+            label="Create Password" 
+            variant="filled"
+            sx={{
+                backgroundColor: '#ffffff',
+            }}
+            onChange={(e)=> setPassword(e.target.value)}
+        /> 
+         <div className='sign-in'>
+            <h3>Already have an account?</h3>
+            <Link to="/login">
+                <button className='button'>Login</button>
+            </Link>
+        </div>
+        <button className='button' onClick = {handleSignUp}>Create</button>
+    </form>
+        
     </div>
     </>
   )

@@ -7,16 +7,16 @@ const RestaurantDashboardButtons = () => {
     <div className='buttonBox'>
         <div className="allButtons">
         {/* Routing of buttons */}
-        <Link to="/restaurantDashboard">
+        <Link to="/restaurant-dashboard">
             <button className="dashboardButton">Dashboard</button>
         </Link>
-        <Link to="/restaurantProfilePage">
+        <Link to="/restaurant-profile">
             <button className="dashboardButton">View Profile</button>
         </Link>
-        <Link to="/updateListings">
-            <button className="dashboardButton">Update Listings</button>
+        <Link to="/add-listing">
+            <button className="dashboardButton">Add Listing</button>
         </Link>
-        <Link to="/donationHistory">
+        <Link to="/dontation-history">
             <button className="dashboardButton">Donation History</button>
         </Link>
         </div>
