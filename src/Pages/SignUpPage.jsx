@@ -54,7 +54,7 @@ const SignUpPage = () => {
                 
                 // store token in local storage as token
                 localStorage.setItem("token", loginResponse.data.token);
-                navigate(`/${userType}-dashboard`);
+                navigate(`/${userType}-dashboard/${username}`);
             }
             else if (userType === "food") {
                 const response = await axios.post(`${DEV_BASE_URL}/foodpantries`, {name, email, username, password});
@@ -65,7 +65,7 @@ const SignUpPage = () => {
                 
                 // store token in local storage as token
                 localStorage.setItem("token", loginResponse.data.token);
-                navigate(`/${userType}-dashboard`);
+                navigate(`/${userType}-dashboard/${username}`);
             }
 
         }

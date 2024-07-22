@@ -8,8 +8,15 @@
     padding: 20px;
     margin: auto; 
     width: 500px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* box-shadow: 0 0 10px rgba(255,125,0,1),
+            0 0 20px 5px rgba(255,175,0,0.8),
+            0 0 30px 15px rgba(255,225,0,0.5); */
 }
+
+.login:hover { 
+    box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
+} 
 
 .login-header {
     display: flex;

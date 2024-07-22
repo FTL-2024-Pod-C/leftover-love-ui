@@ -34,12 +34,12 @@ const LoginPage = () => {
             if (userType === "restaurant") {
                 const response = await axios.post(`${DEV_BASE_URL}/restaurants/restaurantlogin`, {username, password});
                 localStorage.setItem("token", response.data.token);
-                navigate(`/${userType}-dashboard`);
+                navigate(`/${userType}-dashboard/${username}`);
             }
             if (userType === "food") {
                 const response = await axios.post(`${DEV_BASE_URL}/foodpantries/foodpantrylogin`, {username, password});
                 localStorage.setItem("token", response.data.token);
-                navigate(`/${userType}-dashboard`);
+                navigate(`/${userType}-dashboard/${username}`);
             }
             
         }
