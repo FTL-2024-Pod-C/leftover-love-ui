@@ -9,9 +9,8 @@ const DashboardProfileSection = () => {
             <img className="profileImage" src="https://via.placeholder.com/150"/>
             <h2 className="profileName">Name</h2>
         </div>
-            {/* Routes editProfileButton to editProfile */}
-            <Link to="/editProfilePage">
-            <button className="editProfilebutton">Edit Profile</button>
+            <Link to="/edit-profile">
+            <button className="edit-profile-btn">Edit Profile</button>
             </Link>
     </div>
   )
