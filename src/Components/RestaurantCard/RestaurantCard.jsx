@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import "./RestaurantCard.css";
 
-const RestaurantCard = () => {
-
+const RestaurantCard = ({name, expiration_date}) => {
+  console.log(name);
   return (
     <div className="foodCardBox">
         <img className="foodCardImage" src="https://via.placeholder.com/150"/>
         <div className="foodCardDetails">
-            <h2 className="foodCardName">Food Name</h2>
-            <h4 className="expirationDate">Expiration Date: 1/23/24</h4>
+            <h2 className="foodCardName">{name}</h2>
+            <h4 className="expirationDate">{expiration_date}</h4>
         </div>
     </div>
   );
