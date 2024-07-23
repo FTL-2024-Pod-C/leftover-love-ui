@@ -1,0 +1,30 @@
+.donatedFoodItemBox {
+    max-width: 150px;
+    max-height: 400px;
+    margin: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #000;
+  }
+
+.donatedFoodItemImage{
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 0px;
+}
+
+.donatedFoodItemName {
+    font-size: 20px;
+    color: #004715;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 0px;
+}
+
+.donatedFoodItemQuantity {
+    font-size: 15px;
+    color: #004715;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
