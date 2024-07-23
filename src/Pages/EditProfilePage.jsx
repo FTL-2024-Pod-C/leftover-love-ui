@@ -7,7 +7,11 @@ const EditProfilePage = () => {
   return (
     <>
     <Header />
-    <PhotoLibraryIcon />
+    <PhotoLibraryIcon 
+    sx={{
+      backgroundColor: '#ffffff',
+    }}
+    />
      <TextField
       id="outlined-basic-name" 
       margin="normal"
