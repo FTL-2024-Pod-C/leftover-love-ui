@@ -1,18 +1,25 @@
 import React from 'react'
 import "./RestaurantDashboardMain.css";
 import RestaurantCard from '../RestaurantCard/RestaurantCard.jsx';
+import RequestCard from '../RequestCard/RequestCard.jsx';
 
-const RestaurantDashboardMain = () => {
+const RestaurantDashboardMain = ({listings}) => {
   return (
     <>
     <div className="restaurantDashboardMainBox">
         <div className="currentListingsBox">
             <h1 className="boxTitles">Current Listings</h1>
-            <RestaurantCard />
+            {listings.map((listing) => (
+              <RestaurantCard 
+                key={listing.id}
+                name={listing.name}
+                expiration_date={listing.expiration_date}
+              />
+            ))}
         </div>
         <div className="currentRequestsBox">
             <h1 className="boxTitles">Current Requests</h1>
-            <RestaurantCard />
+            <RequestCard />
         </div>
     </div>
     </>

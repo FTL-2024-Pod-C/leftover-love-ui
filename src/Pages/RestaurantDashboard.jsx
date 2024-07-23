@@ -13,42 +13,61 @@ const DEV_BASE_URL = "http://localhost:3000"
 
 const RestaurantDashboard = () => {
   const {username} = useParams();
-  const [restaurant, setRestaurant] = useState([]);
+  const [restaurant, setRestaurant] = useState({});
   const [listings, setListings] = useState([]);
+  const [idReceived, setIdReceived] = useState(false);
 
   
-
   useEffect (() => {
     fetchRestaurant();
-    fetchListings();
+    // fetchListings();
   }, []);
+
+  useEffect (() => {
+    fetchListings();
+  }, [idReceived]);
+
+  useEffect(() => {
+    console.log("Listings updated:", listings);
+  }, [listings]);
+  
 
   const fetchRestaurant = async () => {
     try {
-      // console.log(username);
       const url = `${DEV_BASE_URL}/restaurants/restaurantusername/${username}`;
+      console.log(url);
       const response = await axios.get(url);
-      // console.log(response.data);
+      console.log(response.data);
       setRestaurant(response.data);
+      setIdReceived(true);
     }
     catch (error) {
       console.error("Error fetching restaurant", error);
     }
   }
-  // console.log(restaurant.id);
 
   const fetchListings = async () => {
+    console.log("hereeeeeee")
     try {
       if (restaurant.id) {
         const url = `${DEV_BASE_URL}/listings/restaurant/${restaurant.id}`;
+        console.log(url);
         const response = await axios.get(url);
-        // console.log(response.data);
+        console.log(response.data);
         setListings(response.data);
+        // console.log("listings",listings);
+      }
+      else{
+        console.log("No id, id is: ", restaurant.id)
       }
     }
     catch (error) {
       console.error("Error fetching restaurant listings", error);
     }
+  }
+
+  const addNewListing = async () => {
+
   }
   
   return (
@@ -65,7 +84,9 @@ const RestaurantDashboard = () => {
         </div>
         <div className="rightColumn">
             <DashboardHeader />
-            <RestaurantDashboardMain />
+            <RestaurantDashboardMain 
+              listings={listings}
+            />
         </div>
     </div>
   </>
