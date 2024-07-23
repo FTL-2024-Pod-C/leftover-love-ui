@@ -12,6 +12,8 @@ import EditProfilePage from './Pages/EditProfilePage'
 import CartPage from './Pages/CartPage.jsx';
 import DonationHistoryPage from './Pages/DonationHistoryPage.jsx';
 import AllRestaurantsPage from './Pages/AllRestaurantsPage.jsx';
+import FoodPantryProfilePage from './Pages/FoodPantryProfilePage.jsx';
+import RestaurantProfilePage from './Pages/RestaurantProfilePage.jsx';
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
           <Route path="/cart-page" element={<CartPage />} />
           <Route path="/donation-history" element={<DonationHistoryPage />} />
           <Route path="/restaurant-list" element={<AllRestaurantsPage />} />
+          <Route path="/food-profile" element={<FoodPantryProfilePage />} />
+          <Route path="/restaurant-profile" element={<RestaurantProfilePage />} />
           {/* Other routes */}
         </Routes>
       </div>

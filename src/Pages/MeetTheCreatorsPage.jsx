@@ -9,7 +9,7 @@ import './MeetTheCreators.css'
 const MeetTheCreatorsPage = () => {
   return (
     <>
-    <Header />
+    <Header headingText="Meet the Creators" closeRoute="/"/>
     <div className='creators'>
         <div className='creator'>
             <img src={madel} alt="madel-img" className="creator-img" />

@@ -4,7 +4,6 @@ import "./CartItem.css";
 const CartItem = () => {
   return (
     <>
-    <h1 className="cartHeader">Cart</h1>
     <button className="requestButton">Request</button>
     <div className="cartItemBox">
         <div className="cartItemLeftSide">   
