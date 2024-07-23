@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import "./FoodAvailableHeader.css";
 import TextField from '@mui/material/TextField';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange}) => {
   return (
@@ -20,8 +21,13 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange}) => {
                     value={searchInputValue}
                     onChange={handleOnSearchInputChange}
                 />
+
                 <Link to="/cart-page">
                     <button className="cartButton">Cart</button>
+
+                <Link to="/cartPage">
+                    <ShoppingCartIcon />
+
                 </Link>
             </div>
 

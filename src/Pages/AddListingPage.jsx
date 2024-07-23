@@ -3,11 +3,10 @@ import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom';
 import './AddListingPage.css'
+import {useNavigate} from "react-router-dom"
 
-
-
-const UpdateListingsPage = () => {
-
+const UpdateListingsPage = (props) => {
+    const navigate = useNavigate();
   return (
     <>
     <Header />
@@ -71,9 +70,9 @@ const UpdateListingsPage = () => {
                 backgroundColor: '#ffffff',
             }}
         />
-        <Link to="/restaurant-dashboard">
-        <button className='dashboardButton'>Add Listing</button>
-        </Link>
+        {/* <Link to="/restaurant-dashboard/:username"> */}
+        <button className='dashboardButton' onClick={()=> navigate(`/restaurant-dashboard/${props.restaurant.username}`)}>Add Listing</button>
+        {/* </Link> */}
     </form>
 </div>
 </div>
