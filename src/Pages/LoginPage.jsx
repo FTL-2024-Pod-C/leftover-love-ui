@@ -22,6 +22,7 @@ const LoginPage = () => {
    <>
    <div className='login'>
     <div className='login-header'>
+    {/* "x" Button */}
     <div className="right-aligned-element">
             <Link to="/">
             <IconButton>
@@ -33,6 +34,7 @@ const LoginPage = () => {
                 </IconButton>
             </Link>
             </div>
+            
         <div className="centered-element">
             <h1>Welcome!</h1>
         </div>
