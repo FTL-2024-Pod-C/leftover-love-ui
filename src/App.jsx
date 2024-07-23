@@ -9,6 +9,7 @@ import FoodPantryDashboard from './Pages/FoodPantryDashboard';
 import RestaurantDashboard from './Pages/RestaurantDashboard';
 import AddListingPage from './Pages/AddListingPage';
 import EditProfilePage from './Pages/EditProfilePage'
+import CartPage from './Pages/CartPage.jsx';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/restaurant-dashboard/:username" element={<RestaurantDashboard />} />
           <Route path="/edit-profile" element={<EditProfilePage />} />
           <Route path="/add-listing" element={<AddListingPage />} />
+          <Route path="/cart-page" element={<CartPage />} />
           {/* Other routes */}
         </Routes>
       </div>
