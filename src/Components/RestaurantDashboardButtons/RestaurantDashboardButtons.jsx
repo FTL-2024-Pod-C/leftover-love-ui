@@ -18,7 +18,7 @@ const RestaurantDashboardButtons = (props) => {
         <Link to="/add-listing">
             <button className="dashboardButton" restaurant={props.restaurant}>Add Listing</button>
         </Link>
-        <Link to="/dontation-history">
+        <Link to="/donation-history">
             <button className="dashboardButton">Donation History</button>
         </Link>
         </div>

@@ -9,7 +9,7 @@ const UpdateListingsPage = (props) => {
     const navigate = useNavigate();
   return (
     <>
-    <Header />
+    <Header headingText="Add Listing" closeRoute="/restaurant-dashboard"/>
 
     <div className='update-listings-page'>
     <div className='updatelistings'>

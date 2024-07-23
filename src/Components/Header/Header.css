@@ -12,10 +12,24 @@
 }
 
 .header .logo {
-    width: 100px;
-    height: auto;
+    width: 70px;
+    height: 70px;
+    padding-left: 10px;
 }
 
 .header-item {
     margin: 30px;
+}
+
+.headerText {
+    color: #fdffdb;
+}
+
+.headerLeftSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    font-size: 25px;
 }

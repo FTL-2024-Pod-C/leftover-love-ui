@@ -1,13 +1,13 @@
 import React from 'react'
 import './LandingPage.css'
 import { Link } from 'react-router-dom';
-import Header from '../Components/Header/Header';
+import LandingPageHeader from '../Components/Header/LandingPageHeader'
 import Footer from '../Components/Footer/Footer';
 
 const LandingPage = () => {
   return (
     <>
-    <Header />
+    <LandingPageHeader />
     
     <div className='title'>
       <h1>Leftover Love</h1>

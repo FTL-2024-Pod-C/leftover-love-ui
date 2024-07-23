@@ -1,0 +1,53 @@
+.donationHistoryHeader {
+    margin-left: 15px;
+    font-size: 30px;
+    color: #004715;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.donationHistoryItemTime{
+    color: #004715;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 25px;
+    margin-bottom: 0px;
+}
+
+.foodPantryBox {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    border-radius: 8px;
+    justify-content: space-between;
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+.foodPantryName {
+    margin-left: 15px;
+    font-size: 30px;
+    color: #004715;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.foodPantryLocation {
+    margin-left: 15px;
+    padding-top: 9px;
+    font-size: 15px;
+    color: #004715;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.foodPantryImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.foodPantryInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}

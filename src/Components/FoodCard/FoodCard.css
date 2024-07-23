@@ -37,19 +37,17 @@
     align-items: center;
 }
 
-/* Controls size of input box */
   .quantityControl input {
     width: 30px; 
     text-align: center;
     margin: 0 10px;
 }
 
-/* Controls size/styling of increment/decrement buttons */
 .quantityControl button {
     font-size: 15px;
     cursor: pointer;
-    border-radius: 10%; /* Make the button circular */
-    border: 2px solid #0000; /* Optional: Add a border */
-    background-color: #f0f0f0; /* Optional: Add a background color */
+    border-radius: 10%; 
+    border: 2px solid #0000; 
+    background-color: #f0f0f0; 
     color: black;
     }

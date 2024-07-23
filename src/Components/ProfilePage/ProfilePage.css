@@ -1,0 +1,67 @@
+
+.wholeProfilePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    flex-direction: column;
+  }
+  
+  .profilePageTopRow {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .profilePageDetails {
+    display: flex;
+    flex-direction: row;
+    color: #004715;
+  }
+
+  .profilePageName {
+    margin-bottom: 0px;
+    margin-right: 10px;
+  }
+
+  .profilePageLocation {
+    font-style: italic;
+    padding-top: 10px;
+    padding-left: 20px;
+  }
+
+  .profilePageContact {
+    margin-top: 0px;
+    color: #004715;
+  }
+
+  .profilePageBasicInfo {
+    padding-left: 30px;
+    font-size: 30px;
+  }
+
+  .profilePageImage {
+    width: 400px;
+    height: 200px;
+  }
+
+  .profilePageBottomRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .profilePageDescription {
+    display: flex;
+    text-align: left; 
+    color: #004715;
+    font-size: 25px;
+    max-width: 500px;
+    margin-left: 10px;
+    margin-right: 60px;
+  }
+
+  .mapComponent {
+    width: 400px;
+    height: 300px;
+  }

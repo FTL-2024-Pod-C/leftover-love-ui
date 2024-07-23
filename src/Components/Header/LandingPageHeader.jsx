@@ -2,8 +2,6 @@ import React from 'react'
 import logo from "./logo.png"
 import "./Header.css"
 import { Link } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 
 const Header = ({headingText, closeRoute}) => {
   return (
@@ -17,14 +15,15 @@ const Header = ({headingText, closeRoute}) => {
       </div>
       <div className="headerRightSide">
         <Link to={closeRoute}>
-          <IconButton className="xButton">
+          {/* <IconButton className="xButton">
               <CloseIcon
               sx={{
                   color: '#FFFFFF',
                   fontSize: '40px',
               }}
               />
-            </IconButton>
+            </IconButton> */}
+            <Link to="/login" className='button header-item'>Login</Link>
         </Link>
       </div>
     </div>
