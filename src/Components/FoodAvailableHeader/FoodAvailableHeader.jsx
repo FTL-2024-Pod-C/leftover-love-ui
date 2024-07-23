@@ -24,6 +24,7 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange}) => {
 
                 <Link to="/cart-page">
                     <button className="cartButton">Cart</button>
+                </Link>
 
                 <Link to="/cartPage">
                     <ShoppingCartIcon />
