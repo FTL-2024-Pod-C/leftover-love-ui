@@ -47,7 +47,6 @@ const RestaurantDashboard = () => {
   }
 
   const fetchListings = async () => {
-    console.log("hereeeeeee")
     try {
       if (restaurant.id) {
         const url = `${DEV_BASE_URL}/listings/restaurant/${restaurant.id}`;
