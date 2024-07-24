@@ -7,14 +7,15 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import ButtonGroup from '@mui/material/ButtonGroup';
-// import Button from '@mui/material/Button';
 import axios from "axios";
 import {useNavigate} from "react-router-dom"
 
 const DEV_BASE_URL = "http://localhost:3000"
 
 const SignUpPage = () => {
+
     const navigate = useNavigate();
+    
     const users = [
     {
         label: 'Restaurant',
@@ -67,13 +68,11 @@ const SignUpPage = () => {
                 localStorage.setItem("token", loginResponse.data.token);
                 navigate(`/${userType}-dashboard/${username}`);
             }
-
         }
         catch (error) {
             console.log(error);
             alert("Registration failed. Try again!");
         }
-
     }
 
     const handleUserTypeChange = (event) => {
@@ -82,6 +81,7 @@ const SignUpPage = () => {
     
     return (
     <>
+
     <div className='login'>
         <div className='login-header'>
 
@@ -101,19 +101,7 @@ const SignUpPage = () => {
                 <h1>Sign Up!</h1>
             </div>
         </div>
-        {/* <select className="userType">
-          <option value="">Select User Type</option>
-          <option value="restaurant-user" onClick={() => setUserType("restaurant")}>Restaurant</option>
-          <option value="food-pantry-user" onClick={() => setUserType("food")}>Food Pantry</option>
-        </select> */}
-        {/* <ButtonGroup variant="contained" aria-label="Basic button group">
-            <Link to="/food-dashboard">
-                <button className="dashboardButton">Food Pantry</button>
-            </Link>
-            <Link to="/restaurant-dashboard">
-                <button className="dashboardButton">Restaurant</button>
-            </Link>
-        </ButtonGroup> */}
+
         <form className='form'>
         <TextField
         required
