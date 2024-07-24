@@ -46,6 +46,7 @@ const RestaurantDashboard = () => {
     }
   }
 
+  // need to check for if quantity is 0 then don't display
   const fetchListings = async () => {
 
     try {
@@ -66,18 +67,18 @@ const RestaurantDashboard = () => {
     }
   }
 
-  const addNewListing = async (newListing) => {
-    try {
-      console.log("in addNewListing")
-      const url = `${DEV_BASE_URL}/restaurants/${restaurant.id}/listings`;
-      const response = await axios.post(url, newListing);
-      console.log(response.data);
-      setListings([...listings, response.data]);
-    }
-    catch (error) {
-      console.error("Error creating a new listing", error);
-    }
-  }
+  // const addNewListing = async (newListing) => {
+  //   try {
+  //     console.log("in addNewListing")
+  //     const url = `${DEV_BASE_URL}/restaurants/${restaurant.id}/listings`;
+  //     const response = await axios.post(url, newListing);
+  //     console.log(response.data);
+  //     setListings([...listings, response.data]);
+  //   }
+  //   catch (error) {
+  //     console.error("Error creating a new listing", error);
+  //   }
+  // }
 
     // Conditional rendering while waiting for data to arrive
     if (!idReceived) {
@@ -95,7 +96,7 @@ const RestaurantDashboard = () => {
             />
             <RestaurantDashboardButtons 
               restaurant={restaurant}
-              addNewListing={addNewListing}
+              // addNewListing={addNewListing}
             />
         </div>
         <div className="rightColumn">

@@ -67,7 +67,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './RestaurantDashboardButtons.css';
 
-const RestaurantDashboardButtons = ({ restaurant, addNewListing }) => {
+const RestaurantDashboardButtons = ({ restaurant}) => {
   const navigate = useNavigate();
 
   return (
