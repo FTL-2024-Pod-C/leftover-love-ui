@@ -1,96 +1,80 @@
-import React from 'react'
-import DashboardHeader from '../Components/DashboardHeader/DashboardHeader.jsx';
-import DashboardProfileSection from '../Components/DashboardProfileSection/DashboardProfileSection.jsx';
-import RestaurantDashboardButtons from '../Components/RestaurantDashboardButtons/RestaurantDashboardButtons.jsx';
-import RestaurantDashboardMain from '../Components/RestaurantDashboardMain/RestaurantDashboardMain.jsx';
-import './RestaurantDashboard.css';
-
-import { useParams } from 'react-router-dom';
-import {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useRestaurant } from "../context/RestaurantContext";
+import DashboardHeader from "../Components/DashboardHeader/DashboardHeader";
+import DashboardProfileSection from "../Components/DashboardProfileSection/DashboardProfileSection";
+import RestaurantDashboardButtons from "../Components/RestaurantDashboardButtons/RestaurantDashboardButtons";
+import RestaurantDashboardMain from "../Components/RestaurantDashboardMain/RestaurantDashboardMain";
+import "./RestaurantDashboard.css";
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "http://localhost:3000";
 
 const RestaurantDashboard = () => {
-  const {username} = useParams();
-  const [restaurant, setRestaurant] = useState({});
+  const { username } = useParams();
+  const { restaurant, setRestaurant } = useRestaurant();
   const [listings, setListings] = useState([]);
   const [idReceived, setIdReceived] = useState(false);
 
-  
-  useEffect (() => {
+  useEffect(() => {
     fetchRestaurant();
-    // fetchListings();
   }, []);
 
-  useEffect (() => {
-    fetchListings();
-  }, [idReceived]);
-
   useEffect(() => {
-    console.log("Listings updated:", listings);
-  }, [listings]);
-  
+    if (idReceived) {
+      fetchListings();
+    }
+  }, [idReceived]);
 
   const fetchRestaurant = async () => {
     try {
       const url = `${DEV_BASE_URL}/restaurants/restaurantusername/${username}`;
-      console.log(url);
       const response = await axios.get(url);
-      console.log(response.data);
       setRestaurant(response.data);
       setIdReceived(true);
-    }
-    catch (error) {
+    } catch (error) {
       console.error("Error fetching restaurant", error);
     }
-  }
+  };
 
   const fetchListings = async () => {
-    console.log("hereeeeeee")
     try {
-      if (restaurant.id) {
+      if (restaurant?.id) {
         const url = `${DEV_BASE_URL}/listings/restaurant/${restaurant.id}`;
-        console.log(url);
         const response = await axios.get(url);
-        console.log(response.data);
         setListings(response.data);
-        // console.log("listings",listings);
       }
-      else{
-        console.log("No id, id is: ", restaurant.id)
-      }
-    }
-    catch (error) {
+    } catch (error) {
       console.error("Error fetching restaurant listings", error);
     }
+  };
+
+  const addNewListing = async (newListing) => {
+    try {
+      const url = `${DEV_BASE_URL}/restaurants/${restaurant.id}/listings`;
+      const response = await axios.post(url, newListing);
+      setListings([...listings, response.data]);
+    } catch (error) {
+      console.error("Error creating a new listing", error);
+    }
+  };
+
+  if (!restaurant) {
+    return <p>Loading...</p>;
   }
 
-  const addNewListing = async () => {
-
-  }
-  
   return (
-    <>
     <div className="wholePage">
-        {/* leftColumn refers to the sidebar */}
-        <div className="leftColumn">
-            <DashboardProfileSection 
-              name={restaurant.name}
-            />
-            <RestaurantDashboardButtons 
-              restaurant={restaurant}
-            />
-        </div>
-        <div className="rightColumn">
-            <DashboardHeader />
-            <RestaurantDashboardMain 
-              listings={listings}
-            />
-        </div>
+      <div className="leftColumn">
+        <DashboardProfileSection name={restaurant.name} />
+        <RestaurantDashboardButtons addNewListing={addNewListing} />
+      </div>
+      <div className="rightColumn">
+        <DashboardHeader />
+        <RestaurantDashboardMain listings={listings} />
+      </div>
     </div>
-  </>
-  )
-}
+  );
+};
 
-export default RestaurantDashboard
+export default RestaurantDashboard;
