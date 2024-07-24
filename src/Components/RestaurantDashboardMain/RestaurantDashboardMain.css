@@ -6,6 +6,11 @@
     padding-right: 1000px;
   }
 
+.listings {
+    display: flex;
+    flex-direction: row;
+}
+
 .currentRequestsBox {
     background-color: gray;
     border-radius: 10px;

@@ -9,6 +9,7 @@ const RestaurantDashboardMain = ({listings}) => {
     <div className="restaurantDashboardMainBox">
         <div className="currentListingsBox">
             <h1 className="boxTitles">Current Listings</h1>
+            <div className="listings">
             {listings.map((listing) => (
               <RestaurantCard 
                 key={listing.id}
@@ -16,6 +17,7 @@ const RestaurantDashboardMain = ({listings}) => {
                 expiration_date={listing.expiration_date}
               />
             ))}
+            </div>
         </div>
         <div className="currentRequestsBox">
             <h1 className="boxTitles">Current Requests</h1>
