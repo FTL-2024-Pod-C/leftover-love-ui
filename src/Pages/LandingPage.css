@@ -6,6 +6,8 @@
     align-items: center;
     padding: 20px;
     margin: 50px;
+    border-radius: 25px;
+    margin-bottom: 10px;
     
 }
 
@@ -23,6 +25,18 @@
 .stats {
     border: 1px solid #fdffdb;
     border-radius: 20px;
-    padding: 40px;
     text-align: center;
+    padding: 20px;
+    max-width: 200px;
+    max-height: 200px;
 }
+
+.impact {
+    border-radius: 25px;
+}
+
+@media (min-width: 600px) {
+    stats {
+      font-size: 18px; /* Font size for screens wider than 600px */
+    }
+  }
