@@ -1,10 +1,9 @@
 import React from 'react'
 import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
-import { Link } from 'react-router-dom';
 import './AddListingPage.css'
 import {useNavigate, useLocation} from "react-router-dom"
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import MenuItem from '@mui/material/MenuItem';
 import axios from "axios";
 
@@ -30,7 +29,7 @@ const  AddListingPage = () => {
         catch (error) {
           console.error("Error creating a new listing", error);
         }
-      }
+    }
     
     const categories = [
         {

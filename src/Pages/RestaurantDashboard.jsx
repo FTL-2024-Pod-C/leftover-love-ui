@@ -79,6 +79,8 @@ const RestaurantDashboard = () => {
     }
   }
 
+  // need some kind of function to handleEditProfile
+
     // Conditional rendering while waiting for data to arrive
     if (!idReceived) {
       return <p>Loading...</p>;
@@ -92,6 +94,9 @@ const RestaurantDashboard = () => {
         <div className="leftColumn">
             <DashboardProfileSection 
               name={restaurant.name}
+              restaurant={restaurant}
+              // change to edit profile
+              handleEditProfile={addNewListing}
             />
             <RestaurantDashboardButtons 
               restaurant={restaurant}

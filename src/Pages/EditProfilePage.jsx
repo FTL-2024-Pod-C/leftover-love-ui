@@ -1,22 +1,42 @@
 import React, { useState } from 'react'
 import Header from '../Components/Header/LandingPageHeader';
 import TextField from '@mui/material/TextField';
+import {useNavigate, useLocation} from "react-router-dom"
 import axios from "axios";
 import AWS from 'aws-sdk';
 
 const DEV_BASE_URL = "http://localhost:3000"
 
 const EditProfilePage = () => {
+  //use states for profile
+  const [name, setName] = useState(null);
+  const [location, setLocation] = useState(null);
+  const [description, setDescription] = useState(null);
+  const [email, setEmail] = useState("");
+  const [phone_number, setPhoneNumber] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
 
+  // get the state that was passed through
+  let { state } = useLocation();
+  console.log(state);
+  // set the restaurant user in order to not lose it as the user updates profile
+  const [restaurant, setRestaurant] = useState(state.restaurant);
+  const navigate = useNavigate();
+  //function for updating profile
+  const handleEditProfile = async (e) => {
+    try {
+      console.log("in handleEditProfile")
+      // const restaurantId = 3;
+      // e.preventDefault();
+      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
+      console.log(response.data);
+    }
+    catch (error) {
+      console.error("Error updating profile page", error);
+    }
+  }
+    // all AWS s3 bucket stuff
   const [file, setFile] = useState(null);
-
-const [name, setName] = useState(null);
-const [location, setLocation] = useState(null);
-const [description, setDescription] = useState(null);
-const [email, setEmail] = useState("");
-const [phoneNumber, setPhoneNumber] = useState(null);
-const [imageUrl, setImageUrl] = useState(null);
-
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -55,53 +75,30 @@ const [imageUrl, setImageUrl] = useState(null);
       console.error("Error uploading file:", error);
       alert("Failed to upload file.");
     }
-  
-
-    // var upload = s3
-    //   .putObject(params)
-    //   .on("httpUploadProgress", (evt) => {
-    //     console.log(
-    //       "Uploading " + parseInt((evt.loaded * 100) / evt.total) + "%"
-    //     );
-    //   })
-    //   .promise();
-
-    // await upload.then((err, data) => {
-    //   console.log(err);
-    //   alert("File uploaded successfully.");
-    // });
   };
 
-  const sendImageToBackend = async (imageUrl) => {
-    const restaurantId = 2; // Replace with the actual restaurant ID
-    try {
-      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurantId}`, {profile_photo: imageUrl});
-      console.log('Profile photo updated successfully:', response.data);
+  // const sendImageToBackend = async (imageUrl) => {
+  //   const restaurantId = 1; // Replace with the actual restaurant ID
+  //   try {
+  //     const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurantId}`, {profile_photo: imageUrl});
+  //     console.log('Profile photo updated successfully:', response.data);
 
-    } catch (error) {
-      console.error('Error updating profile photo:', error.message);
-    }
-  };
-
-  const handleEditProfile = async (e) => {
-    const restaurantId = 3;
-    e.preventDefault();
-    console.log(name);
-    // register the user
-    const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurantId}`, {name, location, description, email, phoneNumber});
-    console.log(response);
-  }
+  //   } catch (error) {
+  //     console.error('Error updating profile photo:', error.message);
+  //   }
+  // };
 
   return (
     <>
     <Header />
-    <form className='form'>
+    <div className='form'>
       <TextField
         id="update-name" 
         margin="normal"
         type="text" 
         label="Name" 
         variant="filled"
+        defaultValue={restaurant.name}
         sx={{
             backgroundColor: '#ffffff',
         }}
@@ -113,6 +110,7 @@ const [imageUrl, setImageUrl] = useState(null);
         type="text" 
         label="Location" 
         variant="filled"
+        defaultValue={restaurant.location}
         sx={{
             backgroundColor: '#ffffff',
         }}
@@ -124,6 +122,7 @@ const [imageUrl, setImageUrl] = useState(null);
         type="text" 
         label="Description" 
         variant="filled"
+        defaultValue={restaurant.description}
         sx={{
             backgroundColor: '#ffffff',
         }}
@@ -135,6 +134,7 @@ const [imageUrl, setImageUrl] = useState(null);
         type="text" 
         label="Email" 
         variant="filled"
+        defaultValue={restaurant.email}
         required
         sx={{
             backgroundColor: '#ffffff',
@@ -147,13 +147,14 @@ const [imageUrl, setImageUrl] = useState(null);
         type="text" 
         label="Phone Number" 
         variant="filled"
+        defaultValue={restaurant.phone_number}
         sx={{
             backgroundColor: '#ffffff',
         }}
         onChange = {(e) => setPhoneNumber(e.target.value)}
       />
       <button onClick = {handleEditProfile}>SAVE</button>
-    </form>
+    </div>
 
 
     <div className="aws">
