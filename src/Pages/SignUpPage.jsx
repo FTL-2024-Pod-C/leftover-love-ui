@@ -172,7 +172,7 @@ const SignUpPage = () => {
             onChange={(e)=> setPassword(e.target.value)}
         /> 
          <div className='sign-in'>
-            <h3>Already have an account?</h3>
+            <h3 className="accountQuestion">Already have an account?</h3>
             <Link to="/login">
                 <button className='button'>Login</button>
             </Link>
