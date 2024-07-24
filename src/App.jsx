@@ -15,6 +15,8 @@ import AllRestaurantsPage from './Pages/AllRestaurantsPage.jsx';
 import FoodPantryProfilePage from './Pages/FoodPantryProfilePage.jsx';
 import RestaurantProfilePage from './Pages/RestaurantProfilePage.jsx';
 
+
+
 const App = () => {
   return (
     <BrowserRouter>

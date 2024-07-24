@@ -47,6 +47,7 @@ const RestaurantDashboard = () => {
   }
 
   const fetchListings = async () => {
+
     try {
       if (restaurant.id) {
         const url = `${DEV_BASE_URL}/listings/restaurant/${restaurant.id}`;
@@ -65,12 +66,27 @@ const RestaurantDashboard = () => {
     }
   }
 
-  const addNewListing = async () => {
-
+  const addNewListing = async (newListing) => {
+    try {
+      console.log("in addNewListing")
+      const url = `${DEV_BASE_URL}/restaurants/${restaurant.id}/listings`;
+      const response = await axios.post(url, newListing);
+      console.log(response.data);
+      setListings([...listings, response.data]);
+    }
+    catch (error) {
+      console.error("Error creating a new listing", error);
+    }
   }
+
+    // Conditional rendering while waiting for data to arrive
+    if (!idReceived) {
+      return <p>Loading...</p>;
+    }
   
   return (
     <>
+    
     <div className="wholePage">
         {/* leftColumn refers to the sidebar */}
         <div className="leftColumn">
@@ -79,6 +95,7 @@ const RestaurantDashboard = () => {
             />
             <RestaurantDashboardButtons 
               restaurant={restaurant}
+              addNewListing={addNewListing}
             />
         </div>
         <div className="rightColumn">
