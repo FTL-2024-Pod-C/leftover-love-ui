@@ -15,6 +15,8 @@ import AllRestaurantsPage from './Pages/AllRestaurantsPage.jsx';
 import FoodPantryProfilePage from './Pages/FoodPantryProfilePage.jsx';
 import RestaurantProfilePage from './Pages/RestaurantProfilePage.jsx';
 
+
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -33,7 +35,6 @@ const App = () => {
           <Route path="/restaurant-list" element={<AllRestaurantsPage />} />
           <Route path="/food-profile" element={<FoodPantryProfilePage />} />
           <Route path="/restaurant-profile" element={<RestaurantProfilePage />} />
-          {/* Other routes */}
         </Routes>
       </div>
     </BrowserRouter>
