@@ -77,16 +77,16 @@ const EditProfilePage = () => {
     }
   };
 
-  // const sendImageToBackend = async (imageUrl) => {
-  //   const restaurantId = 1; // Replace with the actual restaurant ID
-  //   try {
-  //     const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurantId}`, {profile_photo: imageUrl});
-  //     console.log('Profile photo updated successfully:', response.data);
+  const sendImageToBackend = async (imageUrl) => {
+    const restaurantId = 1; // Replace with the actual restaurant ID
+    try {
+      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurantId}`, {profile_photo: imageUrl});
+      console.log('Profile photo updated successfully:', response.data);
 
-  //   } catch (error) {
-  //     console.error('Error updating profile photo:', error.message);
-  //   }
-  // };
+    } catch (error) {
+      console.error('Error updating profile photo:', error.message);
+    }
+  };
 
   return (
     <>

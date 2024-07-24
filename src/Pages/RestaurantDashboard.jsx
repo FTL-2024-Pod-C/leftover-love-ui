@@ -94,9 +94,9 @@ const RestaurantDashboard = () => {
         <div className="leftColumn">
             <DashboardProfileSection 
               name={restaurant.name}
-              restaurant={restaurant}
-              // change to edit profile
-              handleEditProfile={addNewListing}
+              profile_photo={restaurant.profile_photo}
+              // restaurant={restaurant}
+              // handleEditProfile={addNewListing}
             />
             <RestaurantDashboardButtons 
               restaurant={restaurant}
