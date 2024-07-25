@@ -15,6 +15,7 @@ const RestaurantDashboardMain = ({listings}) => {
                 key={listing.id}
                 name={listing.name}
                 expiration_date={listing.expiration_date}
+                photo_url={listing.photo_url}
               />
             ))}
             </div>
