@@ -6,7 +6,8 @@ import {useState, useEffect} from 'react';
 const DEV_BASE_URL = "http://localhost:3000"
 
 const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
-
+    console.log(restaurantListings);
+    console.log(allRestaurants);
     return (
         <>
         <div className= "restaurantListingsGrid">
@@ -18,7 +19,7 @@ const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
                 key={listing.id}
                 name={listing.name}
                 expiration_date={listing.expiration_date}
-                restaurantName={restaurant.name}
+                restaurantName={restaurant ? restaurant.name : ""}
                 quantity={listing.quantity}
                 unit={listing.unit}
               />)

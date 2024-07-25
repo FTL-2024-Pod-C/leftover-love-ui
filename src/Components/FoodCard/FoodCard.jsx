@@ -5,7 +5,7 @@ const FoodCard = ({name, expiration_date, restaurantName, quantity, unit}) => {
     // Handles adding/subtracting in field box
     const[userQuantity, setUserQuantity] = useState(0);
     const handleIncrement = () => {
-        setUserQuantity(prevQuantity => prevQuantity + 1);
+        setUserQuantity(prevQuantity => prevQuantity < quantity ? prevQuantity + 1 : quantity);
     };
     const handleDecrement = () => {
         setUserQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 0));
