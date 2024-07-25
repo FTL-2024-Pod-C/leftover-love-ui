@@ -13,9 +13,9 @@ const RestaurantDashboardButtons = ({ restaurant }) => {
           <button className="edit-profile-btn">Edit Profile</button>
         </Link>
 
-        <button className="dashboardButton" onClick={() => navigate(`/restaurant-dashboard/${restaurant.username}`)}>
+        {/* <button className="dashboardButton" onClick={() => navigate(`/restaurant-dashboard/${restaurant.username}`)}>
           Dashboard
-        </button>
+        </button> */}
         
         <Link to="/restaurant-profile">
           <button className="dashboardButton">View Profile</button>

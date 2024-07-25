@@ -24,11 +24,23 @@ const EditProfilePage = () => {
   const navigate = useNavigate();
   //function for updating profile
   const handleEditProfile = async (e) => {
+    console.log("REstaurant in the handleEditProfile is", restaurant)
+
+    let updatedFields = {}
+    if (name !== null && name !== '') updatedFields.name = name;
+    if (location !== null && location !== '') updatedFields.location = location;
+    if (description !== null && description !== '') updatedFields.description = description;
+    if (email !== null && email !== '') updatedFields.email = email;
+    if (phone_number !== null && phone_number !== '') updatedFields.phone_number = phone_number;
+
+    
+
     try {
       console.log("in handleEditProfile")
       // const restaurantId = 3;
       // e.preventDefault();
-      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
+      // const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
+      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurant.id}`, updatedFields);
       console.log(response.data);
     }
     catch (error) {
@@ -80,7 +92,7 @@ const EditProfilePage = () => {
   const sendImageToBackend = async (imageUrl) => {
     const restaurantId = 1; // Replace with the actual restaurant ID
     try {
-      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurantId}`, {profile_photo: imageUrl});
+      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurant.id}`, {profile_photo: imageUrl});
       console.log('Profile photo updated successfully:', response.data);
 
     } catch (error) {
@@ -153,7 +165,12 @@ const EditProfilePage = () => {
         }}
         onChange = {(e) => setPhoneNumber(e.target.value)}
       />
-      <button onClick = {handleEditProfile}>SAVE</button>
+      {/* <button onClick = {handleEditProfile}>SAVE</button> */}
+      <button className='dashboardButton' 
+        onClick={()=> {
+          handleEditProfile();
+            navigate(`/restaurant-dashboard/${restaurant.username}`); 
+        }}>SAVE</button>
     </div>
 
 
