@@ -6,12 +6,9 @@ const DashboardProfileSection = (props) => {
   return (
     <div className="profileBox">
         <div className="profileSection">
-            <img className="profileImage" src="https://via.placeholder.com/150"/>
+            <img className="profileImage" src={props.profile_photo}/>
             <h2 className="profileName">{props.name}</h2>
         </div>
-            <Link to="/edit-profile">
-            <button className="edit-profile-btn">Edit Profile</button>
-            </Link>
     </div>
   )
 }

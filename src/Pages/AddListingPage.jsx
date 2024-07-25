@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
-import { Link } from 'react-router-dom';
 import './AddListingPage.css'
+import AWS from 'aws-sdk';
 import {useNavigate, useLocation} from "react-router-dom"
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import MenuItem from '@mui/material/MenuItem';
 import axios from "axios";
 
@@ -16,7 +16,60 @@ const  AddListingPage = () => {
     let { state } = useLocation();
     console.log(state);
 
-    // set the restauran user in order to not lose it as the user creates a listing
+    // all AWS s3 bucket stuff
+  const [file, setFile] = useState(null);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFile(file);
+  };
+
+  const uploadFile = async () => {
+    const S3_BUCKET = "leftoverlove";
+    const REGION = "us-east-2";
+
+    AWS.config.update({
+      accessKeyId: import.meta.env.VITE_ACCESS_KEY_ID,
+      secretAccessKey: import.meta.env.VITE_SECRET_ACCESS_KEY_ID,
+    });
+    const s3 = new AWS.S3({
+      params: { Bucket: S3_BUCKET },
+      region: REGION,
+    });
+
+    const params = {
+      Bucket: S3_BUCKET,
+      Key: file.name,
+      Body: file,
+    };
+
+    try {
+      const data = await s3.upload(params).promise();
+      console.log("File uploaded successfully:", data.Location);
+      setImageUrl(data.Location); // stores the uploaded image URL
+      alert("File uploaded successfully.");
+
+      // send imageurl to the backend
+      await addListing(data.Location);
+
+    } catch (error) {
+      console.error("Error uploading file:", error);
+      alert("Failed to upload file.");
+    }
+  };
+  // end aws
+
+
+
+
+
+
+
+
+
+
+
+    // set the restaurant user in order to not lose it as the user creates a listing
     const [restaurant, setRestaurant] = useState(state.restaurant);
     const navigate = useNavigate();
 
@@ -30,7 +83,7 @@ const  AddListingPage = () => {
         catch (error) {
           console.error("Error creating a new listing", error);
         }
-      }
+    }
     
     const categories = [
         {
@@ -65,20 +118,21 @@ const  AddListingPage = () => {
     const [description, setDescription] = useState("");
     const [expirationDate, setExpirationDate] = useState("");
     const [category, setCategory] = useState("");
-    const [photoURL, setPhotoURL] = useState("");
+    // const [photoURL, setPhotoURL] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
 
     const addListing = () => {
         //maybe you cab debug if this addListing function is being called bc it doesnt seem like its make a call to your backend rn
         console.log("in addListing()");
-        if (name && quantity && unit && description && expirationDate && category) {
-            addNewListing({name, quantity: parseInt(quantity), unit, description, expirationDate, category, photoURL});
+        if (name && quantity && unit && description && expirationDate && category && imageUrl) {
+            addNewListing({name, quantity: parseInt(quantity), unit, description, expirationDate, category, photoURL: imageUrl});
             setName('');
             setQuantity('');
             setUnit('')
             setDescription('');
             setExpirationDate('');
             setCategory('');
-            setPhotoURL('temp.url');
+            setImageUrl('');
         } 
         else {
             alert("Please fill out all fields");
@@ -89,17 +143,60 @@ const  AddListingPage = () => {
         setCategory(event.target.value);
     }
 
+    
+
+  // const [imageUrl, setImageUrl] = useState(null);
+
+//   const sendImageToBackend = async (imageUrl) => {
+//     try {
+//         console.log("in sendImageToBackend")
+//       const response = await axios.put(`${DEV_BASE_URL}/${restaurant.id}`, {photo_url: imageUrl});
+//       console.log('Listing photo updated successfully:', response.data);
+
+//     } catch (error) {
+//       console.error('Error updating listing photo:', error.message);
+//     }
+//   };
+
     return (
     <>
     <Header headingText="Add Listing" closeRoute="/restaurant-dashboard"/>
 
     <div className='update-listings-page'>
     <div className='updatelistings'>
-    <img className='listing-img'
+
+    {/* <img className='listing-img'
       src="https://via.placeholder.com/150"
       alt="Placeholder"
       style={{ width: '500px', height: 'auto' }}
-    />
+    /> */}
+    <div className="listing-img">
+        <div>
+          <input type="file" onChange={handleFileChange} />
+          <button onClick={uploadFile}>Upload</button>
+        </div>
+        {imageUrl && (
+          <div style={{ 
+          width: '300px', 
+          height: '300px', 
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center', 
+          overflow: 'hidden', 
+        //   borderRadius: '50%', 
+          border: '1px solid #ccc' }}>
+          <img
+            src={imageUrl}
+            alt="Uploaded"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+        </div>
+        )}
+        </div>
 
     <div className='listing-form'>
         <TextField
@@ -187,6 +284,7 @@ const  AddListingPage = () => {
     </div>
 </div>
 </div>
+
     </>
   )
 }
