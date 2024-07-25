@@ -1,21 +1,40 @@
 import React, { useState } from 'react';
 import "./FoodCard.css";
 
-const FoodCard = ({name, expiration_date, restaurantName, quantity, unit}) => {
+const FoodCard = ({listingId, name, expiration_date, restaurantName, quantity, unit, shoppingCart, setShoppingCart}) => {
     // Handles adding/subtracting in field box
-    const[userQuantity, setUserQuantity] = useState(0);
+    //const[userQuantity, setUserQuantity] = useState(0);
     const handleIncrement = () => {
-        setUserQuantity(prevQuantity => prevQuantity < quantity ? prevQuantity + 1 : quantity);
+        setShoppingCart(prev=>{
+            // if (!prev[listingId]) {
+            //     return {
+            //         [`${listingId}`]: 1, 
+            //         ...prev
+            //     }
+            // }
+            console.log('increment', prev )
+            
+            const newValue = prev[listingId] < quantity ? prev[listingId] + 1 : quantity;
+            return {...prev, [`${listingId}`]: newValue}
+        })
+        // setShoppingCart(prevQuantity => prevQuantity < quantity ? prevQuantity + 1 : quantity);
     };
     const handleDecrement = () => {
-        setUserQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 0));
+        setShoppingCart(prev => {
+            // if (!prev[listingId]) {
+            //     return {[`${listingId}`]: 0, ...prev}
+            // }
+            const newValue = prev[listingId] > 1 ? prev[listingId] - 1 : 0;
+            return { ...prev, [`${listingId}`]: newValue}
+        })
+        // setUserQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 0));
     };
-    const handleChange = (event) => {
-        const value = parseInt(event.target.value, 10);
-        if (!isNaN(value) && value > 0){
-            setUserQuantity(value);
-        }
-    };
+    // const handleChange = (event) => {
+    //     const value = parseInt(event.target.value, 10);
+    //     if (!isNaN(value) && value > 0) {
+    //         setUserQuantity(value); 
+    //     }
+    // };
 
   return (
     <div className="foodCardBox">
@@ -30,9 +49,9 @@ const FoodCard = ({name, expiration_date, restaurantName, quantity, unit}) => {
             <button onClick={handleDecrement}>-</button>
             <input 
                 type="number" 
-                value={userQuantity} 
-                onChange={handleChange} 
-                min="1"
+                value={shoppingCart[`${listingId}`]} 
+                //onChange={handleChange} 
+                //min="1"
             />
             <button onClick={handleIncrement}>+</button>
         </div>

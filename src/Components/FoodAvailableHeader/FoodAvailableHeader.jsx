@@ -22,11 +22,11 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange}) => {
                     onChange={handleOnSearchInputChange}
                 />
 
-                <Link to="/cart-page">
+                {/* <Link to="/cart-page">
                     <button className="cartButton">Cart</button>
-                </Link>
+                </Link> */}
 
-                <Link to="/cartPage">
+                <Link to="/cart-page">
                     <ShoppingCartIcon />
 
                 </Link>

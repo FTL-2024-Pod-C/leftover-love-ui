@@ -14,11 +14,12 @@ import DonationHistoryPage from './Pages/DonationHistoryPage.jsx';
 import AllRestaurantsPage from './Pages/AllRestaurantsPage.jsx';
 import FoodPantryProfilePage from './Pages/FoodPantryProfilePage.jsx';
 import RestaurantProfilePage from './Pages/RestaurantProfilePage.jsx';
-
+import {ShoppingCartProvider } from "./Context/ShoppingCartContext";
 
 
 const App = () => {
   return (
+    <ShoppingCartProvider>
     <BrowserRouter>
       <div className='app'>
         <Routes>
@@ -38,6 +39,7 @@ const App = () => {
         </Routes>
       </div>
     </BrowserRouter>
+    </ShoppingCartProvider>
   );
 }
 

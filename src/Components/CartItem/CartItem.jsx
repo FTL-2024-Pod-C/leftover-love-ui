@@ -12,7 +12,7 @@ const CartItem = () => {
                 <h2 className="cartItemName">Food Item</h2>
                 <h3 className="cartItemRestaurant">Restaurant Name</h3>
                 <h4 className="cartItemLocation">City, State</h4>
-                <h5 classname="cartItemExpiration">Expiration Date: 1/23/24</h5>
+                <h5 className="cartItemExpiration">Expiration Date: 1/23/24</h5>
             </div>
         </div> 
         <div className="cartItemRightSide">
