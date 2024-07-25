@@ -7,8 +7,8 @@ const AllRestaurantsItem = ({allRestaurants}) => {
   
   return (
     <>
-    <h1 className="allRestaurantsHeader">All Restaurants</h1>
-    <div className="restaurantBox"> 
+    {/* <h1 className="allRestaurantsHeader">All Restaurants</h1> */}
+    <div className="restaurantsGrid"> 
       {allRestaurants.map((restaurant) => (
         <RestaurantInfoCard 
           key={restaurant.id}

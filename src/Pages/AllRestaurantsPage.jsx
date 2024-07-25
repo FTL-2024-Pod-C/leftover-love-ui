@@ -16,7 +16,7 @@ const AllRestaurantsPage = () => {
   
   return (
     <>
-        <Header headingText="All Restaurants" closeRoute="/food-dashboard"/>
+        <Header headingText="All Restaurants" closeRoute={`/food-dashboard/${foodPantry.username}`}/>
         <AllRestaurantsItem
           allRestaurants={allRestaurants}
         />

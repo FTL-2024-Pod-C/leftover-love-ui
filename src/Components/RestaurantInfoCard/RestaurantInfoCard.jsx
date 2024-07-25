@@ -3,7 +3,7 @@ import "./RestaurantInfoCard.css";
 
 const RestaurantInfoCard = ({name, location, description, email, phone_number}) => {
     return (
-    <div classname="restaurantCardBox">
+    <div className="restaurantCardBox">
         <img className="restaurantBoxImage" src="https://via.placeholder.com/150"/>
         <div className="restaurantBoxDetails">
             <h2 className="restaurantBoxName">{name}</h2>
