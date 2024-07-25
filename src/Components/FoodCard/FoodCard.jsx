@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import "./FoodCard.css";
 
-const FoodCard = ({name, expiration_date, restaurantName}) => {
+const FoodCard = ({name, expiration_date, restaurantName, quantity, unit}) => {
     // Handles adding/subtracting in field box
-    const[quantity, setQuantity] = useState(0);
+    const[userQuantity, setUserQuantity] = useState(0);
     const handleIncrement = () => {
-        setQuantity(prevQuantity => prevQuantity + 1);
+        setUserQuantity(prevQuantity => prevQuantity + 1);
     };
     const handleDecrement = () => {
-        setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+        setUserQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 0));
     };
     const handleChange = (event) => {
         const value = parseInt(event.target.value, 10);
         if (!isNaN(value) && value > 0){
-            setQuantity(value);
+            setUserQuantity(value);
         }
     };
 
@@ -24,12 +24,13 @@ const FoodCard = ({name, expiration_date, restaurantName}) => {
             <h2 className="foodCardName">{name}</h2>
             <h3 className="foodCardRestaurant">{restaurantName}</h3>
             <h4 className="expirationDate">{expiration_date}</h4>
+            <h4 className="quantity">{quantity} {unit}</h4>
         </div>
         <div className="quantityControl">
             <button onClick={handleDecrement}>-</button>
             <input 
                 type="number" 
-                value={quantity} 
+                value={userQuantity} 
                 onChange={handleChange} 
                 min="1"
             />

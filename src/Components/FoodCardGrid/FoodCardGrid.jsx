@@ -6,9 +6,6 @@ import {useState, useEffect} from 'react';
 const DEV_BASE_URL = "http://localhost:3000"
 
 const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
-    // function getRestaurant (r) {
-    //     return listing.restaurant_id == r.id
-    // }
 
     return (
         <>
@@ -22,6 +19,8 @@ const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
                 name={listing.name}
                 expiration_date={listing.expiration_date}
                 restaurantName={restaurant.name}
+                quantity={listing.quantity}
+                unit={listing.unit}
               />)
             })}
         </div>
