@@ -1,0 +1,36 @@
+.restaurantCardBox {
+  display: flex;
+  flex-direction: row;
+  background-color: #ebd5b6;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.restaurantBoxDetails {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 10px;
+    color: #004715;
+  }
+
+  .restaurantBoxName {
+    color: #004715;
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+
+  .restaurantBoxLocation {
+    color: #004715;
+    font-size: 15px;
+    margin-bottom: 0px;
+  }
+
+  .restaurantBoxContact {
+    color: #004715;
+    font-size: 15px;
+    margin-bottom: 0px;
+  }

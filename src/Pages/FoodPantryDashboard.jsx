@@ -8,20 +8,27 @@ import DashboardProfileSection from '../Components/DashboardProfileSection/Dashb
 import FoodPantryDashboardButtons from '../Components/FoodPantryDashboardButtons/FoodPantryDashboardButtons.jsx';
 import FoodAvailableHeader from '../Components/FoodAvailableHeader/FoodAvailableHeader.jsx';
 import FoodCard from '../Components/FoodCard/FoodCard.jsx';
+import FoodCardGrid from '../Components/FoodCardGrid/FoodCardGrid.jsx';
 import './FoodPantryDashboard.css';
 
+const DEV_BASE_URL = "http://localhost:3000"
+
 const FoodPantryDashboard = () => {
-  const DEV_BASE_URL = "http://localhost:3000"
-
-  const [foodPantry, setFoodPantry] = useState({});
-
   const {username} = useParams();
-  // const [listings, setListings] = useState([]);
+  const [foodPantry, setFoodPantry] = useState({});
+  const [idReceived, setIdReceived] = useState(false);
+  const [restaurantListings, setRestaurantListings] = useState([]);
+  const [allRestaurants, setAllRestaurants] = useState([]);
 
   useEffect (() => {
     fetchFoodPantry();
-    // fetchListings();
+    fetchAllRestaurants();
+    //fetchListings();
   }, []);
+
+  useEffect (() => {
+    fetchListings();
+  }, [idReceived]);
 
   const fetchFoodPantry = async () => {
     try {
@@ -30,9 +37,36 @@ const FoodPantryDashboard = () => {
       const response = await axios.get(url);
       // console.log(response.data);
       setFoodPantry(response.data);
+      setIdReceived(true);
     }
     catch (error) {
       console.error("Error fetching food pantry", error);
+    }
+  }
+
+  const fetchListings = async () => {
+    try {
+      const url = `${DEV_BASE_URL}/listings`;
+      console.log(url);
+      const response = await axios.get(url);
+      console.log(response.data);
+      setRestaurantListings(response.data);
+    }
+    catch (error) {
+      console.error("Error fetching listings", error);
+    }
+  }
+
+  const fetchAllRestaurants = async () => {
+    try {
+      const url = `${DEV_BASE_URL}/restaurants`;
+      console.log(url);
+      const response = await axios.get(url);
+      console.log(response.data);
+      setAllRestaurants(response.data);
+    }
+    catch (error) {
+      console.error("Error fetching restaurants", error);
     }
   }
 
@@ -48,12 +82,16 @@ const FoodPantryDashboard = () => {
             />
             <FoodPantryDashboardButtons
               foodPantry = {foodPantry}
+              allRestaurants={allRestaurants}
             />
         </div>
         <div className="rightColumn">
             <DashboardHeader />
             <FoodAvailableHeader />
-            <FoodCard />
+            <FoodCardGrid 
+              restaurantListings={restaurantListings}
+              allRestaurants={allRestaurants}
+            />
         </div>
     </div>
   </>

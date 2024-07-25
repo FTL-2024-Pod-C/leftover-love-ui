@@ -1,20 +1,27 @@
 import React from 'react'
 import "./AllRestaurantsItem.css";
+import RestaurantInfoCard from '../RestaurantInfoCard/RestaurantInfoCard';
 
-const AllRestaurantsItem = () => {
+const AllRestaurantsItem = ({allRestaurants}) => {
+  // console.log("in restaurant item: ", allRestaurants[0].name);
+  
   return (
     <>
-    <h1 className="allRestaurantsHeader">All Restaurants</h1>
-    <div className="restaurantBox"> 
-        <img className="restaurantBoxImage" src="https://via.placeholder.com/150"/>
-        <div className="restaurantBoxDetails">
-            <h2 className="restaurantBoxName">Restaurant Name</h2>
-            <h3 className="restaurantBoxLocation">City, State</h3>
-            <h4 className="restaurantBoxContact">email@email.com | 234-567-8910</h4>
-        </div>
+    {/* <h1 className="allRestaurantsHeader">All Restaurants</h1> */}
+    <div className="restaurantsGrid"> 
+      {allRestaurants.map((restaurant) => (
+        <RestaurantInfoCard 
+          key={restaurant.id}
+          name={restaurant.name}
+          location={restaurant.location}
+          description={restaurant.description}
+          email={restaurant.email}
+          phoneNumber={restaurant.phone_number}
+        />
+      ))}
     </div>
     </>
   )
 }
 
-export default AllRestaurantsItem
+export default AllRestaurantsItem;
