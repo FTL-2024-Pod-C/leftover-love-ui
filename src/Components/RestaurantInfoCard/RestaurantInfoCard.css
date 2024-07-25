@@ -1,11 +1,4 @@
-.allRestaurantsHeader {
-    margin-left: 15px;
-    font-size: 30px;
-    color: #004715;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-/* .restaurantBoxDetails {
+.restaurantBoxDetails {
     display: flex;
     align-items: left;
     justify-content: left;
@@ -31,15 +24,4 @@
     color: #004715;
     font-size: 15px;
     margin-bottom: 0px;
-  } */
-
-  .restaurantBox {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: gray;
-    margin: 10px 10px;
   }

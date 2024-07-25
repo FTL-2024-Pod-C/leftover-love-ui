@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./FoodCard.css";
 
-const FoodCard = (props) => {
+const FoodCard = ({name, expiration_date, restaurantName}) => {
     // Handles adding/subtracting in field box
     const[quantity, setQuantity] = useState(0);
     const handleIncrement = () => {
@@ -21,9 +21,9 @@ const FoodCard = (props) => {
     <div className="foodCardBox">
         <img className="foodCardImage" src="https://via.placeholder.com/150"/>
         <div className="foodCardDetails">
-            <h2 className="foodCardName">Food Name</h2>
-            <h3 className="foodCardRestaurant">Restaurant Name</h3>
-            <h4 className="expirationDate">Expiration Date: 1/23/24</h4>
+            <h2 className="foodCardName">{name}</h2>
+            <h3 className="foodCardRestaurant">{restaurantName}</h3>
+            <h4 className="expirationDate">{expiration_date}</h4>
         </div>
         <div className="quantityControl">
             <button onClick={handleDecrement}>-</button>

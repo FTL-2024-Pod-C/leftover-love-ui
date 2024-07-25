@@ -41,11 +41,11 @@ const SignUpPage = () => {
             // if restaurant, post should go to restaurant endpoint
             // else food pantry
             if (userType === "restaurant") {
-                console.log(name);
-                console.log(email);
-                console.log(username);
-                console.log(password);
-                console.log(userType);
+                // console.log(name);
+                // console.log(email);
+                // console.log(username);
+                // console.log(password);
+                // console.log(userType);
                 // register the user
                 const response = await axios.post(`${DEV_BASE_URL}/restaurants`, {name, email, username, password});
                 console.log(response);
