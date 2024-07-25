@@ -24,7 +24,7 @@ const EditProfilePage = () => {
   const navigate = useNavigate();
   //function for updating profile
   const handleEditProfile = async (e) => {
-    console.log("REstaurant in the handleEditProfile is", restaurant)
+    console.log("Restaurant in the handleEditProfile is", restaurant)
 
     let updatedFields = {}
     if (name !== null && name !== '') updatedFields.name = name;

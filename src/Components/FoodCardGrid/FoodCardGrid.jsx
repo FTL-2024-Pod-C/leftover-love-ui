@@ -18,7 +18,7 @@ const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
                 key={listing.id}
                 name={listing.name}
                 expiration_date={listing.expiration_date}
-                restaurantName={restaurant.name}
+                restaurantName={restaurant ? restaurant.name : ""}
                 quantity={listing.quantity}
                 unit={listing.unit}
               />)

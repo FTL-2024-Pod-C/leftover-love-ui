@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Header = ({headingText, closeRoute}) => {
+const Header = ({headingText, closeButton}) => {
   return (
     <>
     <div className="header">
@@ -16,7 +16,8 @@ const Header = ({headingText, closeRoute}) => {
         <h1 className="headerText">{headingText}</h1>
       </div>
       <div className="headerRightSide">
-        <Link to={closeRoute}>
+      {closeButton}
+        {/* <Link to={closeButton}>
           <IconButton className="xButton">
               <CloseIcon
               sx={{
@@ -25,7 +26,7 @@ const Header = ({headingText, closeRoute}) => {
               }}
               />
             </IconButton>
-        </Link>
+        </Link> */}
       </div>
     </div>
     </>
