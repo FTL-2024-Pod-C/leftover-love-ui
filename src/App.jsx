@@ -8,15 +8,14 @@ import LoginPage from './Pages/LoginPage.jsx';
 import FoodPantryDashboard from './Pages/FoodPantryDashboard';
 import RestaurantDashboard from './Pages/RestaurantDashboard';
 import AddListingPage from './Pages/AddListingPage';
-
 import CartPage from './Pages/CartPage.jsx';
 import DonationHistoryPage from './Pages/DonationHistoryPage.jsx';
 import AllRestaurantsPage from './Pages/AllRestaurantsPage.jsx';
 import FoodPantryProfilePage from './Pages/FoodPantryProfilePage.jsx';
 import RestaurantProfilePage from './Pages/RestaurantProfilePage.jsx';
 import {ShoppingCartProvider } from "./Context/ShoppingCartContext";
-import EditProfilePageRestaurant from './Pages/EditProfilePageRestaurant'
-import EditProfilePageFoodPantry from './Pages/EditProfilePageFoodPantry'
+import EditProfilePageRestaurant from './Pages/EditProfilePageRestaurant';
+import EditProfilePageFoodPantry from './Pages/EditProfilePageFoodPantry';
 
 
 
