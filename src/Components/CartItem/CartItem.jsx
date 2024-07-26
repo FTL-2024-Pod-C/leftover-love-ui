@@ -11,12 +11,12 @@ const CartItem = ({listingId, quantity}) => {
             <div className="cartItemDetails">
                 <h2 className="cartItemName">{listingId}</h2>
                 <h3 className="cartItemRestaurant">Restaurant Name</h3>
-                <h4 className="cartItemLocation">{quantity}</h4>
+                {/* <h4 className="cartItemLocation">Location</h4> */}
                 <h5 className="cartItemExpiration">Expiration Date: 1/23/24</h5>
             </div>
         </div> 
         <div className="cartItemRightSide">
-            <h2 className="cartItemQuantity">Quantity: 1</h2>
+            <h2 className="cartItemQuantity">Quantity: {quantity}</h2>
             <button className="deleteItemButton">Delete</button>
         </div>
     </div>
