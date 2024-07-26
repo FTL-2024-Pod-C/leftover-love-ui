@@ -19,10 +19,11 @@
 
 .cartItemBox {
     display: flex;
-    background-color: gray;
+    background-color: #004715;
     border-radius: 8px;
     justify-content: space-between;
     margin: 20px;
+    color: white;
 }
 
 .requestButton {

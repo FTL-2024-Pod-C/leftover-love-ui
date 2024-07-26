@@ -1,14 +1,19 @@
 /* Refers to JUST the buttons */
+
 .allButtons {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    align-items: center;
+    justify-content: center;
+   
 }
 
 /* Refers to the container encasing the buttons */
 .buttonBox {
-    display: inline-block;
-    padding-right: 105px;
-    padding: 30px 5px 450px 5px;
+    background-color: #004715;
+    height: 100%;
+    text-align: center;
+
+    
+   
 }

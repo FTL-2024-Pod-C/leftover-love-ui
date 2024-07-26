@@ -8,31 +8,14 @@
     margin: 50px;
     border-radius: 25px;
     margin-bottom: 10px;
-    
 }
 
-.impact {
-    /* background-color: #004715; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 40px;
-    margin: 50px;
+.numberStats {
+    color: white;
 }
 
-.stats {
-    border: 1px solid #fdffdb;
-    border-radius: 20px;
-    text-align: center;
-    padding: 20px;
-    max-width: 200px;
-    max-height: 200px;
-}
-
-.impact {
-    border-radius: 25px;
+.statsD {
+    color: white;
 }
 
 @media (min-width: 600px) {
@@ -41,11 +24,36 @@
     }
   }
 
+.impact {
+    background-color: #004715;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 40px;
+    margin: 50px;
+    border-radius: 25px;
+}
+
+.stats {
+    border: 1px solid #004715;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+/* .impact {
+    border-radius: 25px;
+}  */
+
 .landingBox {
     background-color: #fdffdb;
     display: flex;
     margin-top: 50px;
-    align-items: center; /* Vertically center the content */
+    align-items: center;
     justify-content: center; 
     margin-bottom: 10px;
 }
@@ -84,7 +92,7 @@
 }
 
 .stats {
-    background-color: #fcffd1; /* Light background color */
+    background-color: #004715; /* Light background color */
     border: 1px solid #ddd; /* Light border */
     border-radius: 8px; /* Rounded corners */
     padding: 20px; /* Padding inside the card */
@@ -92,8 +100,9 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
     }
-    /* Hover effect for the stats cards */
-    .stats:hover {
+    
+/* Hover effect for the stats cards */
+.stats:hover {
     transform: translateY(-10px); /* Lift the card up */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
     }

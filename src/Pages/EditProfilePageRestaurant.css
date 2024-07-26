@@ -1,24 +1,25 @@
-.dashboardHeaderBox {
+.edit-form {
     display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    /* width: 250%; */
-    width: 100%;
-    padding: 30px;
-    color: #004715;
-    /* gap: 900px; */
-    gap: 65%;
+    flex-direction: column;
+    padding: 50px;
+    gap: 20px;
 }
 
-.logout-btn {
-    background-color: #004715;
+.save-button {
     color: #fdffdb;
+    padding: 20px;
     border: none;
     border-radius: 50px;
+    background-color: #004715;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.photo-form {
+    display: flex;
+    justify-content: center;
 }

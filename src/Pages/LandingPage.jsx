@@ -1,14 +1,26 @@
 import React from 'react'
 import './LandingPage.css'
 import { Link } from 'react-router-dom';
-import LandingPageHeader from '../Components/Header/LandingPageHeader'
+import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer';
 import landingPic from "./landingPic.png"
 import foodBox from "./foodBox.png"
 import loveHands from "./loveHands.png"
 import threeHands from "./threeHands.png"
+import {useNavigate, useLocation} from "react-router-dom"
+
+
+
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+const handleClose = () => {
+  console.log('Close button clicked');
+  // Implement your navigation or other logic here
+  navigate(`/login`);
+};
+
   return (
     <>
 
@@ -16,7 +28,13 @@ const LandingPage = () => {
 
 
 
-    <LandingPageHeader />
+    <Header  headingText="Leftover Love"
+    closeButton={
+      <button onClick={handleClose} className="button">
+        Login
+      </button> }
+    />
+    
     
     <div className="landingBox">
       <div className="leftSide">
@@ -32,17 +50,17 @@ const LandingPage = () => {
       <div className='stats'>
         <img src={loveHands} className="statsImage" />
         <h2 className="numberStats">Give Food</h2>
-        <h3>Donate items through our website</h3>
+        <h3 className="statsD">Donate items through our website</h3>
       </div>
       <div className='stats'>
         <img src={foodBox} className="statsImage" />
         <h2 className="numberStats">Get Food</h2>
-        <h3>Sign-up to receive donations from Leftover Love</h3>
+        <h3 className="statsD">Sign-up to receive donations from Leftover Love</h3>
       </div>
       <div className='stats'>
         <img src={threeHands} className="statsImage" />
         <h2 className="numberStats">Meet Us</h2>
-        <h3>Learn about the Leftover Love creators.</h3>
+        <h3 className="statsD">Learn about the Leftover Love creators.</h3>
       </div>
     </div>
 

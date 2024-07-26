@@ -4,10 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    padding: 20px;
+    justify-content: space-evenly; /* Center vertically */
+    /* padding: 20px; */
     margin: auto; 
-    width: 500px;
+    width: 700px;
+    height: 700px;
+    color: white;
+
 
     /* box-shadow: 0 0 10px rgba(255,125,0,1),
             0 0 20px 5px rgba(255,175,0,0.8),
@@ -28,36 +31,57 @@
 }
   
 .right-aligned-element {
-    margin-left: 450px;
+    margin-left: 550px; 
+    /* margin-bottom: 60px; */
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    width: 500px;
+    /* padding: 40px; */
 }
 
 .sign-up {
     display: flex;
+    flex-direction: row;
+    /* margin-top: 80px; */
+    /* margin-bottom: 20px; */
+    
 }
 
 .sign-up-btn{
-    text-decoration: underline;
-    appearance: none;
-    appearance: none;
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: none;
+    background: none;           /* Remove background color */
+    border: none;               /* Remove border */
+    color: white;            /* Set text color */
+    text-decoration: underline; /* Underline text */
+    font-size: 20px;            /* Set font size */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Set font family */
+    margin-left: 1px;          /* Add margin */
+    padding: 0;                 /* Remove padding */
+    cursor: pointer;            /* Change cursor to pointer */
+    display: inline-block; 
+  
 }
 
-.test {
+/* .test {
     padding: 60px;
-}
+} */
 
 .memberQuestion {
     margin-right: 10px;
+}
+
+.login-button {
+    /* margin-top: 70px; */
+    background-color: #fdffdb;
+    border: none;
+    border-radius: 50px;
+    color: #004715;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
