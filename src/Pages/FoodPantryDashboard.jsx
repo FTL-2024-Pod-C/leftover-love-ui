@@ -22,12 +22,12 @@ const FoodPantryDashboard = () => {
 
   useEffect (() => {
     fetchFoodPantry();
-    fetchAllRestaurants();
     //fetchListings();
   }, []);
 
   useEffect (() => {
     fetchListings();
+    fetchAllRestaurants();
   }, [idReceived]);
 
   const fetchFoodPantry = async () => {

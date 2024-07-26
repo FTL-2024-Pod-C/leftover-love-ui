@@ -3,7 +3,7 @@ import logo from "./logo.png"
 import "./Header.css"
 import { Link } from 'react-router-dom';
 
-const Header = ({headingText, closeRoute}) => {
+const LandingPageHeader = ({headingText, closeRoute}) => {
   return (
     <>
     <div className="header">
@@ -14,7 +14,7 @@ const Header = ({headingText, closeRoute}) => {
         <h1 className="headerText">{headingText}</h1>
       </div>
       <div className="headerRightSide">
-        <Link to={closeRoute}>
+        {/* <Link to={closeRoute}> */}
           {/* <IconButton className="xButton">
               <CloseIcon
               sx={{
@@ -23,12 +23,13 @@ const Header = ({headingText, closeRoute}) => {
               }}
               />
             </IconButton> */}
-            <Link to="/login" className='button header-item'>Login</Link>
-        </Link>
+        
+        {/* </Link> */}
+        <Link to="/login" className='button header-item'>Login</Link>
       </div>
     </div>
     </>
   )
 }
 
-export default Header
+export default LandingPageHeader;
