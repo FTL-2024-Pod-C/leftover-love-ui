@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+// import {useNavigate, useLocation} from "react-router-dom"
 import "./FoodCard.css";
 
-const FoodCard = ({name, expiration_date, restaurantName, quantity, unit}) => {
+const FoodCard = ({name, expiration_date, restaurantName, quantity, unit, photo}) => {
     // Handles adding/subtracting in field box
     const[userQuantity, setUserQuantity] = useState(0);
     const handleIncrement = () => {
@@ -19,7 +20,17 @@ const FoodCard = ({name, expiration_date, restaurantName, quantity, unit}) => {
 
   return (
     <div className="foodCardBox">
-        <img className="foodCardImage" src="https://via.placeholder.com/150"/>
+        <img className="foodCardImage" src={photo}
+            style={{ 
+                width: '300px', 
+                height: '300px', 
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center', 
+                overflow: 'hidden',  
+                border: '1px solid #ccc',
+                objectFit: 'cover' }}
+        />
         <div className="foodCardDetails">
             <h2 className="foodCardName">{name}</h2>
             <h3 className="foodCardRestaurant">{restaurantName}</h3>

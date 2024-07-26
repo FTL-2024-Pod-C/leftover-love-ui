@@ -156,10 +156,22 @@ const  AddListingPage = () => {
 //       console.error('Error updating listing photo:', error.message);
 //     }
 //   };
+const handleClose = () => {
+  console.log('Close button clicked');
+  // Implement your navigation or other logic here
+  navigate(`/restaurant-dashboard/${restaurant.username}`);
+};
 
     return (
     <>
-    <Header headingText="Add Listing" closeRoute="/restaurant-dashboard"/>
+    <Header 
+        headingText="Add Listings" 
+        closeButton={
+          <button onClick={handleClose} className="button">
+            Back to Dashboard
+          </button>
+        }
+      />
 
     <div className='update-listings-page'>
     <div className='updatelistings'>
