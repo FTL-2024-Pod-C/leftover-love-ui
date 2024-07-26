@@ -4,7 +4,7 @@ import FoodCard from '../FoodCard/FoodCard';
 import {useState, useEffect} from 'react';
 import { useShoppingCart } from "../../Context/ShoppingCartContext"
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
     const { shoppingCart, setShoppingCart } = useShoppingCart();

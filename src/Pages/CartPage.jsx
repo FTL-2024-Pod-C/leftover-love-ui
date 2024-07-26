@@ -7,7 +7,7 @@ import {useState, useEffect} from 'react';
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const CartPage = () => {
   const { shoppingCart, setShoppingCart } = useShoppingCart();
