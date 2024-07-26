@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./RestaurantCard.css";
 
-const RestaurantCard = ({name, expiration_date, photo_url}) => {
+const RestaurantCard = ({name, quantity, unit, expiration_date, photo_url}) => {
   console.log(name);
   return (
     <div className="foodCardBox">
@@ -18,7 +18,8 @@ const RestaurantCard = ({name, expiration_date, photo_url}) => {
               objectFit: 'cover' }}
             />
         <div className="foodCardDetails">
-            <h2 className="foodCardName">{name}</h2>
+            <h4 className="foodCardName">{name}</h4>
+            <h4 className="foodCardQuantity">{quantity} {unit}</h4>
             <h4 className="expirationDate">{expiration_date}</h4>
         </div>
     </div>

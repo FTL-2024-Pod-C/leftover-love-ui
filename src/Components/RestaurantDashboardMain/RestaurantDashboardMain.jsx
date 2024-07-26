@@ -16,6 +16,8 @@ const RestaurantDashboardMain = ({listings}) => {
                 name={listing.name}
                 expiration_date={listing.expiration_date}
                 photo_url={listing.photo_url}
+                quantity={listing.quantity}
+                unit={listing.unit}
               />
             ))}
             </div>

@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
     <div className='footer'>
-        <h2>Connect with us on our socials!</h2>
+        {/* <h2>Connect with us on our socials!</h2>
         <LinkedInIcon 
         sx={{
           padding: '5px',
@@ -23,7 +23,7 @@ const Footer = () => {
         sx={{
           padding: '5px',
         }}
-        />
+        /> */}
         <h3>© 2024 Matcha Gang</h3>
     </div>
     </>
