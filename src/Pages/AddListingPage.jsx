@@ -122,7 +122,6 @@ const  AddListingPage = () => {
     const [imageUrl, setImageUrl] = useState("");
 
     const addListing = () => {
-        //maybe you cab debug if this addListing function is being called bc it doesnt seem like its make a call to your backend rn
         console.log("in addListing()");
         if (name && quantity && unit && description && expirationDate && category && imageUrl) {
             addNewListing({name, quantity: parseInt(quantity), unit, description, expirationDate, category, photoURL: imageUrl});
