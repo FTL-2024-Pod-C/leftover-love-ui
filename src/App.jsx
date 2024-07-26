@@ -17,8 +17,6 @@ import {ShoppingCartProvider } from "./Context/ShoppingCartContext";
 import EditProfilePageRestaurant from './Pages/EditProfilePageRestaurant';
 import EditProfilePageFoodPantry from './Pages/EditProfilePageFoodPantry';
 
-
-
 const App = () => {
   return (
     <ShoppingCartProvider>
