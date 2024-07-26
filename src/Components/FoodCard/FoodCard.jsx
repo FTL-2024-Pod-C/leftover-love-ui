@@ -12,7 +12,7 @@ const FoodCard = ({listingId, name, expiration_date, restaurantName, quantity, u
             //         ...prev
             //     }
             // }
-            console.log('increment', prev )
+            //console.log('increment', prev )
             
             const newValue = prev[listingId] < quantity ? prev[listingId] + 1 : quantity;
             return {...prev, [`${listingId}`]: newValue}
