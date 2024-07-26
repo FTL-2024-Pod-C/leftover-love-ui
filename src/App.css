@@ -6,6 +6,10 @@ body, html {
     /* color: #fdffdb; */
 }
 
+/* h1 , h2, h3{
+    color: white;
+} */
+
 .app {
     display: flex;
     flex-direction: column;
