@@ -1,4 +1,7 @@
 .foodCardBox {
+  /* child */
+  display: inline-block;
+  
     background-color: gray;
     width: auto;
     max-width: 300px;

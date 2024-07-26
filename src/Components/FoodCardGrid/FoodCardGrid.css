@@ -1,5 +1,7 @@
 .restaurantListingsGrid {
     display: flex;
     flex-direction: row;
-    margin-left: 20px;
+    flex-wrap: wrap;
+    /* margin-left: 20px; */
+    margin: 20px;
 }

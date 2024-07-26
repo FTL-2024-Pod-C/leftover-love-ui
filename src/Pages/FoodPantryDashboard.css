@@ -3,12 +3,16 @@
     flex-direction: column;
 }
 
-.wholePage {
+/* .wholePage {
     display: flex;
     flex-direction: row;
     color: #004715;
-}
+} */
 
 .rightColumn {
-    width: 75%;
+    width: 84%;
+}
+
+.right-side {
+   width: 100%;
 }

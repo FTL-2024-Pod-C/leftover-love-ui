@@ -7,8 +7,9 @@ const RestaurantDashboardMain = ({listings}) => {
   return (
     <>
     <div className="restaurantDashboardMainBox">
+    <h1 className="boxTitles">Current Listings</h1>
         <div className="currentListingsBox">
-            <h1 className="boxTitles">Current Listings</h1>
+            
             <div className="listings">
             {listings.map((listing) => (
               <RestaurantCard 
