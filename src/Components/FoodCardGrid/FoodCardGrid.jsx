@@ -42,6 +42,7 @@ const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
                 setShoppingCart={setShoppingCart}
                 quantity={listing.quantity}
                 unit={listing.unit}
+                photo={listing.photo_url}
               />)
             })}
         </div>

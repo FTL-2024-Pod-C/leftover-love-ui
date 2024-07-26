@@ -53,12 +53,13 @@
 
   .profilePageDescription {
     display: flex;
-    text-align: left; 
+    text-align: center; 
     color: #004715;
     font-size: 25px;
-    max-width: 500px;
+    padding: 50px;
+    /* max-width: 500px;
     margin-left: 10px;
-    margin-right: 60px;
+    margin-right: 60px; */
   }
 
   .mapComponent {

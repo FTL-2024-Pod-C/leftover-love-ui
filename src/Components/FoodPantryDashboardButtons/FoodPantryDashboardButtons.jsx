@@ -7,9 +7,13 @@ const FoodPantryDashboardButtons = ({foodPantry, allRestaurants}) => {
     <div className='buttonBox'>
         <div className="allButtons">
         {/* Routing of buttons */}
-        <Link to="/food-dashboard/:username">
-            <button className="dashboardButton">Dashboard</button>
+        {/* <Link to="/edit-profile" state={{foodPantry}}>
+          <button className="edit-profile-btn">Edit Profile</button>
+        </Link> */}
+        <Link to="/edit-profile-food" state={{foodPantry}}>
+          <button className="edit-profile-btn">Edit Profile</button>
         </Link>
+        
         <Link to="/food-profile">
             <button className="dashboardButton">View Profile</button>
         </Link>

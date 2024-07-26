@@ -9,7 +9,7 @@ const RestaurantDashboardButtons = ({ restaurant }) => {
   return (
     <div className='buttonBox'>
       <div className="allButtons">
-        <Link to="/edit-profile" state={{restaurant}}>
+        <Link to="/edit-profile-restaurant" state={{restaurant}}>
           <button className="edit-profile-btn">Edit Profile</button>
         </Link>
 
@@ -17,7 +17,10 @@ const RestaurantDashboardButtons = ({ restaurant }) => {
           Dashboard
         </button> */}
         
-        <Link to="/restaurant-profile">
+        {/* <Link to="/restaurant-profile">
+          <button className="dashboardButton">View Profile</button>
+        </Link> */}
+         <Link to="/restaurant-profile" state={{restaurant}} >
           <button className="dashboardButton">View Profile</button>
         </Link>
 
