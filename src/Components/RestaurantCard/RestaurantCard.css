@@ -20,10 +20,21 @@
     justify-content: center;
     flex-direction: column;
     padding-top: 10px;
+    color: #f0f0f0;
+    font-size: 20px;
 }
 
-.foodCardName, .expirationDate {
-    margin: 4px;
+.foodCardQuantity {
+  color: #f0f0f0;
+  margin-top: 2px;
+}
+
+.foodCardName {
+  margin-bottom: 2px;
+}
+
+.foodCardQuantity, .expirationDate {
+  margin-bottom: 2px;
   }
 
 /* These lines of code remove the default 
