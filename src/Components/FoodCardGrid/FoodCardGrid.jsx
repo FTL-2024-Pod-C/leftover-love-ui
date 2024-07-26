@@ -21,6 +21,7 @@ const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
                 restaurantName={restaurant ? restaurant.name : ""}
                 quantity={listing.quantity}
                 unit={listing.unit}
+                photo={listing.photo_url}
               />)
             })}
         </div>
