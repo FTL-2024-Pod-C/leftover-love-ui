@@ -5,10 +5,12 @@
     justify-content: center;
     /* border-bottom: 2px solid #000; */
     padding: 20px 30px 20px 20px;
+    background-color: #004715;
 }
 
 .profileSection{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -22,6 +24,10 @@
     height: 150px;
     border-radius: 50%;
     border: 2px solid #000;
+}
+
+.profileName {
+    color: #fdffdb;
 }
 
 .edit-profile-btn {

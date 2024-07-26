@@ -11,7 +11,7 @@ const FoodPantryDashboardButtons = ({foodPantry, allRestaurants}) => {
           <button className="edit-profile-btn">Edit Profile</button>
         </Link> */}
         <Link to="/edit-profile-food" state={{foodPantry}}>
-          <button className="edit-profile-btn">Edit Profile</button>
+          <button className="dashboardButton">Edit Profile</button>
         </Link>
         
         <Link to="/food-profile">
