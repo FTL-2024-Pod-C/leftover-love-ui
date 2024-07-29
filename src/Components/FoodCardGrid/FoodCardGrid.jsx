@@ -18,11 +18,16 @@ const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
 
     useEffect(()=> {
         const intialValue = {};
-        const initializer = restaurantListings.reduce((accumulated, listing) => {
-            return {...accumulated, [`${listing.id}`]: 0}
-        }, intialValue);
-        console.log("initializer", initializer);
-        setShoppingCart(initializer);
+        if (restaurantListings.length > 0) {
+            const initializer = restaurantListings.reduce((accumulated, listing) => {
+                const currentValue = shoppingCart[`${listing.id}`] ?? 0;
+                console.log("current value: ", currentValue);
+                return {...accumulated, [`${listing.id}`]: currentValue}
+            }, intialValue);
+        
+            console.log("initializer", initializer);
+            setShoppingCart(initializer);
+        }
     },[restaurantListings])
 
     return (

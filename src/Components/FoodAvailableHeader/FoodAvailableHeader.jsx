@@ -4,7 +4,7 @@ import "./FoodAvailableHeader.css";
 import TextField from '@mui/material/TextField';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange}) => {
+const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange, allRestaurants, restaurantListings}) => {
   return (
     <>
         <div className="main">
@@ -26,7 +26,7 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange}) => {
                     <button className="cartButton">Cart</button>
                 </Link> */}
 
-                <Link to="/cart-page">
+                <Link to="/cart-page" state={{allRestaurants, restaurantListings}}>
                     <ShoppingCartIcon />
 
                 </Link>

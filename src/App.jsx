@@ -14,13 +14,10 @@ import DonationHistoryPage from './Pages/DonationHistoryPage.jsx';
 import AllRestaurantsPage from './Pages/AllRestaurantsPage.jsx';
 import FoodPantryProfilePage from './Pages/FoodPantryProfilePage.jsx';
 import RestaurantProfilePage from './Pages/RestaurantProfilePage.jsx';
-<<<<<<< HEAD
 import {ShoppingCartProvider } from "./Context/ShoppingCartContext";
-=======
 import EditProfilePageRestaurant from './Pages/EditProfilePageRestaurant'
 import EditProfilePageFoodPantry from './Pages/EditProfilePageFoodPantry'
 
->>>>>>> 90ec274bf675ee9caddfef68fc4ac1e71e941f32
 
 
 const App = () => {
@@ -42,7 +39,7 @@ const App = () => {
           <Route path="/donation-history" element={<DonationHistoryPage />} />
           <Route path="/restaurant-list" element={<AllRestaurantsPage />} />
           <Route path="/food-profile" element={<FoodPantryProfilePage />} />
-          <Route path="/restaurant-profile" element={<RestaurantProfilePage />} />
+          <Route path="/restaurant-profile/:username" element={<RestaurantProfilePage />} />
         </Routes>
       </div>
     </BrowserRouter>

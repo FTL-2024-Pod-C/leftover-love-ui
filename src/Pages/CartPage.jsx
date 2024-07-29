@@ -6,13 +6,19 @@ import { useShoppingCart } from "../Context/ShoppingCartContext"
 import {useState, useEffect} from 'react';
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
+import {useLocation} from "react-router-dom"
 
 const DEV_BASE_URL = "http://localhost:3000"
 
 const CartPage = () => {
+  let { state } = useLocation();
+
+
   const { shoppingCart, setShoppingCart } = useShoppingCart();
   const [foodPantryId, setFoodPantryId] = useState(null);
   const [request, setRequest] = useState({});
+  const [allRestaurants, setAllRestaurants] = useState(state.allRestaurants);
+  const [restaurantListings, setAllRestaurantListings] = useState(state.restaurantListings);
 
   useEffect(() => {
     const tokenDecoded = jwtDecode(localStorage.getItem("token"));
@@ -31,6 +37,22 @@ const CartPage = () => {
     const response = await axios.post(url, reqData);
     console.log(response.data);
     setRequest(response.data);
+    createRequestItems(response.data.id);
+  }
+
+  const createRequestItems = async (requestId) => {
+    const cartItems = Object.keys(shoppingCart).filter((item) => shoppingCart[item] > 0);
+    const requestItems = cartItems.map((item) => ({
+      quantity: shoppingCart[item],
+      status: "pending", 
+      listing_id: parseInt(item), 
+      request_id: requestId
+    }))
+
+    const url = `${DEV_BASE_URL}/requestitems`;
+    const response = await axios.post(url, requestItems);
+    setShoppingCart({});
+
   }
 
   console.log(shoppingCart);
@@ -42,8 +64,10 @@ const CartPage = () => {
         <Header headingText="Cart" closeRoute="/food-dashboard"/>
         <button className="requestButton" onClick={() => createRequest(foodPantryId, "pending")}>Request</button>
         {cartItems.map((item) => (
-           <CartItem 
-            listingId={parseInt(item)}
+           <CartItem
+            listing={restaurantListings.find((r) => {
+              return parseInt(item) == r.id
+          })}
             quantity={shoppingCart[item]}
            />
         ))}

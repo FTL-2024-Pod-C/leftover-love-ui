@@ -87,7 +87,10 @@ const FoodPantryDashboard = () => {
         </div>
         <div className="rightColumn">
             <DashboardHeader />
-            <FoodAvailableHeader />
+            <FoodAvailableHeader 
+              allRestaurants={allRestaurants}
+              restaurantListings={restaurantListings}
+            />
             <FoodCardGrid 
               restaurantListings={restaurantListings}
               allRestaurants={allRestaurants}
