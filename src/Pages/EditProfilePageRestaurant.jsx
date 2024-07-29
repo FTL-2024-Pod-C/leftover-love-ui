@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import "./EditProfilePageRestaurant.css"
 import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
 import {useNavigate, useLocation} from "react-router-dom"
 import axios from "axios";
 import AWS from 'aws-sdk';
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const EditProfilePageRestaurant = () => {
   //use states for profile
@@ -116,7 +117,7 @@ const EditProfilePageRestaurant = () => {
           </button>
         }
       />
-    <div className='form'>
+    <div className='edit-form'>
       <TextField
         id="update-name" 
         margin="normal"
@@ -178,17 +179,13 @@ const EditProfilePageRestaurant = () => {
         }}
         onChange = {(e) => setPhoneNumber(e.target.value)}
       />
-      {/* <button onClick = {handleEditProfile}>SAVE</button> */}
-      <button className='dashboardButton' 
-        onClick={()=> {
-          handleEditProfile();
-            navigate(`/restaurant-dashboard/${restaurant.username}`); 
-        }}>SAVE</button>
+      
     </div>
+    
 
 
     <div className="aws">
-        <div>
+        <div className="photo-form">
           <input type="file" onChange={handleFileChange} />
           <button onClick={uploadFile}>Upload</button>
         </div>
@@ -214,6 +211,13 @@ const EditProfilePageRestaurant = () => {
         </div>
         )}
         </div>
+
+        {/* <button onClick = {handleEditProfile}>SAVE</button> */}
+    <button className='save-button' 
+        onClick={()=> {
+          handleEditProfile();
+            navigate(`/restaurant-dashboard/${restaurant.username}`); 
+        }}>SAVE</button>
     </>
   )
 }

@@ -1,4 +1,7 @@
 .foodCardBox {
+  /* child */
+  display: inline-block;
+  
     background-color: gray;
     width: auto;
     max-width: 300px;
@@ -10,6 +13,8 @@
     color: white;
     border-radius: 8px;
     padding: 10px;
+
+    margin: 10px;
   }
 
 .foodCardDetails{
@@ -51,7 +56,3 @@
     background-color: #f0f0f0; 
     color: black;
     }
-
-  .foodCardBox {
-    margin-right: 10px;
-  }

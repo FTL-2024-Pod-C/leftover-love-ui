@@ -8,7 +8,7 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import {useLocation} from "react-router-dom"
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const CartPage = () => {
   let { state } = useLocation();

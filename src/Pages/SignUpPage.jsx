@@ -10,7 +10,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import axios from "axios";
 import {useNavigate} from "react-router-dom"
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const SignUpPage = () => {
 
@@ -82,10 +82,10 @@ const SignUpPage = () => {
     return (
     <>
 
-    <div className='login'>
-        <div className='login-header'>
+    <div className='signup'>
+        <div className='signup-header'>
 
-        <div className="right-aligned-element">
+        <div className="right-align-element">
             <Link to="/">
             <IconButton>
                 <CloseIcon 
@@ -97,12 +97,12 @@ const SignUpPage = () => {
             </Link>
             </div>
 
-            <div className="centered-element">
+            <div className="center-element">
                 <h1>Sign Up!</h1>
             </div>
         </div>
 
-        <form className='form'>
+        <form className='signup-form'>
         <TextField
         required
           id="outlined-select-user"
@@ -171,15 +171,27 @@ const SignUpPage = () => {
             }}
             onChange={(e)=> setPassword(e.target.value)}
         /> 
-         <div className='sign-in'>
+         {/* <div className='sign-in'>
             <h3 className="accountQuestion">Already have an account?</h3>
             <Link to="/login">
                 <button className='button'>Login</button>
             </Link>
         </div>
-        <button className='button' onClick = {handleSignUp}>Create</button>
+        <button className='button' onClick = {handleSignUp}>Create</button> */}
     </form>
-        
+    {/* <div className='sign-in'>
+            <h3 className="accountQuestion">Already have an account?</h3>
+            <Link to="/login">
+                <button className='button'>Login</button>
+            </Link>
+        </div> */}
+        <button className='signup-button' onClick = {handleSignUp}>Create</button> 
+        <div className='sign-in'>
+            <h3 className="accountQuestion">Already have an account?</h3>
+            <Link to="/login">
+                <button className='button'>Login</button>
+            </Link>
+        </div> 
     </div>
     </>
   )

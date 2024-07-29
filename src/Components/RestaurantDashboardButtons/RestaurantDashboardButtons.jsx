@@ -10,7 +10,7 @@ const RestaurantDashboardButtons = ({ restaurant }) => {
     <div className='buttonBox'>
       <div className="allButtons">
         <Link to="/edit-profile-restaurant" state={{restaurant}}>
-          <button className="edit-profile-btn">Edit Profile</button>
+          <button className="dashboardButton">Edit Profile</button>
         </Link>
 
         {/* <button className="dashboardButton" onClick={() => navigate(`/restaurant-dashboard/${restaurant.username}`)}>

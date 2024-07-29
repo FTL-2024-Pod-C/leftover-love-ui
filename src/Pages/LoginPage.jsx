@@ -9,7 +9,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom"
 import {useState, useEffect} from "react";
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -57,17 +57,17 @@ const LoginPage = () => {
    <div className='login'>
     <div className='login-header'>
     {/* "x" Button */}
-    <div className="right-aligned-element">
+        <div className="right-aligned-element">
             <Link to="/">
-            <IconButton>
-                <CloseIcon 
-                sx={{
-                    color: '#ffffff',
-                }}
-                />
-                </IconButton>
+                <IconButton>
+                 <CloseIcon 
+                     sx={{
+                            color: '#ffffff',
+                     }}
+                 />
+             </IconButton>
             </Link>
-            </div>
+        </div>
             
         <div className="centered-element">
             <h1>Welcome!</h1>
@@ -117,14 +117,29 @@ const LoginPage = () => {
             }}
             onChange = {(e) => setPassword(e.target.value)}
         />
-        <div className='sign-up'>
+        {/* <div className='sign-up'>
             <h3 className="memberQuestion">Not a member?</h3>
             <Link to="/sign-up">
-                <button className='button'>Sign Up!</button>
+                <button className='sign-up-btn'>Sign Up!</button>
             </Link>
-        </div>
-        <button className='button' onClick = {handleLogIn}>Log In</button>
+        </div> */}
+        {/* <button className='login-button' onClick = {handleLogIn}>Log In</button>
+        <div className='sign-up'>
+            <h3 className="memberQuestion">Not a member?</h3>
+            <h3 className="memberQuestion">Spread Love and </h3>
+            <Link to="/sign-up">
+                <button className='sign-up-btn'>Sign Up!</button>
+            </Link>
+        </div> */}
     </form>
+    <button className='login-button' onClick = {handleLogIn}>Log In</button>
+        <div className='sign-up'>
+            <h3 className="memberQuestion">Not a member?</h3>
+            <h3 className="memberQuestion">Spread Love and <Link className='sign-up-btn' to="/sign-up">Sign Up!</Link></h3>
+            {/* <Link to="/sign-up">
+                <button className='sign-up-btn'>Sign Up!</button>
+            </Link> */}
+        </div>
    </div>
    </>
   )
