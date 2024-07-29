@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from "axios";
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const RestaurantDashboard = () => {
   const {username} = useParams();

@@ -5,7 +5,7 @@ import {useNavigate, useLocation} from "react-router-dom"
 import axios from "axios";
 import AWS from 'aws-sdk';
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const EditProfilePageFoodPantry = () => {
   //use states for profile

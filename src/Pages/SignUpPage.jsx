@@ -10,7 +10,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import axios from "axios";
 import {useNavigate} from "react-router-dom"
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const SignUpPage = () => {
 

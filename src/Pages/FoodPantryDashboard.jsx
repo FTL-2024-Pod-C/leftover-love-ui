@@ -11,7 +11,7 @@ import FoodCard from '../Components/FoodCard/FoodCard.jsx';
 import FoodCardGrid from '../Components/FoodCardGrid/FoodCardGrid.jsx';
 import './FoodPantryDashboard.css';
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const FoodPantryDashboard = () => {
   const {username} = useParams();

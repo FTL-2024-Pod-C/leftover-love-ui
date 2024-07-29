@@ -9,7 +9,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom"
 import {useState, useEffect} from "react";
 
-const DEV_BASE_URL = "http://localhost:3000"
+const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const LoginPage = () => {
     const navigate = useNavigate();
