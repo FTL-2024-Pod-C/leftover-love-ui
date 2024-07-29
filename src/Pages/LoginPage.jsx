@@ -31,6 +31,7 @@ const LoginPage = () => {
     const handleLogIn = async (e) => {
         e.preventDefault();
         try {
+            console.log("login")
             if (userType === "restaurant") {
                 const response = await axios.post(`${DEV_BASE_URL}/restaurants/restaurantlogin`, {username, password});
                 localStorage.setItem("token", response.data.token);
