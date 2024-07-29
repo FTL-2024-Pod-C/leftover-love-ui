@@ -8,7 +8,6 @@ import {useState} from "react";
 import MenuItem from '@mui/material/MenuItem';
 import axios from "axios";
 
-const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 //const  AddListingPage = ({restaurant}) => {
 const  AddListingPage = () => {
 
@@ -76,7 +75,7 @@ const  AddListingPage = () => {
     const addNewListing = async (newListing) => {
         try {
           console.log("in addNewListing")
-          const url = `${DEV_BASE_URL}/restaurants/${restaurant.id}/listings`;
+          const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}/listings`;
           const response = await axios.post(url, newListing);
           console.log(response.data);
         }
@@ -149,7 +148,7 @@ const  AddListingPage = () => {
 //   const sendImageToBackend = async (imageUrl) => {
 //     try {
 //         console.log("in sendImageToBackend")
-//       const response = await axios.put(`${DEV_BASE_URL}/${restaurant.id}`, {photo_url: imageUrl});
+//       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/${restaurant.id}`, {photo_url: imageUrl});
 //       console.log('Listing photo updated successfully:', response.data);
 
 //     } catch (error) {

@@ -2,6 +2,7 @@ import React from 'react'
 import "./CartItem.css";
 
 const CartItem = ({listing, quantity, restaurantName}) => {
+  
   return (
     <>
     {/* <button className="requestButton">Request</button> */}

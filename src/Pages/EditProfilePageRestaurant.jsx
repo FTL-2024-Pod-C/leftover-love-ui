@@ -6,8 +6,6 @@ import {useNavigate, useLocation} from "react-router-dom"
 import axios from "axios";
 import AWS from 'aws-sdk';
 
-const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
-
 const EditProfilePageRestaurant = () => {
   //use states for profile
   const [name, setName] = useState(null);
@@ -40,8 +38,8 @@ const EditProfilePageRestaurant = () => {
       console.log("in handleEditProfile")
       // const restaurantId = 3;
       // e.preventDefault();
-      // const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
-      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurant.id}`, updatedFields);
+      // const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
+      const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, updatedFields);
       console.log(response.data);
     }
     catch (error) {
@@ -93,7 +91,7 @@ const EditProfilePageRestaurant = () => {
   const sendImageToBackend = async (imageUrl) => {
     const restaurantId = 1; // Replace with the actual restaurant ID
     try {
-      const response = await axios.put(`${DEV_BASE_URL}/restaurants/${restaurant.id}`, {profile_photo: imageUrl});
+      const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, {profile_photo: imageUrl});
       console.log('Profile photo updated successfully:', response.data);
 
     } catch (error) {

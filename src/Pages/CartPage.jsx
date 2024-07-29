@@ -8,8 +8,6 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import {useLocation} from "react-router-dom"
 
-const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
-
 const CartPage = () => {
   let { state } = useLocation();
 
@@ -33,7 +31,7 @@ const CartPage = () => {
       status
     };
     console.log(foodPantryId);
-    const url = `${DEV_BASE_URL}/requests`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/requests`;
     const response = await axios.post(url, reqData);
     console.log(response.data);
     setRequest(response.data);
@@ -49,7 +47,7 @@ const CartPage = () => {
       request_id: requestId
     }))
 
-    const url = `${DEV_BASE_URL}/requestitems`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/requestitems`;
     const response = await axios.post(url, requestItems);
     setShoppingCart({});
 
