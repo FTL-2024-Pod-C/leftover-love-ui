@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import LandingPage from './Pages/LandingPage'
 import MeetTheCreatorsPage from './Pages/MeetTheCreatorsPage';
 import SignUpPage from './Pages/SignUpPage';
@@ -17,32 +17,10 @@ import {ShoppingCartProvider } from "./Context/ShoppingCartContext";
 import EditProfilePageRestaurant from './Pages/EditProfilePageRestaurant';
 import EditProfilePageFoodPantry from './Pages/EditProfilePageFoodPantry';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-        <Route>
-        <Route path="/" element={<LandingPage />} />
-          <Route path="/meet-the-creators" element={<MeetTheCreatorsPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/sign-up" element={<SignUpPage />} />
-          <Route path="/food-dashboard/:username" element={<FoodPantryDashboard />} />
-          <Route path="/restaurant-dashboard/:username" element={<RestaurantDashboard />} />
-          <Route path="/edit-profile-restaurant" element={<EditProfilePageRestaurant />} />
-          <Route path="/edit-profile-food" element={<EditProfilePageFoodPantry />} />
-          <Route path="/add-listing" element={<AddListingPage />} />
-          <Route path="/cart-page" element={<CartPage />} />
-          <Route path="/donation-history" element={<DonationHistoryPage />} />
-          <Route path="/restaurant-list" element={<AllRestaurantsPage />} />
-          <Route path="/food-profile" element={<FoodPantryProfilePage />} />
-          <Route path="/restaurant-profile" element={<RestaurantProfilePage />} />
-        </Route>
-  )
-)
-
-const App = ({routes}) => {
+const App = () => {
   return (
     <ShoppingCartProvider>
-      <RouterProvider router={router}/>
-    {/* <BrowserRouter>
+    <BrowserRouter>
       <div className='app'>
         <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -61,7 +39,7 @@ const App = ({routes}) => {
           <Route path="/restaurant-profile/:username" element={<RestaurantProfilePage />} />
         </Routes>
       </div>
-    </BrowserRouter> */}
+    </BrowserRouter>
     </ShoppingCartProvider>
   );
 }
