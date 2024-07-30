@@ -39,7 +39,7 @@
     background-color: #fdffdb;
     border: none;
     border-radius: 15px;
-  }
+}
   
 .landing-page-btn:hover {
     background-color: #fdffdb76
@@ -67,7 +67,6 @@
 }
 
 .stats {
-    /* background: linear-gradient(90deg, rgba(0,117,69,1) 24%, rgba(116,161,46,1) 81%); */
     background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
     border-radius: 20px;
     text-align: center;
@@ -98,8 +97,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
-
 }
+
 .gridBox {
     border: 2px dotted #000;
     padding: 20px;
@@ -112,7 +111,7 @@
 }
 
 .gridBox {
-    background-color: #fdffdb;;
+    background-color: #fdffdb;
     border: 1px solid #ddd; 
     border-radius: 8px; 
     padding: 20px; 
@@ -120,7 +119,7 @@
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s; 
-    }
+}
 
 .gridBox:hover {
     transform: translateY(-10px); 
@@ -141,4 +140,67 @@
 .statsImage {
     height: 70px;
     width: 70px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .headline-section {
+        flex-direction: column;
+        padding: 0 50px;
+        height: auto;
+    }
+
+    .headline-section-img {
+        margin-top: 20px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .headline-section {
+        padding: 0 20px;
+    }
+
+    .gridContainer {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .impact {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stats {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .headline-section {
+        padding: 0 10px;
+    }
+
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .headline-section {
+        padding: 0 5px;
+    }
+
+    .headline-section-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .landing-page-btn {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
 }

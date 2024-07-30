@@ -1,29 +1,14 @@
-.sign-in {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.accountQuestion {
-    margin-right: 10px;
-}
-
 .signup {
     background-color: #004715;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: space-evenly; /* Center vertically */
-    /* padding: 20px; */
-    margin: auto; 
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
     width: 700px;
     height: 700px;
     color: white;
-
-
-    /* box-shadow: 0 0 10px rgba(255,125,0,1),
-            0 0 20px 5px rgba(255,175,0,0.8),
-            0 0 30px 15px rgba(255,225,0,0.5); */
 }
 
 .signup:hover { 
@@ -36,8 +21,7 @@
 }
 
 .right-align-element {
-    margin-left: 550px; 
-    /* margin-bottom: 60px; */
+    margin-left: auto;
 }
 
 .center-element {
@@ -48,11 +32,9 @@
     display: flex;
     flex-direction: column;
     width: 500px;
-    /* padding: 40px; */
 }
 
 .signup-button {
-    /* margin-top: 70px; */
     background-color: #fdffdb;
     border: none;
     border-radius: 50px;
@@ -63,4 +45,71 @@
     display: inline-block;
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sign-in {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.accountQuestion {
+    margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+    .signup {
+        width: 90%; 
+        height: auto; 
+    }
+
+    .signup-header {
+        flex-direction: column;
+    }
+
+    .right-align-element {
+        margin-left: 0; 
+        text-align: right; 
+    }
+
+    .signup-form {
+        width: 90%; 
+    }
+
+    .signup-button {
+        font-size: 18px; 
+        padding: 12px 28px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .signup {
+        width: 95%; 
+        height: auto; 
+        padding: 20px; 
+    }
+
+    .right-align-element {
+        margin-left: 0; 
+        text-align: center; 
+    }
+
+    .signup-form {
+        width: 100%; 
+    }
+
+    .signup-button {
+        font-size: 16px; 
+        padding: 10px 24px; 
+    }
+
+    .sign-in {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .accountQuestion {
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
 }
