@@ -9,8 +9,6 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom"
 import {useState, useEffect} from "react";
 
-const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
-
 const LoginPage = () => {
     const navigate = useNavigate();
     const users = [
@@ -31,13 +29,14 @@ const LoginPage = () => {
     const handleLogIn = async (e) => {
         e.preventDefault();
         try {
+            console.log("login")
             if (userType === "restaurant") {
-                const response = await axios.post(`${DEV_BASE_URL}/restaurants/restaurantlogin`, {username, password});
+                const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/restaurants/restaurantlogin`, {username, password});
                 localStorage.setItem("token", response.data.token);
                 navigate(`/${userType}-dashboard/${username}`);
             }
             if (userType === "food") {
-                const response = await axios.post(`${DEV_BASE_URL}/foodpantries/foodpantrylogin`, {username, password});
+                const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/foodpantrylogin`, {username, password});
                 localStorage.setItem("token", response.data.token);
                 navigate(`/${userType}-dashboard/${username}`);
             }

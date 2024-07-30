@@ -11,14 +11,14 @@ import FoodCard from '../Components/FoodCard/FoodCard.jsx';
 import FoodCardGrid from '../Components/FoodCardGrid/FoodCardGrid.jsx';
 import './FoodPantryDashboard.css';
 
-const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
-
 const FoodPantryDashboard = () => {
   const {username} = useParams();
   const [foodPantry, setFoodPantry] = useState({});
   const [idReceived, setIdReceived] = useState(false);
   const [restaurantListings, setRestaurantListings] = useState([]);
   const [allRestaurants, setAllRestaurants] = useState([]);
+  const [searchInputValue, setSearchInputValue] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
 
   useEffect (() => {
     fetchFoodPantry();
@@ -33,7 +33,7 @@ const FoodPantryDashboard = () => {
   const fetchFoodPantry = async () => {
     try {
       // console.log(username);
-      const url = `${DEV_BASE_URL}/foodpantries/foodpantryusername/${username}`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/foodpantries/foodpantryusername/${username}`;
       const response = await axios.get(url);
       // console.log(response.data);
       setFoodPantry(response.data);
@@ -46,7 +46,7 @@ const FoodPantryDashboard = () => {
 
   const fetchListings = async () => {
     try {
-      const url = `${DEV_BASE_URL}/listings`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/listings`;
       console.log(url);
       const response = await axios.get(url);
       console.log(response.data);
@@ -59,7 +59,7 @@ const FoodPantryDashboard = () => {
 
   const fetchAllRestaurants = async () => {
     try {
-      const url = `${DEV_BASE_URL}/restaurants`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants`;
       console.log(url);
       const response = await axios.get(url);
       console.log(response.data);
@@ -69,6 +69,27 @@ const FoodPantryDashboard = () => {
       console.error("Error fetching restaurants", error);
     }
   }
+
+  const handleOnSearchInputChange = (event) => {
+    setSearchInputValue(event.target.value);
+  };
+
+  const handleActiveCategoryChange = (event) => {
+    setActiveCategory(event.target.value);
+  };
+
+  console.log("setActiveCategory", activeCategory)
+  console.log("searchActiveCategory", searchInputValue)
+
+  const restaurantListingsByCategory =
+  Boolean(activeCategory) && activeCategory !== "all"
+  ? restaurantListings.filter((p) => p.category.toLowerCase() === activeCategory.toLowerCase())
+  : restaurantListings
+
+
+  const restaurantListingsToShow = Boolean(searchInputValue)
+  ? restaurantListingsByCategory.filter((p) => p.name.toLowerCase().indexOf(searchInputValue.toLowerCase()) !== -1)
+  : restaurantListingsByCategory
 
 
 
@@ -87,9 +108,15 @@ const FoodPantryDashboard = () => {
         </div>
         <div className="right-side">
             <DashboardHeader />
-            <FoodAvailableHeader />
-            <FoodCardGrid 
+            <FoodAvailableHeader 
+              searchInputValue={searchInputValue}
+              handleOnSearchInputChange={handleOnSearchInputChange}
+              handleActiveCategoryChange={handleActiveCategoryChange}
+              allRestaurants={allRestaurants}
               restaurantListings={restaurantListings}
+            />
+            <FoodCardGrid 
+              restaurantListings={restaurantListingsToShow}
               allRestaurants={allRestaurants}
             />
         </div>

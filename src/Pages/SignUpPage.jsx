@@ -10,7 +10,6 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import axios from "axios";
 import {useNavigate} from "react-router-dom"
 
-const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
 
 const SignUpPage = () => {
 
@@ -47,10 +46,10 @@ const SignUpPage = () => {
                 // console.log(password);
                 // console.log(userType);
                 // register the user
-                const response = await axios.post(`${DEV_BASE_URL}/restaurants`, {name, email, username, password});
+                const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/restaurants`, {name, email, username, password});
                 console.log(response);
                 // login in the user
-                const loginResponse = await axios.post(`${DEV_BASE_URL}/restaurants/restaurantlogin`, {name, email, username, password});
+                const loginResponse = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/restaurants/restaurantlogin`, {name, email, username, password});
                 console.log(loginResponse);
                 
                 // store token in local storage as token
@@ -58,10 +57,10 @@ const SignUpPage = () => {
                 navigate(`/${userType}-dashboard/${username}`);
             }
             else if (userType === "food") {
-                const response = await axios.post(`${DEV_BASE_URL}/foodpantries`, {name, email, username, password});
+                const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/foodpantries`, {name, email, username, password});
                 console.log(response);
                 // login in the user
-                const loginResponse = await axios.post(`${DEV_BASE_URL}/foodpantries/foodpantrylogin`, {name, email, username, password});
+                const loginResponse = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/foodpantrylogin`, {name, email, username, password});
                 console.log(loginResponse);
                 
                 // store token in local storage as token
