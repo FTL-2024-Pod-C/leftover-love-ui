@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
 import './AddListingPage.css'
-import AWS from 'aws-sdk';
+// import AWS from 'aws-sdk';
 import {useNavigate, useLocation} from "react-router-dom"
 import {useState} from "react";
 import MenuItem from '@mui/material/MenuItem';

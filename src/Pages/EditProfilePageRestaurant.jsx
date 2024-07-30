@@ -4,7 +4,7 @@ import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
 import {useNavigate, useLocation} from "react-router-dom"
 import axios from "axios";
-import AWS from 'aws-sdk';
+// import AWS from 'aws-sdk';
 
 const EditProfilePageRestaurant = () => {
   //use states for profile
