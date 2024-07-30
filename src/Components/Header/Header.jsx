@@ -17,16 +17,6 @@ const Header = ({headingText, closeButton}) => {
       </div>
       <div className="headerRightSide">
       {closeButton}
-        {/* <Link to={closeButton}>
-          <IconButton className="xButton">
-              <CloseIcon
-              sx={{
-                  color: '#FFFFFF',
-                  fontSize: '40px',
-              }}
-              />
-            </IconButton>
-        </Link> */}
       </div>
     </div>
     </>

@@ -9,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import axios from "axios";
 
 const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
-//const  AddListingPage = ({restaurant}) => {
+
 const  AddListingPage = () => {
 
     // get the state that was passed through

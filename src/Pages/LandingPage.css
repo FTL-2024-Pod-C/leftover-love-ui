@@ -1,3 +1,46 @@
+.headline-section {
+    background: rgb(0,117,69);
+    background: linear-gradient(90deg, rgba(0,117,69,1) 24%, rgba(116,161,46,1) 81%);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.headline-section-text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.bullet-points li {
+    margin-bottom: 10px; 
+    line-height: 1.5; 
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.landing-page-btn {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #fdffdb;
+    border: none;
+    border-radius: 15px;
+  }
+  
+.landing-page-btn:hover {
+    background-color: #fdffdb76
+}
+
 .title {
     background-color: #004715;
     display: flex;
@@ -10,22 +53,7 @@
     margin-bottom: 10px;
 }
 
-.numberStats {
-    color: white;
-}
-
-.statsD {
-    color: white;
-}
-
-@media (min-width: 600px) {
-    stats {
-      font-size: 18px; /* Font size for screens wider than 600px */
-    }
-  }
-
 .impact {
-    background-color: #004715;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -37,41 +65,18 @@
 }
 
 .stats {
+    color: black;
     border: 1px solid #004715;
     border-radius: 20px;
     text-align: center;
     padding: 20px;
-    max-width: 200px;
-    max-height: 200px;
 }
 
-/* .impact {
-    border-radius: 25px;
-}  */
 
-.landingBox {
-    background-color: #fdffdb;
-    display: flex;
-    margin-top: 50px;
-    align-items: center;
-    justify-content: center; 
-    margin-bottom: 10px;
-}
 
 .leftSide {
-    width: 400px;
-    font-size: 25px;
-    padding-right: 100px;
-}
-
-.landingPicture {
-    height: 400px;
-    width: 600px;
-    padding-left: 100px;
-}
-
-.statisticsBox {
-    background-color: #fdffdb;
+    color: white;
+    padding: 24px;
 }
 
 .causeText {
@@ -80,7 +85,7 @@
 
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
 
@@ -92,41 +97,44 @@
 }
 
 .stats {
-    background-color: #004715; /* Light background color */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside the card */
-    margin: 10px; /* Margin around the card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
-    }
-    
-/* Hover effect for the stats cards */
-.stats:hover {
-    transform: translateY(-10px); /* Lift the card up */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px; 
+    margin: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s; 
     }
 
+.stats:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
 .gridBox {
-    background-color: #fff; /* White background */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside the box */
-    margin: 10px; /* Margin around the box */
-    text-align: center; /* Center text */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 10px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+.gridBox:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
     }
 
 .statNumber {
-    font-size: 2em; /* Large font size */
-    font-weight: bold; /* Bold text */
-    margin-bottom: 10px; /* Space below the number */
+    font-size: 2em;
+    font-weight: bold; 
+    margin-bottom: 10px; 
 }
     
 .statDescription {
-    font-size: 0.9em; /* Smaller font size */
-    color: #666; /* Gray color */
-    }
+    font-size: 0.9em;
+    color: #666; 
+}
 
 .statsImage {
     height: 70px;
