@@ -29,11 +29,12 @@ const goToSignUp = () => {
 
   return (
     <>
-    <Header  headingText="Leftover Love" closeButton={
-      <IconButton onClick={goToLogin}>
-      <AccountCircleIcon sx={{ fontSize: 50 }}/>
-      </IconButton>
-    }
+    <Header  headingText="Leftover Love" 
+    // closeButton={
+    //   <IconButton onClick={goToLogin}>
+    //   <AccountCircleIcon sx={{ fontSize: 50 }}/>
+    //   </IconButton>
+    // }
     />
     
     <div className="headline-section">

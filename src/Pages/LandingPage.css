@@ -1,9 +1,12 @@
 .headline-section {
     background: rgb(0,117,69);
     background: linear-gradient(90deg, rgba(0,117,69,1) 24%, rgba(116,161,46,1) 81%);
-    padding: 20px;
+    padding: 0 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 700px;
+    font-size: 20px;
 }
 
 .headline-section-text {
@@ -12,6 +15,10 @@
     color: white;
 }
 
+/* .headline-section { 
+   
+} */
+
 .bullet-points li {
     margin-bottom: 10px; 
     line-height: 1.5; 
@@ -19,8 +26,9 @@
 
 .btn-group {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .landing-page-btn {
@@ -66,10 +74,11 @@
 
 .stats {
     color: black;
-    border: 1px solid #004715;
+    background: linear-gradient(90deg, rgba(0,117,69,1) 24%, rgba(116,161,46,1) 81%);
     border-radius: 20px;
     text-align: center;
     padding: 20px;
+    background-color: purple;
 }
 
 
