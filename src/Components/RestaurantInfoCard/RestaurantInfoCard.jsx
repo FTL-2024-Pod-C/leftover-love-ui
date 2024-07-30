@@ -1,16 +1,19 @@
 import React from 'react'
 import "./RestaurantInfoCard.css";
+import { useNavigate } from 'react-router-dom';
 
-const RestaurantInfoCard = ({name, location, description, email, phone_number}) => {
+const RestaurantInfoCard = ({username, name, location, email, phone_number, profile_photo}) => {
+    const navigate = useNavigate();
+    
     return (
-    <div className="restaurantCardBox">
-        <img className="restaurantBoxImage" src="https://via.placeholder.com/150"/>
-        <div className="restaurantBoxDetails">
-            <h2 className="restaurantBoxName">{name}</h2>
-            <h3 className="restaurantBoxLocation">City, State</h3>
-            <h4 className="restaurantBoxContact">email@email.com | 234-567-8910</h4>
-        </div> 
-    </div>
+        <div className="restaurantCardBox" onClick={() => navigate(`/restaurant-profile/${username}`)}>
+            <img className="restaurantBoxImage" src={profile_photo}/>
+            <div className="restaurantBoxDetails">
+                <h2 className="restaurantBoxName">{name}</h2>
+                <h3 className="restaurantBoxLocation">{location}e</h3>
+                <h4 className="restaurantBoxContact">{email} | {phone_number}</h4>
+            </div> 
+        </div>
     )
 }
   

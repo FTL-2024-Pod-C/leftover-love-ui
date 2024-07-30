@@ -11,8 +11,6 @@ import FoodCard from '../Components/FoodCard/FoodCard.jsx';
 import FoodCardGrid from '../Components/FoodCardGrid/FoodCardGrid.jsx';
 import './FoodPantryDashboard.css';
 
-const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
-
 const FoodPantryDashboard = () => {
   const {username} = useParams();
   const [foodPantry, setFoodPantry] = useState({});
@@ -35,7 +33,7 @@ const FoodPantryDashboard = () => {
   const fetchFoodPantry = async () => {
     try {
       // console.log(username);
-      const url = `${DEV_BASE_URL}/foodpantries/foodpantryusername/${username}`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/foodpantries/foodpantryusername/${username}`;
       const response = await axios.get(url);
       // console.log(response.data);
       setFoodPantry(response.data);
@@ -48,7 +46,7 @@ const FoodPantryDashboard = () => {
 
   const fetchListings = async () => {
     try {
-      const url = `${DEV_BASE_URL}/listings`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/listings`;
       console.log(url);
       const response = await axios.get(url);
       console.log(response.data);
@@ -61,7 +59,7 @@ const FoodPantryDashboard = () => {
 
   const fetchAllRestaurants = async () => {
     try {
-      const url = `${DEV_BASE_URL}/restaurants`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants`;
       console.log(url);
       const response = await axios.get(url);
       console.log(response.data);
@@ -114,6 +112,8 @@ const FoodPantryDashboard = () => {
               searchInputValue={searchInputValue}
               handleOnSearchInputChange={handleOnSearchInputChange}
               handleActiveCategoryChange={handleActiveCategoryChange}
+              allRestaurants={allRestaurants}
+              restaurantListings={restaurantListings}
             />
             <FoodCardGrid 
               restaurantListings={restaurantListingsToShow}

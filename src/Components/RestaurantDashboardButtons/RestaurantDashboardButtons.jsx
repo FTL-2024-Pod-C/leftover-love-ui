@@ -20,7 +20,7 @@ const RestaurantDashboardButtons = ({ restaurant }) => {
         {/* <Link to="/restaurant-profile">
           <button className="dashboardButton">View Profile</button>
         </Link> */}
-         <Link to="/restaurant-profile" state={{restaurant}} >
+         <Link to={`/restaurant-profile/${restaurant.username}`} state={{restaurant}} >
           <button className="dashboardButton">View Profile</button>
         </Link>
 
