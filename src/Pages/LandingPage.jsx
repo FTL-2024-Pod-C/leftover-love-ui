@@ -57,6 +57,21 @@ const goToSignUp = () => {
       </div>
     </div>
 
+    <div className="gridContainer">
+      <div className="gridBox">
+        <h1>22 to 33 Billion Pounds</h1>
+        <p>Restaurants in the United States generate between 22 and 33 billion pounds of food waste annually, which significantly contributes to economic challenges.</p>
+      </div>
+      <div className="gridBox">
+        <h1>1 in 8 Households</h1>
+        <p>Approximately one in eight households in the U.S. faces food insecurity or lacks access to nutritious meals, highlighting a stark contrast between food waste and need.</p>
+      </div>
+      <div className="gridBox">
+        <h1>40% of Food Supply</h1>
+        <p>In the United States, about 40% of the food supply is wasted, from production through consumption. This staggering amount of waste underscores the need for improved food management practices and highlights the potential for addressing both economic and food security challenges.</p>
+      </div>
+    </div>
+
 
     <div className='impact'>
       <div className='stats'>
@@ -67,7 +82,7 @@ const goToSignUp = () => {
       <div className='stats'>
         <img src={foodBox} className="statsImage" />
         <h2 className="numberStats">For Food Pantries:</h2>
-        <h3 className="statsD">Explore available food donations, filter by type and location, and make direct requests to restaurants. Our smart matching system ensures you find the perfect matches for your needs quickly and efficiently.</h3>
+        <h3 className="statsD">Explore available food donations, filter by type and location, and make direct requests to restaurants. Our site ensures you find the perfect matches for your needs quickly and efficiently.</h3>
       </div>
     </div>
 
@@ -98,7 +113,6 @@ const goToSignUp = () => {
           style={{ color: '#333' }}
           />
         </IconButton>
-        <h3>Description</h3>
       </div>
       <div className="gridBox">
         <img src={karina} alt="karina-img" className="creator-img" />
@@ -123,7 +137,6 @@ const goToSignUp = () => {
           style={{ color: '#333' }}
           />
         </IconButton>
-        <h3>Description</h3>
       </div>
       <div className="gridBox">
         <img src={julia} alt="julia-img" className="creator-img" />
@@ -148,7 +161,6 @@ const goToSignUp = () => {
           style={{ color: '#333' }}
           />
         </IconButton>
-        <h3>Description</h3>
       </div>
     </div>
 

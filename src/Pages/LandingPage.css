@@ -1,6 +1,6 @@
 .headline-section {
     background: rgb(0,117,69);
-    background: linear-gradient(90deg, rgba(0,117,69,1) 24%, rgba(116,161,46,1) 81%);
+    background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
     padding: 0 100px;
     display: flex;
     justify-content: center;
@@ -14,10 +14,6 @@
     flex-direction: column;
     color: white;
 }
-
-/* .headline-section { 
-   
-} */
 
 .bullet-points li {
     margin-bottom: 10px; 
@@ -67,21 +63,23 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    padding: 40px;
     margin: 50px;
-    border-radius: 25px;
 }
 
 .stats {
-    color: black;
-    background: linear-gradient(90deg, rgba(0,117,69,1) 24%, rgba(116,161,46,1) 81%);
+    /* background: linear-gradient(90deg, rgba(0,117,69,1) 24%, rgba(116,161,46,1) 81%); */
+    background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
     border-radius: 20px;
     text-align: center;
     padding: 20px;
-    background-color: purple;
+    border: 1px solid #ddd;
+    color: white;
+    border-radius: 8px;
+    padding: 20px; 
+    margin: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s; 
 }
-
-
 
 .leftSide {
     color: white;
@@ -90,6 +88,9 @@
 
 .causeText {
     text-align: center;
+    color: white;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
 }
 
 .gridContainer {
@@ -105,34 +106,26 @@
     text-align: center;
 }
 
-.stats {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px; 
-    margin: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.2s, box-shadow 0.2s; 
-    }
-
 .stats:hover {
     transform: translateY(-10px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .gridBox {
-    background-color: #fff; 
+    background-color: #fdffdb;;
     border: 1px solid #ddd; 
     border-radius: 8px; 
     padding: 20px; 
     margin: 10px; 
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s; 
     }
 
 .gridBox:hover {
     transform: translateY(-10px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-    }
+}
 
 .statNumber {
     font-size: 2em;

@@ -89,7 +89,6 @@ const EditProfilePageRestaurant = () => {
   };
 
   const sendImageToBackend = async (imageUrl) => {
-    const restaurantId = 1; // Replace with the actual restaurant ID
     try {
       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, {profile_photo: imageUrl});
       console.log('Profile photo updated successfully:', response.data);
