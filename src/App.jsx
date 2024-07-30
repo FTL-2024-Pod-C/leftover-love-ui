@@ -16,6 +16,7 @@ import RestaurantProfilePage from './Pages/RestaurantProfilePage.jsx';
 import {ShoppingCartProvider } from "./Context/ShoppingCartContext";
 import EditProfilePageRestaurant from './Pages/EditProfilePageRestaurant';
 import EditProfilePageFoodPantry from './Pages/EditProfilePageFoodPantry';
+import FoodPantryRequestsPage from './Pages/FoodPantryRequestsPage';
 
 
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/restaurant-list" element={<AllRestaurantsPage />} />
           <Route path="/food-profile" element={<FoodPantryProfilePage />} />
           <Route path="/restaurant-profile" element={<RestaurantProfilePage />} />
+          <Route path="/food-request" element={<FoodPantryRequestsPage />} />
         </Routes>
       </div>
     </BrowserRouter>
