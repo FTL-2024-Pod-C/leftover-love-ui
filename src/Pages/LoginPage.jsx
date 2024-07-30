@@ -29,6 +29,7 @@ const LoginPage = () => {
     const handleLogIn = async (e) => {
         e.preventDefault();
         try {
+            console.log("login")
             if (userType === "restaurant") {
                 const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/restaurants/restaurantlogin`, {username, password});
                 localStorage.setItem("token", response.data.token);

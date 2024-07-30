@@ -17,6 +17,8 @@ const FoodPantryDashboard = () => {
   const [idReceived, setIdReceived] = useState(false);
   const [restaurantListings, setRestaurantListings] = useState([]);
   const [allRestaurants, setAllRestaurants] = useState([]);
+  const [searchInputValue, setSearchInputValue] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
 
   useEffect (() => {
     fetchFoodPantry();
@@ -68,6 +70,27 @@ const FoodPantryDashboard = () => {
     }
   }
 
+  const handleOnSearchInputChange = (event) => {
+    setSearchInputValue(event.target.value);
+  };
+
+  const handleActiveCategoryChange = (event) => {
+    setActiveCategory(event.target.value);
+  };
+
+  console.log("setActiveCategory", activeCategory)
+  console.log("searchActiveCategory", searchInputValue)
+
+  const restaurantListingsByCategory =
+  Boolean(activeCategory) && activeCategory !== "all"
+  ? restaurantListings.filter((p) => p.category.toLowerCase() === activeCategory.toLowerCase())
+  : restaurantListings
+
+
+  const restaurantListingsToShow = Boolean(searchInputValue)
+  ? restaurantListingsByCategory.filter((p) => p.name.toLowerCase().indexOf(searchInputValue.toLowerCase()) !== -1)
+  : restaurantListingsByCategory
+
 
 
   return (
@@ -86,11 +109,14 @@ const FoodPantryDashboard = () => {
         <div className="right-side">
             <DashboardHeader />
             <FoodAvailableHeader 
+              searchInputValue={searchInputValue}
+              handleOnSearchInputChange={handleOnSearchInputChange}
+              handleActiveCategoryChange={handleActiveCategoryChange}
               allRestaurants={allRestaurants}
               restaurantListings={restaurantListings}
             />
             <FoodCardGrid 
-              restaurantListings={restaurantListings}
+              restaurantListings={restaurantListingsToShow}
               allRestaurants={allRestaurants}
             />
         </div>
