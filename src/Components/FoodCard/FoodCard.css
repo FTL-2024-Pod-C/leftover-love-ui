@@ -1,8 +1,6 @@
 .foodCardBox {
   /* child */
   display: inline-block;
-  
-    background-color: gray;
     width: auto;
     max-width: 300px;
     height: auto;
@@ -31,11 +29,11 @@
 
 /* These lines of code remove the default 
    in the text field increment/decrement buttons */
-.quantityControl input::-webkit-outer-spin-button,
+/* .quantityControl input::-webkit-outer-spin-button,
 .quantityControl input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-}
+} */
 
 .quantityControl {
     display: flex;
@@ -44,15 +42,16 @@
 
   .quantityControl input {
     width: 30px; 
-    text-align: center;
+    text-align: right;
     margin: 0 10px;
+    background-color: white;
 }
 
 .quantityControl button {
     font-size: 15px;
     cursor: pointer;
-    border-radius: 10%; 
+    /* border-radius: 10%; 
     border: 2px solid #0000; 
-    background-color: #f0f0f0; 
-    color: black;
-    }
+    background-color: white;
+    color: black; */
+  }

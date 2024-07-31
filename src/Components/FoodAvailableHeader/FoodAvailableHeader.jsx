@@ -63,14 +63,14 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange, handl
                 />
             
                 <TextField
-                    required
                     id="outlined-select-category"
                     select
-                    label="Choose Category"
+                    label="Sort By"
                     value={category}
                     variant="filled"
                     sx={{
                         backgroundColor: '#ffffff',
+                        width: '100px',
                     }}
                     onChange={handleCategoryChange}
                     >
@@ -81,20 +81,13 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange, handl
                     ))}
                 </TextField>
 
-
-
-            {/* {categories.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                {option.label}
-                </MenuItem>
-            ))} */}
-
-                {/* <Link to="/cart-page">
-                    <button className="cartButton">Cart</button>
-                </Link> */}
-
                 <Link to="/cart-page" state={{allRestaurants, restaurantListings}}>
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon 
+                        sx={{
+                            fontSize: 40,
+                            color: '#007545',
+                        }}
+                    />
 
                 </Link>
             </div>

@@ -10,14 +10,14 @@
 .foodAvailableText {
     padding-left: 20px;
     align-items: center;
+    color: rgb(0,117,69);
 }
 
 .rightButtons {
     display: flex;
-    padding-top: 15px;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
 }
 
 .searchBar{

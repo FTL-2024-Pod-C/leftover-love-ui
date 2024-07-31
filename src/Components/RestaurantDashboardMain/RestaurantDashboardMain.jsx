@@ -41,8 +41,8 @@ const RestaurantDashboardMain = ({listings, requestItems, requests}) => {
             ))}
             </div>
         </div>
+        <h1 className="boxTitles">Current Requests</h1>
         <div className="currentRequestsBox">
-            <h1 className="boxTitles">Current Requests</h1>
             <div className="requests">
             {requestItems.map((requestItem) => (
               <RequestCard

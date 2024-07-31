@@ -5,20 +5,22 @@
     /* width: 250%; */
     width: 100%;
     padding: 30px;
-    color: #004715;
+    color: rgb(0,117,69);
     /* gap: 900px; */
     justify-content: space-between;
 }
 
 .logout-btn {
-    background-color: #004715;
-    color: #fdffdb;
-    border: none;
-    border-radius: 50px;
-    padding: 15px 32px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0,117,69);
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    outline: none;
+    background-color: #fdffdb;
+    border: none;
+    border-radius: 15px;
 }
