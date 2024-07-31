@@ -1,3 +1,4 @@
+css
 .leftColumn {
     display: flex;
     flex-direction: column;
@@ -6,5 +7,30 @@
 .wholePage {
     display: flex;
     flex-direction: row;
-    
+}
+
+/* Media query for screens smaller than 768px (e.g., tablets and phones) */
+@media (max-width: 768px) {
+    .wholePage {
+        flex-direction: column;
+    }
+
+    .leftColumn {
+        width: 100%;
+    }
+
+    .rightColumn {
+        width: 100%;
+    }
+}
+
+/* Media query for screens smaller than 480px (e.g., small phones) */
+@media (max-width: 480px) {
+    .leftColumn {
+        align-items: center;
+    }
+
+    .rightColumn {
+        align-items: center;
+    }
 }
