@@ -80,7 +80,6 @@ const SignUpPage = () => {
     
     return (
     <>
-
     <div className='signup'>
         <div className='signup-header'>
 
@@ -186,10 +185,11 @@ const SignUpPage = () => {
         </div> */}
         <button className='signup-button' onClick = {handleSignUp}>Create</button> 
         <div className='sign-in'>
-            <h3 className="accountQuestion">Already have an account?</h3>
+            {/* <h3 className="accountQuestion">Already have an account?</h3>
             <Link to="/login">
                 <button className='button'>Login</button>
-            </Link>
+            </Link> */}
+            <h3 className="memberQuestion">Already have an account?<Link className='sign-up-btn' to="/login"> Login</Link></h3>
         </div> 
     </div>
     </>

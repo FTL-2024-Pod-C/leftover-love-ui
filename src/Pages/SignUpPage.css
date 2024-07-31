@@ -1,5 +1,6 @@
 .signup {
-    background-color: #004715;
+    background: rgb(0,117,69);
+    background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -9,6 +10,7 @@
     width: 700px;
     height: 700px;
     color: white;
+    transition: transform 0.2s, box-shadow 0.2s; 
 }
 
 .signup:hover { 
@@ -77,6 +79,7 @@
     }
 
     .signup-button {
+        color: #007545;
         font-size: 18px; 
         padding: 12px 28px; 
     }

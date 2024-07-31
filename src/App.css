@@ -17,14 +17,15 @@ body, html {
 }
 
 .button {
-    /* background-color: #fdffdb; */
-    border: none;
-    border-radius: 50px;
-    color: #004715;
-    padding: 15px 32px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-items: center;
+    color: rgb(0,117,69);
+    font-size: 24px;
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    outline: none;
+    background-color: #fdffdb;
+    border: none;
+    border-radius: 15px;
 }
