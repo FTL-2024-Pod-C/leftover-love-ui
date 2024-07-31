@@ -100,6 +100,7 @@ const FoodPantryDashboard = () => {
         <div className="leftColumn">
           <DashboardProfileSection 
               name={foodPantry.name}
+              profile_photo={foodPantry.profile_photo}
             />
             <FoodPantryDashboardButtons
               foodPantry = {foodPantry}

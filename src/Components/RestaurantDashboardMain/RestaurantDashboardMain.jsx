@@ -2,8 +2,26 @@ import React from 'react'
 import "./RestaurantDashboardMain.css";
 import RestaurantCard from '../RestaurantCard/RestaurantCard.jsx';
 import RequestCard from '../RequestCard/RequestCard.jsx';
+import {useState, useEffect} from "react";
+import axios from "axios";
 
-const RestaurantDashboardMain = ({listings}) => {
+const RestaurantDashboardMain = ({listings, requestItems, requests}) => {
+
+  // console.log("restaurant id", restaurant.id);
+
+  // useEffect (() => {
+  //   console.log("in useEffect");
+  //   fetchRequests();
+  // }, []);
+
+  // const fetchRequests = async () => {
+  //   const url = `${import.meta.env.VITE_BACKEND_URL}/requestitems/restaurant/${restaurant.id}`;
+  //   const response = await axios.get(url);
+  //   console.log("response", response);
+  //   setRequests(response.data);
+  //   console.log(requests);
+  // }
+  
   return (
     <>
     <div className="restaurantDashboardMainBox">
@@ -25,7 +43,20 @@ const RestaurantDashboardMain = ({listings}) => {
         </div>
         <div className="currentRequestsBox">
             <h1 className="boxTitles">Current Requests</h1>
-            <RequestCard />
+            <div className="requests">
+            {requestItems.map((requestItem) => (
+              <RequestCard
+                key={requestItem.id}
+                quantity={requestItem.quantity}
+                listing= {listings.find((l) => {
+                  return parseInt(requestItem.listing_id) == l.id
+                })}
+                request= {requests.find((r) => {
+                  return parseInt(requestItem.request_id) == r.id
+                })}
+              />
+            ))}
+            </div>
         </div>
     </div>
     </>
