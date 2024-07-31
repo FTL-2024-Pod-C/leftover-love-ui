@@ -15,6 +15,7 @@ const RestaurantDashboard = () => {
   const [listings, setListings] = useState([]);
   const [requestItems, setRequestItems] = useState([]);
   const [requests, setRequests] = useState([]);
+  const [foodPantries, setFoodPantries] = useState([]);
   const [idReceived, setIdReceived] = useState(false);
 
   
@@ -26,6 +27,7 @@ const RestaurantDashboard = () => {
     fetchListings();
     fetchRequestItems();
     fetchRequests();
+    fetchFoodPantries();
   }, [idReceived]);
 
   useEffect(() => {
@@ -96,6 +98,19 @@ const RestaurantDashboard = () => {
     }
   }
 
+  const fetchFoodPantries = async () => {
+    try{
+      const url = `${import.meta.env.VITE_BACKEND_URL}/foodpantries`;
+      const response = await axios.get(url);
+      console.log("response", response);
+      setFoodPantries(response.data);
+      console.log(requests);
+    }
+    catch (error) {
+      console.error("Error fetching requests", error);
+    }
+  }
+
   // const addNewListing = async (newListing) => {
   //   try {
   //     console.log("in addNewListing")
@@ -139,6 +154,7 @@ const RestaurantDashboard = () => {
               listings={listings}
               requestItems={requestItems}
               requests={requests}
+              foodPantries={foodPantries}
             />
         </div>
     </div>
