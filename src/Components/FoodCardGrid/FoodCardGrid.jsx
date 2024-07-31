@@ -28,10 +28,12 @@ const FoodCardGrid = ({restaurantListings, allRestaurants}) => {
         }
     },[restaurantListings])
 
+    let newRestaurantListings = restaurantListings.filter((listing) => listing.quantity > 0);
+
     return (
         <>
         <div className= "restaurantListingsGrid">
-            {restaurantListings.map((listing) => {
+            {newRestaurantListings.map((listing) => {
                 const restaurant = allRestaurants.find((r) => {
                     return listing.restaurant_id == r.id
                 });
