@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import LandingPage from './Pages/LandingPage'
 import MeetTheCreatorsPage from './Pages/MeetTheCreatorsPage';
 import SignUpPage from './Pages/SignUpPage';
@@ -17,8 +17,6 @@ import {ShoppingCartProvider } from "./Context/ShoppingCartContext";
 import EditProfilePageRestaurant from './Pages/EditProfilePageRestaurant';
 import EditProfilePageFoodPantry from './Pages/EditProfilePageFoodPantry';
 import FoodPantryRequestsPage from './Pages/FoodPantryRequestsPage';
-
-
 
 const App = () => {
   return (
@@ -39,7 +37,7 @@ const App = () => {
           <Route path="/donation-history" element={<DonationHistoryPage />} />
           <Route path="/restaurant-list" element={<AllRestaurantsPage />} />
           <Route path="/food-profile" element={<FoodPantryProfilePage />} />
-          <Route path="/restaurant-profile" element={<RestaurantProfilePage />} />
+          <Route path="/restaurant-profile/:username" element={<RestaurantProfilePage />} />
           <Route path="/food-request" element={<FoodPantryRequestsPage />} />
         </Routes>
       </div>

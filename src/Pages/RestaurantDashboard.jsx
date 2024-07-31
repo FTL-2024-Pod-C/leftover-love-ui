@@ -9,22 +9,23 @@ import { useParams } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from "axios";
 
-const DEV_BASE_URL = "https://leftover-love-api.onrender.com"
-
 const RestaurantDashboard = () => {
   const {username} = useParams();
   const [restaurant, setRestaurant] = useState({});
   const [listings, setListings] = useState([]);
+  const [requestItems, setRequestItems] = useState([]);
+  const [requests, setRequests] = useState([]);
   const [idReceived, setIdReceived] = useState(false);
 
   
   useEffect (() => {
     fetchRestaurant();
-    // fetchListings();
   }, []);
 
   useEffect (() => {
     fetchListings();
+    fetchRequestItems();
+    fetchRequests();
   }, [idReceived]);
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const RestaurantDashboard = () => {
 
   const fetchRestaurant = async () => {
     try {
-      const url = `${DEV_BASE_URL}/restaurants/restaurantusername/${username}`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants/restaurantusername/${username}`;
       console.log(url);
       const response = await axios.get(url);
       console.log(response.data);
@@ -51,7 +52,7 @@ const RestaurantDashboard = () => {
 
     try {
       if (restaurant.id) {
-        const url = `${DEV_BASE_URL}/listings/restaurant/${restaurant.id}`;
+        const url = `${import.meta.env.VITE_BACKEND_URL}/listings/restaurant/${restaurant.id}`;
         console.log(url);
         const response = await axios.get(url);
         console.log(response.data);
@@ -67,10 +68,38 @@ const RestaurantDashboard = () => {
     }
   }
 
+  const fetchRequestItems = async () => {
+    try{
+      if (restaurant.id) {
+        const url = `${import.meta.env.VITE_BACKEND_URL}/requestitems/restaurant/${restaurant.id}`;
+        const response = await axios.get(url);
+        console.log("response", response);
+        setRequestItems(response.data);
+        console.log(requests);
+      }
+    }
+    catch (error) {
+      console.error("Error fetching request items", error);
+    }
+  }
+
+  const fetchRequests = async () => {
+    try{
+      const url = `${import.meta.env.VITE_BACKEND_URL}/requests`;
+      const response = await axios.get(url);
+      console.log("response", response);
+      setRequests(response.data);
+      console.log(requests);
+    }
+    catch (error) {
+      console.error("Error fetching requests", error);
+    }
+  }
+
   // const addNewListing = async (newListing) => {
   //   try {
   //     console.log("in addNewListing")
-  //     const url = `${DEV_BASE_URL}/restaurants/${restaurant.id}/listings`;
+  //     const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}/listings`;
   //     const response = await axios.post(url, newListing);
   //     console.log(response.data);
   //     setListings([...listings, response.data]);
@@ -108,6 +137,8 @@ const RestaurantDashboard = () => {
             <DashboardHeader />
             <RestaurantDashboardMain 
               listings={listings}
+              requestItems={requestItems}
+              requests={requests}
             />
         </div>
     </div>

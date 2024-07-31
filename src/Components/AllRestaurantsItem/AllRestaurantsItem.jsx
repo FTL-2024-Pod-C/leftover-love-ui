@@ -12,11 +12,12 @@ const AllRestaurantsItem = ({allRestaurants}) => {
       {allRestaurants.map((restaurant) => (
         <RestaurantInfoCard 
           key={restaurant.id}
+          username={restaurant.username}
           name={restaurant.name}
           location={restaurant.location}
-          description={restaurant.description}
           email={restaurant.email}
-          phoneNumber={restaurant.phone_number}
+          phone_number={restaurant.phone_number}
+          profile_photo={restaurant.profile_photo}
         />
       ))}
     </div>

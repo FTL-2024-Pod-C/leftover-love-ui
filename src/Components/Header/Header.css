@@ -7,7 +7,6 @@
     align-items: center;
     width: 100%;
     height: 80px;
-    background-color: #004715;
 }
 
 .header .logo {
@@ -21,7 +20,8 @@
 }
 
 .headerText {
-    color: #fdffdb;
+    color: rgb(0,117,69);
+    font-size: 35px;
 }
 
 .headerLeftSide {
@@ -33,7 +33,6 @@
     font-size: 25px;
 }
 
-.button {
-    padding: 5px 15px;
-    font-size: 20px;
+.headerRightSide { 
+    padding-right: 20px;
 }

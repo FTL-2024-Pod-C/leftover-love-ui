@@ -1,25 +1,21 @@
 .login {
-    background-color: #004715;
+    background: rgb(0,117,69);
+    background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: space-evenly; /* Center vertically */
-    /* padding: 20px; */
+    align-items: center;
+    justify-content: space-evenly;
     margin: auto; 
     width: 700px;
     height: 700px;
     color: white;
-
-
-    /* box-shadow: 0 0 10px rgba(255,125,0,1),
-            0 0 20px 5px rgba(255,175,0,0.8),
-            0 0 30px 15px rgba(255,225,0,0.5); */
+    transition: transform 0.2s, box-shadow 0.2s; 
 }
 
 .login:hover { 
     box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
-} 
+}
 
 .login-header {
     display: flex;
@@ -32,48 +28,37 @@
   
 .right-aligned-element {
     margin-left: 550px; 
-    /* margin-bottom: 60px; */
 }
 
 .form {
     display: flex;
     flex-direction: column;
     width: 500px;
-    /* padding: 40px; */
 }
 
 .sign-up {
     display: flex;
     flex-direction: row;
-    /* margin-top: 80px; */
-    /* margin-bottom: 20px; */
-    
 }
 
-.sign-up-btn{
-    background: none;           /* Remove background color */
-    border: none;               /* Remove border */
-    color: white;            /* Set text color */
-    text-decoration: underline; /* Underline text */
-    font-size: 20px;            /* Set font size */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Set font family */
-    margin-left: 1px;          /* Add margin */
-    padding: 0;                 /* Remove padding */
-    cursor: pointer;            /* Change cursor to pointer */
+.sign-up-btn {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 1px;
+    padding: 0;
+    cursor: pointer;
     display: inline-block; 
-  
 }
-
-/* .test {
-    padding: 60px;
-} */
 
 .memberQuestion {
     margin-right: 10px;
 }
 
 .login-button {
-    /* margin-top: 70px; */
     background-color: #fdffdb;
     border: none;
     border-radius: 50px;
@@ -84,4 +69,76 @@
     display: inline-block;
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.close-icon {
+    font-size: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .right-aligned-element {
+        margin-left: auto;
+    }
+
+    .form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .login {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .right-aligned-element {
+        margin-left: auto;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .login-button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .sign-up {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .memberQuestion {
+        margin-right: 0;
+    }
+
+    .sign-up-btn {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .close-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .close-icon {
+        font-size: 1rem;
+    }
 }
