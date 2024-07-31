@@ -13,16 +13,19 @@ const RestaurantDashboard = () => {
   const {username} = useParams();
   const [restaurant, setRestaurant] = useState({});
   const [listings, setListings] = useState([]);
+  const [requestItems, setRequestItems] = useState([]);
+  const [requests, setRequests] = useState([]);
   const [idReceived, setIdReceived] = useState(false);
 
   
   useEffect (() => {
     fetchRestaurant();
-    // fetchListings();
   }, []);
 
   useEffect (() => {
     fetchListings();
+    fetchRequestItems();
+    fetchRequests();
   }, [idReceived]);
 
   useEffect(() => {
@@ -62,6 +65,34 @@ const RestaurantDashboard = () => {
     }
     catch (error) {
       console.error("Error fetching restaurant listings", error);
+    }
+  }
+
+  const fetchRequestItems = async () => {
+    try{
+      if (restaurant.id) {
+        const url = `${import.meta.env.VITE_BACKEND_URL}/requestitems/restaurant/${restaurant.id}`;
+        const response = await axios.get(url);
+        console.log("response", response);
+        setRequestItems(response.data);
+        console.log(requests);
+      }
+    }
+    catch (error) {
+      console.error("Error fetching request items", error);
+    }
+  }
+
+  const fetchRequests = async () => {
+    try{
+      const url = `${import.meta.env.VITE_BACKEND_URL}/requests`;
+      const response = await axios.get(url);
+      console.log("response", response);
+      setRequests(response.data);
+      console.log(requests);
+    }
+    catch (error) {
+      console.error("Error fetching requests", error);
     }
   }
 
@@ -106,6 +137,8 @@ const RestaurantDashboard = () => {
             <DashboardHeader />
             <RestaurantDashboardMain 
               listings={listings}
+              requestItems={requestItems}
+              requests={requests}
             />
         </div>
     </div>

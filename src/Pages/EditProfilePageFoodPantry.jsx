@@ -88,7 +88,7 @@ const EditProfilePageFoodPantry = () => {
 
   const sendImageToBackend = async (imageUrl) => {
     try {
-      const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/foodpantry/${foodPantry.id}`, {profile_photo: imageUrl});
+      const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/${foodPantry.id}`, {profile_photo: imageUrl});
       console.log('Profile photo updated successfully:', response.data);
 
     } catch (error) {
