@@ -19,8 +19,8 @@ const RestaurantCard = ({name, quantity, unit, expiration_date, photo_url}) => {
             />
         <div className="foodCardDetails">
             <h4 className="foodCardName">{name}</h4>
-            <h4 className="foodCardQuantity">{quantity} {unit}</h4>
-            <h4 className="expirationDate">{expiration_date}</h4>
+            <h4 className="foodCardQuantity">Total Quantity: {quantity} {unit}</h4>
+            <h4 className="expirationDate">Expiration Date: {expiration_date}</h4>
         </div>
     </div>
   );
