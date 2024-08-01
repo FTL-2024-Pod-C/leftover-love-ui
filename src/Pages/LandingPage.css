@@ -41,6 +41,10 @@
     border: none;
     border-radius: 15px;
 }
+
+p {
+    font-size: 25px;
+}
   
 .landing-page-btn:hover {
     background-color: #fdffdb76
