@@ -95,8 +95,10 @@ const FoodPantryDashboard = () => {
 
   return (
     <>
-    <div className="wholePage">
+        <div className="wholePage">
         {/* leftColumn refers to the sidebar */}
+
+        {/* <div className="right-side"> */}
         <div className="leftColumn">
           <DashboardProfileSection 
               name={foodPantry.name}
@@ -107,7 +109,7 @@ const FoodPantryDashboard = () => {
               allRestaurants={allRestaurants}
             />
         </div>
-        <div className="right-side">
+        <div className="rightColumn">
             <DashboardHeader />
             <FoodAvailableHeader 
               searchInputValue={searchInputValue}
@@ -122,6 +124,7 @@ const FoodPantryDashboard = () => {
               allRestaurants={allRestaurants}
             />
         </div>
+        
     </div>
   </>
   )

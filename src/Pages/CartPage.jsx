@@ -66,6 +66,12 @@ const CartPage = () => {
     // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };
+
+  const handleDelete = async (listingId) => {
+    console.log("shoppinf cart", shoppingCart);
+    console.log("listing id: ", listingId)
+    setShoppingCart({...shoppingCart, [`${listingId}`]: 0});
+  }
   
   return (
     <>
@@ -78,12 +84,14 @@ const CartPage = () => {
         }/>
 
         <button className="requestButton" onClick={() => createRequest(foodPantryId, "pending")}>Request</button>
-        {cartItems.map((item) => (
+        {cartItems.map((item, i) => (
            <CartItem
+            key={i}
             listing={restaurantListings.find((r) => {
               return parseInt(item) == r.id
           })}
             quantity={shoppingCart[item]}
+            handleDelete={handleDelete}
            />
         ))}
     </>

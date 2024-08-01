@@ -3,7 +3,10 @@ import "./CartItem.css";
 
 
 
-const CartItem = ({listing, quantity, restaurantName}) => {
+const CartItem = ({listing, quantity, restaurantName, handleDelete}) => {
+  
+  
+  
   return (
     <>
     {/* <button className="requestButton">Request</button> */}
@@ -19,7 +22,7 @@ const CartItem = ({listing, quantity, restaurantName}) => {
         </div> 
         <div className="cartItemRightSide">
             <h2 className="cartItemQuantity">Quantity: {quantity}</h2>
-            <button className="deleteItemButton">Delete</button>
+            <button className="deleteItemButton" onClick={() => handleDelete(listing.id)}>Delete</button>
         </div>
     </div>
     </>
