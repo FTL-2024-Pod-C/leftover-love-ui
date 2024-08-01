@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './RestaurantDashboardButtons.css';
 
-const RestaurantDashboardButtons = ({ restaurant }) => {
+const RestaurantDashboardButtons = ({ restaurant, listings, requestItems, requests, foodPantries}) => {
   const navigate = useNavigate();
 
   return (
@@ -29,7 +29,7 @@ const RestaurantDashboardButtons = ({ restaurant }) => {
           <button className="dashboardButton">Add Listing</button>
         </Link>
 
-        <Link to="/donation-history">
+        <Link to="/donation-history" state={{restaurant, listings, requestItems, requests, foodPantries}}>
           <button className="dashboardButton">Donation History</button>
         </Link>
       </div>

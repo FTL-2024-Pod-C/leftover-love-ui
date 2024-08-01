@@ -148,7 +148,8 @@ const RestaurantDashboardMain = ({ listings, requestItems, requests, foodPantrie
                 id={requestItem.id}
                 requestItem={requestItem}
                 quantity={requestItem.quantity}
-                listing={listings.find((l) => parseInt(requestItem.listing_id) === l.id)}
+                listings={listings}
+                // listing={listings.find((l) => parseInt(requestItem.listing_id) === l.id)}
                 request={requests.find((r) => parseInt(requestItem.request_id) === r.id)}
                 foodPantries={foodPantries}
               />
