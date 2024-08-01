@@ -145,6 +145,10 @@ const RestaurantDashboard = () => {
             />
             <RestaurantDashboardButtons 
               restaurant={restaurant}
+              listings={listings}
+              requestItems={requestItems}
+              requests={requests}
+              foodPantries={foodPantries}
               // addNewListing={addNewListing}
             />
         </div>
