@@ -92,8 +92,9 @@ import RestaurantCard from '../RestaurantCard/RestaurantCard.jsx';
 import RequestCard from '../RequestCard/RequestCard.jsx';
 import axios from 'axios';
 
-const RestaurantDashboardMain = ({ listings, requestItems, requests, foodPantries }) => {
+const RestaurantDashboardMain = ({ restaurant, listings, requestItems, requests, foodPantries }) => {
   const [updatedRequestItems, setUpdatedRequestItems] = useState(requestItems);
+  const [updatedListings, setUpdatedListings] = useState(listings);
 
   useEffect(() => {
     // Fetch updated request items from backend if needed
@@ -103,6 +104,13 @@ const RestaurantDashboardMain = ({ listings, requestItems, requests, foodPantrie
       setUpdatedRequestItems(response.data);
     };
 
+    const fetchListings = async () => {
+      const url = `${import.meta.env.VITE_BACKEND_URL}/listings/restaurant/${restaurant.id}`;
+      const response = await axios.get(url);
+      setUpdatedListings(response.data);
+    };
+
+    fetchListings();
     fetchRequestItems();
   }, []); // Add dependencies if necessary
 
@@ -117,8 +125,22 @@ const RestaurantDashboardMain = ({ listings, requestItems, requests, foodPantrie
     fetchRequestItems();
   };
 
+  const handleDeleteListing = () => {
+    // Refresh the listings after an item is deleted
+    const fetchListings = async () => {
+      const url = `${import.meta.env.VITE_BACKEND_URL}/listings/restaurant/${restaurant.id}`;
+      const response = await axios.get(url);
+      setUpdatedListings(response.data);
+      console.log("in handleDeleteListing");
+    };
+
+    fetchListings();
+  };
+
+  console.log("this is updated listings", updatedListings);
+
   let newItems = updatedRequestItems.filter((item) => item.status === "pending");
-  let newListings = listings.filter((listing) => listing.quantity > 0);
+  let newListings = updatedListings.filter((listing) => listing.quantity > 0);
 
   return (
     <>
@@ -129,6 +151,8 @@ const RestaurantDashboardMain = ({ listings, requestItems, requests, foodPantrie
             {newListings.map((listing) => (
               <RestaurantCard
                 key={listing.id}
+                handleDeleteListing={handleDeleteListing}
+                id={listing.id}
                 name={listing.name}
                 expiration_date={listing.expiration_date}
                 photo_url={listing.photo_url}
