@@ -26,23 +26,15 @@ const FoodPantryProfilePage = () => {
           </button>
         }
     />
-  <div className="wholeProfilePage">
-  <div className="profilePageTopRow"> 
-      <img className="profilePageImage" src={foodPantry.profile_photo}/>
-      <div className="profilePageBasicInfo">
-          <div className="profilePageDetails">
-              <h2 className="profilePageName">{foodPantry.name}</h2>
-              <h3 className="profilePageLocation">{foodPantry.location}</h3>
+  <div className="profile-page-top"> 
+          <img className="profile-page-img" src={foodPantry.profile_photo}/>
+          <div className="profile-page-info">
+            <h2>{foodPantry.name}</h2>
+            <h3>{foodPantry.location}</h3>
+            <h4>{foodPantry.email} | {foodPantry.phone_number}</h4>
+          {foodPantry.description}
           </div>
-          <h4 className="profilePageContact">{foodPantry.email} | {foodPantry.phone_number}</h4>
-      </div>
-    </div>
-    <div className="profilePageBottomRow">
-        <div className="profilePageDescription">
-        {foodPantry.description}
         </div>
-    </div> 
-    </div>
     </>
   )
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './ProfilePage.css';
-import ProfilePage from '../Components/ProfilePage/ProfilePage.jsx';
 import Header from '../Components/Header/Header.jsx'
 import {useNavigate, useLocation} from "react-router-dom"
 
@@ -26,25 +25,18 @@ const RestaurantProfilePage = () => {
           </button>
         }
         />
-        <div className="wholeProfilePage">
-    <div className="profilePageTopRow"> 
-        <img className="profilePageImage" src={restaurant.profile_photo}/>
-        <div className="profilePageBasicInfo">
-            <div className="profilePageDetails">
-                <h2 className="profilePageName">{restaurant.name}</h2>
-                <h3 className="profilePageLocation">{restaurant.location}</h3>
+
+
+          <div className="profile-page-top"> 
+            <img className="profile-page-img" src={restaurant.profile_photo}/>
+            <div className="profile-page-info">
+              <h2>{restaurant.name}</h2>
+              <h3>{restaurant.location}</h3>
+              <h4>{restaurant.email} | {restaurant.phone_number}</h4>
+            {restaurant.description}
             </div>
-            <h4 className="profilePageContact">{restaurant.email} | {restaurant.phone_number}</h4>
-        </div>
-        
-        
-    </div>
-    <div className="profilePageBottomRow">
-        <div className="profilePageDescription">
-        {restaurant.description}
-        </div>
-    </div> 
-</div>
+          </div>
+
 
     </>
   )
