@@ -68,11 +68,9 @@ const RequestCard = ({ listings, quantity, request, id, requestItem, foodPantrie
     console.log("status changed");
   }, [status]);
 
-  console.log("request item", requestItem);
 
   const foodPantry = foodPantries.find(p => parseInt(request.food_pantry_id) === p.id);
   const listing = listings.find(l => parseInt(requestItem.listing_id) === l.id);
-  console.log("listing", listing);
   // console.log("sanity check")
 
   const handleAcceptRequest = async () => {

@@ -6,7 +6,7 @@ const RestaurantInfoCard = ({username, name, location, email, phone_number, prof
     const navigate = useNavigate();
     
     return (
-        <div className="restaurantCardBox" onClick={() => navigate(`/restaurant-profile/${username}`)}>
+        <div className="restaurantCardBox">
             <img className="restaurantBoxImage" src={profile_photo}/>
             <div className="restaurantBoxDetails">
                 <h2 className="restaurantBoxName">{name}</h2>

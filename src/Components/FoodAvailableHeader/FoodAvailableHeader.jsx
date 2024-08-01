@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange, handleActiveCategoryChange, allRestaurants, restaurantListings}) => {
+const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange, handleActiveCategoryChange, allRestaurants, restaurantListings, foodPantry}) => {
 
     const [category, setCategory] = useState("");
 
@@ -81,7 +81,7 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange, handl
                     ))}
                 </TextField>
 
-                <Link to="/cart-page" state={{allRestaurants, restaurantListings}}>
+                <Link to="/cart-page" state={{allRestaurants, restaurantListings, foodPantry}}>
                     <ShoppingCartIcon 
                         sx={{
                             fontSize: 40,

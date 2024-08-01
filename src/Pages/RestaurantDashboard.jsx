@@ -154,7 +154,8 @@ const RestaurantDashboard = () => {
         </div>
         <div className="rightColumn">
             <DashboardHeader />
-            <RestaurantDashboardMain 
+            <RestaurantDashboardMain
+              restaurant={restaurant}
               listings={listings}
               requestItems={requestItems}
               requests={requests}

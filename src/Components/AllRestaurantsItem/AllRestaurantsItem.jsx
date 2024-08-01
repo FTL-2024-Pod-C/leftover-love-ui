@@ -12,7 +12,7 @@ const AllRestaurantsItem = ({allRestaurants}) => {
       {allRestaurants.map((restaurant) => (
         <RestaurantInfoCard 
           key={restaurant.id}
-          username={restaurant.username}
+          // username={restaurant.username}
           name={restaurant.name}
           location={restaurant.location}
           email={restaurant.email}

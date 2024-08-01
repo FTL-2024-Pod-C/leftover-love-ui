@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import "./RestaurantCard.css";
+import axios from "axios";
 
-const RestaurantCard = ({name, quantity, unit, expiration_date, photo_url}) => {
+const RestaurantCard = ({handleDeleteListing, id, name, quantity, unit, expiration_date, photo_url}) => {
+
+  const handleDeletingListing = async () => {
+    const url = `${import.meta.env.VITE_BACKEND_URL}/listings/${id}`;
+    const response = await axios.delete(url);
+    handleDeleteListing(); // Notify parent component
+  };
+  
   console.log(name);
   return (
     <div className="foodCardBox">
@@ -21,6 +29,7 @@ const RestaurantCard = ({name, quantity, unit, expiration_date, photo_url}) => {
             <h4 className="foodCardName">{name}</h4>
             <h4 className="foodCardQuantity">Total Quantity: {quantity} {unit}</h4>
             <h4 className="expirationDate">Expiration Date: {expiration_date}</h4>
+            <button className="foodCardDeleteBtn" onClick={() => handleDeletingListing()}>Delete</button>
         </div>
     </div>
   );
