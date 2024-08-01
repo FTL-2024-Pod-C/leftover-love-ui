@@ -115,6 +115,7 @@ const FoodPantryDashboard = () => {
               handleActiveCategoryChange={handleActiveCategoryChange}
               allRestaurants={allRestaurants}
               restaurantListings={restaurantListings}
+              foodPantry = {foodPantry}
             />
             <FoodCardGrid 
               restaurantListings={restaurantListingsToShow}

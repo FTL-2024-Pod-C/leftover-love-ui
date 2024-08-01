@@ -12,6 +12,7 @@ const CartPage = () => {
   let { state } = useLocation();
 
   const [foodPantry, setFoodPantry] = useState(state.foodPantry);
+  console.log("food pantry is: ", state.foodPantry);
   const navigate = useNavigate();
 
 
