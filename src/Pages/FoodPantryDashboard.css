@@ -1,16 +1,16 @@
+.wholePage {
+    display: flex;
+    flex-direction: row;
+}
+
 .leftColumn {
     display: flex;
     flex-direction: column;
+    width:15%;
+    background-color: rgb(0,117,69);
+    
 }
 
-
-/* .wholePage {
-    display: flex;
-    flex-direction: row;
-    color: #004715;
-} */
-
-/* .rightColumn {
-    width: 84%;
+.rightColumn {
+    width: 80%;
 }
- */
