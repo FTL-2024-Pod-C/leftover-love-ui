@@ -6,10 +6,13 @@ import { useShoppingCart } from "../Context/ShoppingCartContext"
 import {useState, useEffect} from 'react';
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
-import {useLocation} from "react-router-dom"
+import {useNavigate, useLocation} from "react-router-dom"
 
 const CartPage = () => {
   let { state } = useLocation();
+
+  const [foodPantry, setFoodPantry] = useState(state.foodPantry);
+  const navigate = useNavigate();
 
 
   const { shoppingCart, setShoppingCart } = useShoppingCart();
@@ -56,10 +59,23 @@ const CartPage = () => {
   console.log(shoppingCart);
   
   const cartItems = Object.keys(shoppingCart).filter((item) => shoppingCart[item] > 0);
+
+  const handleClose = () => {
+    console.log('Close button clicked');
+    // Implement your navigation or other logic here
+    navigate(`/food-dashboard/${foodPantry.username}`);
+  };
   
   return (
     <>
-        <Header headingText="Cart" closeRoute="/food-dashboard"/>
+        <Header 
+          headingText="Your Cart"
+          closeButton={
+          <button onClick={handleClose} className="button">
+            Back to Dashboard
+          </button>
+        }/>
+
         <button className="requestButton" onClick={() => createRequest(foodPantryId, "pending")}>Request</button>
         {cartItems.map((item) => (
            <CartItem

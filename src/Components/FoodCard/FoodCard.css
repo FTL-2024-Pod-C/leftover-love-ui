@@ -1,8 +1,6 @@
 .foodCardBox {
   /* child */
-  display: inline-block;
-  
-    background-color: gray;
+    display: inline-block;
     width: auto;
     max-width: 300px;
     height: auto;
@@ -13,46 +11,49 @@
     color: white;
     border-radius: 8px;
     padding: 10px;
-
     margin: 10px;
   }
 
 .foodCardDetails{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 10px;
 }
 
 .foodCardName, .foodCardRestaurant, .expirationDate {
     margin: 4px;
   }
-
-/* These lines of code remove the default 
-   in the text field increment/decrement buttons */
-.quantityControl input::-webkit-outer-spin-button,
-.quantityControl input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 .quantityControl {
-    display: flex;
-    align-items: center;
-}
-
-  .quantityControl input {
-    width: 30px; 
-    text-align: center;
-    margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .quantityControl button {
-    font-size: 15px;
+    background-color: #fdffdb;
+    border: 1px solid #fdffdb;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
     cursor: pointer;
-    border-radius: 10%; 
-    border: 2px solid #0000; 
-    background-color: #f0f0f0; 
-    color: black;
-    }
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* .quantityControl button:hover {
+    background-color: rgb(0,117,69);;
+} */
+
+.quantityControl input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #fdffdb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 16px;
+}

@@ -93,16 +93,15 @@ const RequestCard = ({ listings, quantity, request, id, requestItem, foodPantrie
       <img className="requestCardImage"
         src={listing.photo_url}
         alt="Listing Image"
-        style={{
-          width: '300px',
-          height: '300px',
+        style={{ 
+          width: '300px', 
+          height: '300px', 
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center',
-          overflow: 'hidden',
+          alignItems: 'center', 
+          overflow: 'hidden',  
           border: '1px solid #ccc',
-          objectFit: 'cover'
-        }}
+          objectFit: 'cover' }}
       />
       <div className="requestCardDetails">
         <h2 className="requestCardName">{listing.name}</h2>

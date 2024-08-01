@@ -5,15 +5,11 @@
     flex-direction: column;
     gap: 30px;
     justify-content: center;
-   
 }
 
 /* Refers to the container encasing the buttons */
 .buttonBox {
-    background-color: #004715;
-    height: 100%;
+    background: rgb(0,117,69);
+    height: 100vh;
     text-align: center;
-
-    
-   
 }
