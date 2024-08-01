@@ -29,13 +29,7 @@ const goToSignUp = () => {
 
   return (
     <>
-    <Header  headingText="Leftover Love" 
-    // closeButton={
-    //   <IconButton onClick={goToLogin}>
-    //   <AccountCircleIcon sx={{ fontSize: 50 }}/>
-    //   </IconButton>
-    // }
-    />
+    <Header  headingText="Leftover Love"/>
     
     <div className="headline-section">
       <div className="headline-section-text">
@@ -59,8 +53,7 @@ const goToSignUp = () => {
 
     <div className="gridContainer">
       <div className="gridBox">
-        <h1>22 to 33 Billion Pounds</h1>
-        <p>Restaurants in the United States generate between 22 and 33 billion pounds of food waste annually, which significantly contributes to economic challenges.</p>
+        <p>Restaurants in the United States generate between<strong> 22 and 33 billion pounds </strong>of food waste annually, which significantly contributes to economic challenges.</p>
       </div>
       <div className="gridBox">
         <h1>1 in 8 Households</h1>

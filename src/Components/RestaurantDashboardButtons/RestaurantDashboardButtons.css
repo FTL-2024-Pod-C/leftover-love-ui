@@ -1,25 +1,9 @@
-
-/* Refers to JUST the buttons */
-.allButtons {
-    /* display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center; */
-}
-
 /* Refers to the container encasing the buttons */
 .buttonBox {
-    height: 100%;
+    height: 100vh;
 }
 
 .dashboardButton {
-    /* color: #fdffdb;
-    background: transparent;
-    border: none;
-    padding: 0;
-    text-align: center;
-    font-size: 23px;
-    font-family: Georgia, 'Times New Roman', Times, serif; */
     background-color: #fdffdb;
     border: none;
     border-radius: 50px;
