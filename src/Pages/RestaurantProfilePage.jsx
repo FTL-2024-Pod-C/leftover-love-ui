@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './RestaurantProfilePage.css';
+import './ProfilePage.css';
 import ProfilePage from '../Components/ProfilePage/ProfilePage.jsx';
 import Header from '../Components/Header/Header.jsx'
 import {useNavigate, useLocation} from "react-router-dom"
@@ -25,9 +25,27 @@ const RestaurantProfilePage = () => {
             Back to Dashboard
           </button>
         }
-      />
+        />
+        <div className="wholeProfilePage">
+    <div className="profilePageTopRow"> 
+        <img className="profilePageImage" src={restaurant.profile_photo}/>
+        <div className="profilePageBasicInfo">
+            <div className="profilePageDetails">
+                <h2 className="profilePageName">{restaurant.name}</h2>
+                <h3 className="profilePageLocation">{restaurant.location}</h3>
+            </div>
+            <h4 className="profilePageContact">{restaurant.email} | {restaurant.phone_number}</h4>
+        </div>
+        
+        
+    </div>
+    <div className="profilePageBottomRow">
+        <div className="profilePageDescription">
+        {restaurant.description}
+        </div>
+    </div> 
+</div>
 
-        <ProfilePage />
     </>
   )
 }

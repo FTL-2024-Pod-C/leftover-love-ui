@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import './FoodPantryProfilePage.css';
-
-// import ProfilePage from '../Components/ProfilePage/ProfilePage.jsx';
+import './ProfilePage.css';
 import Header from '../Components/Header/Header.jsx'
 import {useNavigate, useLocation} from "react-router-dom"
 
@@ -27,29 +25,24 @@ const FoodPantryProfilePage = () => {
             Back to Dashboard
           </button>
         }
-      />
-
-    {/* <ProfilePage /> */}
-    <div className="wholeProfilePage">
-    <div className="profilePageTopRow"> 
-        <img className="profilePageImage" src={foodPantry.profile_photo}/>
-        <div className="profilePageBasicInfo">
-            <div className="profilePageDetails">
-                <h2 className="profilePageName">{foodPantry.name}</h2>
-                <h3 className="profilePageLocation">{foodPantry.location}</h3>
-            </div>
-            <h4 className="profilePageContact">{foodPantry.email} | {foodPantry.phone_number}</h4>
-        </div>
-        
-        
+    />
+  <div className="wholeProfilePage">
+  <div className="profilePageTopRow"> 
+      <img className="profilePageImage" src={foodPantry.profile_photo}/>
+      <div className="profilePageBasicInfo">
+          <div className="profilePageDetails">
+              <h2 className="profilePageName">{foodPantry.name}</h2>
+              <h3 className="profilePageLocation">{foodPantry.location}</h3>
+          </div>
+          <h4 className="profilePageContact">{foodPantry.email} | {foodPantry.phone_number}</h4>
+      </div>
     </div>
     <div className="profilePageBottomRow">
         <div className="profilePageDescription">
         {foodPantry.description}
         </div>
-        {/* // GOOGLE MAPS API HERE */}
     </div> 
-</div>
+    </div>
     </>
   )
 }
