@@ -29,9 +29,9 @@ const RestaurantDashboardButtons = ({ restaurant, listings, requestItems, reques
           <button className="dashboardButton">Add Listing</button>
         </Link>
 
-        <Link to="/donation-history" state={{restaurant, listings, requestItems, requests, foodPantries}}>
+        {/* <Link to="/donation-history" state={{restaurant, listings, requestItems, requests, foodPantries}}>
           <button className="dashboardButton">Donation History</button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

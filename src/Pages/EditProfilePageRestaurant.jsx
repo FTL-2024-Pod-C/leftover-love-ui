@@ -109,7 +109,7 @@ const EditProfilePageRestaurant = () => {
     <Header 
         headingText="Edit Profile" 
         closeButton={
-          <button onClick={handleClose} className="button">
+          <button onClick={handleClose} className="logout-btn">
             Back to Dashboard
           </button>
         }

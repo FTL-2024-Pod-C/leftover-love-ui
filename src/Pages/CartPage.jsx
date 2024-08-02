@@ -78,7 +78,7 @@ const CartPage = () => {
         <Header 
           headingText="Your Cart"
           closeButton={
-          <button onClick={handleClose} className="button">
+          <button onClick={handleClose} className="logout-btn">
             Back to Dashboard
           </button>
         }/>

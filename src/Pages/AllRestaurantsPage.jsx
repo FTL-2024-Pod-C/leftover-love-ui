@@ -26,7 +26,7 @@ const AllRestaurantsPage = () => {
     <>
         <Header headingText="All Restaurants"
          closeButton={
-          <button onClick={handleClose} className="button">
+          <button onClick={handleClose} className="logout-btn">
             Back to Dashboard
           </button>
         }/>

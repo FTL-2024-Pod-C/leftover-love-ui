@@ -29,7 +29,7 @@ const RestaurantCard = ({handleDeleteListing, id, name, quantity, unit, expirati
             <h4 className="foodCardName">{name}</h4>
             <h4 className="foodCardQuantity">Total Quantity: {quantity} {unit}</h4>
             <h4 className="expirationDate">Expiration Date: {expiration_date}</h4>
-            <button className="foodCardDeleteBtn" onClick={() => handleDeletingListing()}>Delete</button>
+            <button className="delete-btn" onClick={() => handleDeletingListing()}>Delete</button>
         </div>
     </div>
   );

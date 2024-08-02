@@ -21,7 +21,7 @@ const FoodPantryProfilePage = () => {
    <Header 
         headingText="Profile Page" 
         closeButton={
-          <button onClick={handleClose} className="button">
+          <button onClick={handleClose} className="logout-btn">
             Back to Dashboard
           </button>
         }

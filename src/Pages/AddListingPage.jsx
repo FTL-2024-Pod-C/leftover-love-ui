@@ -166,7 +166,7 @@ const handleClose = () => {
     <Header 
         headingText="Add Listings" 
         closeButton={
-          <button onClick={handleClose} className="button">
+          <button onClick={handleClose} className="logout-btn">
             Back to Dashboard
           </button>
         }
