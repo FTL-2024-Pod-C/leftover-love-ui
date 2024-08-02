@@ -56,12 +56,10 @@ const goToSignUp = () => {
         <p>Restaurants in the United States generate between<strong> 22 and 33 billion pounds </strong>of food waste annually, which significantly contributes to economic challenges.</p>
       </div>
       <div className="gridBox">
-        <h1>1 in 8 Households</h1>
-        <p>Approximately one in eight households in the U.S. faces food insecurity or lacks access to nutritious meals, highlighting a stark contrast between food waste and need.</p>
+        <p>Approximately <strong>1 in 8 households</strong> in the U.S. faces food insecurity or lacks access to nutritious meals, highlighting a stark contrast between food waste and need.</p>
       </div>
       <div className="gridBox">
-        <h1>40% of Food Supply</h1>
-        <p>In the United States, about 40% of the food supply is wasted, from production through consumption. This staggering amount of waste underscores the need for improved food management practices and highlights the potential for addressing both economic and food security challenges.</p>
+        <p>In the United States, about <strong>40% of the food supply is wasted</strong>, from production through consumption. This staggering amount of waste underscores the need for improved food management practices and highlights the potential for addressing both economic and food security challenges.</p>
       </div>
     </div>
 
