@@ -13,7 +13,6 @@ const  AddListingPage = () => {
 
     // get the state that was passed through
     let { state } = useLocation();
-    console.log(state);
 
     // all AWS s3 bucket stuff
   const [file, setFile] = useState(null);
@@ -44,7 +43,6 @@ const  AddListingPage = () => {
 
     try {
       const data = await s3.upload(params).promise();
-      console.log("File uploaded successfully:", data.Location);
       setImageUrl(data.Location); // stores the uploaded image URL
       alert("File uploaded successfully.");
 
@@ -52,20 +50,10 @@ const  AddListingPage = () => {
       await addListing(data.Location);
 
     } catch (error) {
-      console.error("Error uploading file:", error);
       alert("Failed to upload file.");
     }
   };
   // end aws
-
-
-
-
-
-
-
-
-
 
 
     // set the restaurant user in order to not lose it as the user creates a listing
@@ -74,10 +62,8 @@ const  AddListingPage = () => {
 
     const addNewListing = async (newListing) => {
         try {
-          console.log("in addNewListing")
           const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}/listings`;
           const response = await axios.post(url, newListing);
-          console.log(response.data);
         }
         catch (error) {
           console.error("Error creating a new listing", error);
@@ -121,7 +107,6 @@ const  AddListingPage = () => {
     const [imageUrl, setImageUrl] = useState("");
 
     const addListing = () => {
-        console.log("in addListing()");
         if (name && quantity && unit && description && expirationDate && category && imageUrl) {
             addNewListing({name, quantity: parseInt(quantity), unit, description, expirationDate, category, photoURL: imageUrl});
             setName('');
@@ -141,22 +126,7 @@ const  AddListingPage = () => {
         setCategory(event.target.value);
     }
 
-    
-
-  // const [imageUrl, setImageUrl] = useState(null);
-
-//   const sendImageToBackend = async (imageUrl) => {
-//     try {
-//         console.log("in sendImageToBackend")
-//       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/${restaurant.id}`, {photo_url: imageUrl});
-//       console.log('Listing photo updated successfully:', response.data);
-
-//     } catch (error) {
-//       console.error('Error updating listing photo:', error.message);
-//     }
-//   };
 const handleClose = () => {
-  console.log('Close button clicked');
   // Implement your navigation or other logic here
   navigate(`/restaurant-dashboard/${restaurant.username}`);
 };
@@ -285,7 +255,6 @@ const handleClose = () => {
         {/* <Link to="/restaurant-dashboard/:username"> */}
         <button className='dashboardButton' 
         onClick={()=> {
-            console.log(restaurant.username);
             addListing();
             navigate(`/restaurant-dashboard/${restaurant.username}`); 
             // addListing();

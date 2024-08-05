@@ -38,7 +38,6 @@ const LoginPage = () => {
             if (userType === "food") {
                 const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/foodpantrylogin`, {username, password});
                 localStorage.setItem("token", response.data.token);
-                console.log("The username is ", username);
                 navigate(`/${userType}-dashboard/${username}`);
             }
             

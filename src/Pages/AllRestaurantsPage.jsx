@@ -9,14 +9,11 @@ const AllRestaurantsPage = () => {
   const navigate = useNavigate();
   
   let { state } = useLocation();
-  console.log(state.allRestaurants[0]);
-  console.log(state.foodPantry);
 
   const [allRestaurants, setAllRestaurants] = useState(state.allRestaurants);
   const [foodPantry, setFoodPantry] = useState(state.foodPantry);
 
   const handleClose = () => {
-    console.log('Close button clicked');
     // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };

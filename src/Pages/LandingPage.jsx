@@ -18,12 +18,10 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
 const goToLogin = () => {
-  console.log('Close button clicked');
   navigate(`/login`);
 };
 
 const goToSignUp = () => {
-  console.log('Close button clicked');
   navigate(`/sign-up`);
 };
 

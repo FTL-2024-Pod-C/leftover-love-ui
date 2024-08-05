@@ -3,7 +3,6 @@ import "./AllRestaurantsItem.css";
 import RestaurantInfoCard from '../RestaurantInfoCard/RestaurantInfoCard';
 
 const AllRestaurantsItem = ({allRestaurants}) => {
-  // console.log("in restaurant item: ", allRestaurants[0].name);
   
   return (
     <>
