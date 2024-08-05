@@ -1,16 +1,4 @@
 .requestCardBox {
-  /* background-color:  #004715;
-  width: auto;
-  max-width: 300px;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  border-radius: 8px;
-  padding: 10px;
-  border: 2px solid black; */
   background-color: rgb(0,117,69);
   background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
     width: auto;
@@ -47,34 +35,19 @@
 
 .requestCardName, .expirationDate {
     margin: 4px;
-  }
+}
 
-/* These lines of code remove the default 
-   in the text field increment/decrement buttons */
-/* .quantityControl input::-webkit-outer-spin-button,
-.quantityControl input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-} */
-
-/* .quantityControl {
-    display: flex;
-    align-items: center;
-} */
-
-/* Controls size of input box */
-  /* .quantityControl input {
-    width: 30px; 
-    text-align: center;
-    margin: 0 10px;
-} */
-
-/* Controls size/styling of increment/decrement buttons */
-/* .quantityControl button {
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 10%; /* Make the button circular */
-    /* border: 2px solid #0000; /* Optional: Add a border */
-    /* background-color: #f0f0f0; /* Optional: Add a background color */
-    /* color: black;
-    } */
+.acceptButton {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  align-items: center;
+  color: rgb(0,117,69);
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background-color: #fdffdb;
+  border: none;
+  border-radius: 15px;
+}

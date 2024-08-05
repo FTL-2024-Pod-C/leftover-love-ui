@@ -4,7 +4,6 @@ import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
 import {useNavigate, useLocation} from "react-router-dom"
 import axios from "axios";
-// import AWS from 'aws-sdk';
 
 const EditProfilePageRestaurant = () => {
   //use states for profile
@@ -30,12 +29,7 @@ const EditProfilePageRestaurant = () => {
     if (email !== null && email !== '') updatedFields.email = email;
     if (phone_number !== null && phone_number !== '') updatedFields.phone_number = phone_number;
 
-    
-
     try {
-      // const restaurantId = 3;
-      // e.preventDefault();
-      // const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, updatedFields);
     }
     catch (error) {
@@ -94,7 +88,6 @@ const EditProfilePageRestaurant = () => {
   };
 
   const handleClose = () => {
-    // Implement your navigation or other logic here
     navigate(`/restaurant-dashboard/${restaurant.username}`);
   };
 
@@ -203,7 +196,6 @@ const EditProfilePageRestaurant = () => {
         )}
         </div>
 
-        {/* <button onClick = {handleEditProfile}>SAVE</button> */}
     <button className='save-button' 
         onClick={()=> {
           handleEditProfile();

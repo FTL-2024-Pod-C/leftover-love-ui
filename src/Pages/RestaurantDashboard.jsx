@@ -100,7 +100,6 @@ const RestaurantDashboard = () => {
     }
   }
 
-  // need some kind of function to handleEditProfile
 
     // Conditional rendering while waiting for data to arrive
     if (!idReceived) {
@@ -111,13 +110,10 @@ const RestaurantDashboard = () => {
     <>
     
     <div className="wholePage">
-        {/* leftColumn refers to the sidebar */}
         <div className="leftColumn">
             <DashboardProfileSection 
               name={restaurant.name}
               profile_photo={restaurant.profile_photo}
-              // restaurant={restaurant}
-              // handleEditProfile={addNewListing}
             />
             <RestaurantDashboardButtons 
               restaurant={restaurant}
@@ -125,7 +121,6 @@ const RestaurantDashboard = () => {
               requestItems={requestItems}
               requests={requests}
               foodPantries={foodPantries}
-              // addNewListing={addNewListing}
             />
         </div>
         <div className="rightColumn">
