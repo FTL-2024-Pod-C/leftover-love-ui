@@ -22,7 +22,6 @@ const FoodPantryDashboard = () => {
 
   useEffect (() => {
     fetchFoodPantry();
-    //fetchListings();
   }, []);
 
   useEffect (() => {
@@ -87,9 +86,7 @@ const FoodPantryDashboard = () => {
   return (
     <>
         <div className="wholePage">
-        {/* leftColumn refers to the sidebar */}
 
-        {/* <div className="right-side"> */}
         <div className="leftColumn">
           <DashboardProfileSection 
               name={foodPantry.name}

@@ -1,5 +1,4 @@
 import React from 'react'
-import './CartPage.css';
 import CartItem from '../Components/CartItem/CartItem.jsx';
 import Header from '../Components/Header/Header.jsx'
 import { useShoppingCart } from "../Context/ShoppingCartContext"
@@ -24,7 +23,6 @@ const CartPage = () => {
   useEffect(() => {
     const tokenDecoded = jwtDecode(localStorage.getItem("token"));
     setFoodPantryId(tokenDecoded.foodPantryId);
-    // createRequest(foodPantryId, "pending")
   },[])
 
   const createRequest = async (foodPantryId, status) => {
@@ -56,7 +54,6 @@ const CartPage = () => {
   const cartItems = Object.keys(shoppingCart).filter((item) => shoppingCart[item] > 0);
 
   const handleClose = () => {
-    // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };
 

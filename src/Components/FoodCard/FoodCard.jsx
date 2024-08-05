@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-// import {useNavigate, useLocation} from "react-router-dom"
 import "./FoodCard.css";
 
 const FoodCard = ({listingId, name, expiration_date, restaurantName, quantity, unit, shoppingCart, setShoppingCart, photo}) => {
-    // Handles adding/subtracting in field box
-    //const[userQuantity, setUserQuantity] = useState(0);
     const handleIncrement = () => {
         setShoppingCart(prev=>{
             

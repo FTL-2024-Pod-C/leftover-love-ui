@@ -1,11 +1,9 @@
 .dashboardHeaderBox {
     display: flex;
     align-items: center;
-    /* width: 100%; */
     padding: 30px;
     color: rgb(0,117,69);
     justify-content: space-between;
-    /* width: 100vw; */
 }
 
 .logout-btn {

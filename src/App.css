@@ -2,18 +2,12 @@ body, html {
     margin: 0px;
     height: 100%;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    /* background-color: #fdffdb; */
-    /* color: #fdffdb; */
 }
-
-/* h1 , h2, h3{
-    color: white;
-} */
 
 .app {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure app takes up at least the height of the viewport */
+    min-height: 100vh;
 }
 
 .button {

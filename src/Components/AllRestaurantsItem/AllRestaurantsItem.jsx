@@ -1,17 +1,13 @@
 import React from 'react'
-import "./AllRestaurantsItem.css";
 import RestaurantInfoCard from '../RestaurantInfoCard/RestaurantInfoCard';
 
 const AllRestaurantsItem = ({allRestaurants}) => {
-  
   return (
     <>
-    {/* <h1 className="allRestaurantsHeader">All Restaurants</h1> */}
     <div className="restaurantsGrid"> 
       {allRestaurants.map((restaurant) => (
         <RestaurantInfoCard 
           key={restaurant.id}
-          // username={restaurant.username}
           name={restaurant.name}
           location={restaurant.location}
           email={restaurant.email}

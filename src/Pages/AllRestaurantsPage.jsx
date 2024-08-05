@@ -1,9 +1,8 @@
 import React from 'react'
-import './AllRestaurantsPage.css';
 import AllRestaurantsItem from '../Components/AllRestaurantsItem/AllRestaurantsItem.jsx';
 import Header from '../Components/Header/Header.jsx'
 import {useNavigate, useLocation} from "react-router-dom"
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 const AllRestaurantsPage = () => {
   const navigate = useNavigate();
@@ -14,7 +13,6 @@ const AllRestaurantsPage = () => {
   const [foodPantry, setFoodPantry] = useState(state.foodPantry);
 
   const handleClose = () => {
-    // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };
   

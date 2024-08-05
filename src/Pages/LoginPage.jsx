@@ -55,7 +55,6 @@ const LoginPage = () => {
    <>
    <div className='login'>
     <div className='login-header'>
-    {/* "x" Button */}
         <div className="right-aligned-element">
             <Link to="/">
                 <IconButton>

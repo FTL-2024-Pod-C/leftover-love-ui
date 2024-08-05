@@ -155,10 +155,6 @@ p {
     .headline-section-img {
         margin-top: 20px;
     }
-
-    /* .btn-group {
-        gap: 20px;
-    } */
 }
 
 @media (max-width: 992px) {

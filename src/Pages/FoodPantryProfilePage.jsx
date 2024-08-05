@@ -10,7 +10,6 @@ const FoodPantryProfilePage = () => {
   const navigate = useNavigate();
 
   const handleClose = () => {
-    // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };
 

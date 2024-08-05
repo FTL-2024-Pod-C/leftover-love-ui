@@ -160,26 +160,9 @@ const SignUpPage = () => {
             }}
             onChange={(e)=> setPassword(e.target.value)}
         /> 
-         {/* <div className='sign-in'>
-            <h3 className="accountQuestion">Already have an account?</h3>
-            <Link to="/login">
-                <button className='button'>Login</button>
-            </Link>
-        </div>
-        <button className='button' onClick = {handleSignUp}>Create</button> */}
     </form>
-    {/* <div className='sign-in'>
-            <h3 className="accountQuestion">Already have an account?</h3>
-            <Link to="/login">
-                <button className='button'>Login</button>
-            </Link>
-        </div> */}
         <button className='signup-button' onClick = {handleSignUp}>Create</button> 
         <div className='sign-in'>
-            {/* <h3 className="accountQuestion">Already have an account?</h3>
-            <Link to="/login">
-                <button className='button'>Login</button>
-            </Link> */}
             <h3 className="memberQuestion">Already have an account?<Link className='sign-up-btn' to="/login"> Login</Link></h3>
         </div> 
     </div>

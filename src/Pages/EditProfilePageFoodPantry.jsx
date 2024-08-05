@@ -3,7 +3,6 @@ import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
 import {useNavigate, useLocation} from "react-router-dom"
 import axios from "axios";
-// import AWS from 'aws-sdk';
 
 const EditProfilePageFoodPantry = () => {
   //use states for profile
@@ -32,15 +31,13 @@ const EditProfilePageFoodPantry = () => {
     
 
     try {
-      // e.preventDefault();
-      // const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/${foodPantry.id}`, updatedFields);
     }
     catch (error) {
       console.error("Error updating profile page", error);
     }
   }
-    // all AWS s3 bucket stuff
+  // all AWS s3 bucket stuff
   const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -91,7 +88,6 @@ const EditProfilePageFoodPantry = () => {
   };
 
   const handleClose = () => {
-    // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };
 
@@ -198,8 +194,7 @@ const EditProfilePageFoodPantry = () => {
         </div>
         )}
         </div>
-
-        {/* <button onClick = {handleEditProfile}>SAVE</button> */}
+        
       <button className='save-button' 
         onClick={()=> {
           handleEditProfile();

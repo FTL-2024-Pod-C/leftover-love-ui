@@ -1,5 +1,4 @@
 .foodCardBox {
-  /* child */
     display: inline-block;
     width: auto;
     max-width: 300px;
@@ -24,7 +23,8 @@
 
 .foodCardName, .foodCardRestaurant, .expirationDate {
     margin: 4px;
-  }
+}
+
 .quantityControl {
   display: flex;
   align-items: center;
@@ -45,15 +45,11 @@
     transition: background-color 0.3s ease;
 }
 
-/* .quantityControl button:hover {
-    background-color: rgb(0,117,69);;
-} */
-
 .quantityControl input {
-    width: 60px;
-    text-align: center;
-    border: 1px solid #fdffdb;
-    border-radius: 4px;
-    padding: 8px;
-    font-size: 16px;
+  width: 60px;
+  text-align: center;
+  border: 1px solid #fdffdb;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 16px;
 }

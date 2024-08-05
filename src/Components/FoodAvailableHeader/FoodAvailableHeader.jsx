@@ -50,7 +50,6 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange, handl
         <div className="main">
             <h1 className="foodAvailableText">Food Available</h1>
             <div className="rightButtons">
-                {/* This is the search bar */}
                 <TextField 
                     type="text" 
                     label="Search" 
@@ -88,10 +87,8 @@ const FoodAvailableHeader = ({searchInputValue, handleOnSearchInputChange, handl
                             color: '#007545',
                         }}
                     />
-
                 </Link>
             </div>
-
         </div>
     </>
   )

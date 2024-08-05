@@ -152,7 +152,6 @@ const goToSignUp = () => {
         </IconButton>
       </div>
     </div>
-
     <Footer />
     </>
   )
