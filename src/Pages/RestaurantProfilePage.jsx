@@ -10,7 +10,6 @@ const RestaurantProfilePage = () => {
    const navigate = useNavigate();
 
    const handleClose = () => {
-    console.log('Close button clicked');
     // Implement your navigation or other logic here
     navigate(`/restaurant-dashboard/${restaurant.username}`);
   };

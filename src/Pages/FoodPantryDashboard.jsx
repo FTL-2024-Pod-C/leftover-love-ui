@@ -32,10 +32,8 @@ const FoodPantryDashboard = () => {
 
   const fetchFoodPantry = async () => {
     try {
-      // console.log(username);
       const url = `${import.meta.env.VITE_BACKEND_URL}/foodpantries/foodpantryusername/${username}`;
       const response = await axios.get(url);
-      // console.log(response.data);
       setFoodPantry(response.data);
       setIdReceived(true);
     }
@@ -47,9 +45,7 @@ const FoodPantryDashboard = () => {
   const fetchListings = async () => {
     try {
       const url = `${import.meta.env.VITE_BACKEND_URL}/listings`;
-      console.log(url);
       const response = await axios.get(url);
-      console.log(response.data);
       setRestaurantListings(response.data);
     }
     catch (error) {
@@ -60,9 +56,7 @@ const FoodPantryDashboard = () => {
   const fetchAllRestaurants = async () => {
     try {
       const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants`;
-      console.log(url);
       const response = await axios.get(url);
-      console.log(response.data);
       setAllRestaurants(response.data);
     }
     catch (error) {
@@ -77,9 +71,6 @@ const FoodPantryDashboard = () => {
   const handleActiveCategoryChange = (event) => {
     setActiveCategory(event.target.value);
   };
-
-  console.log("setActiveCategory", activeCategory)
-  console.log("searchActiveCategory", searchInputValue)
 
   const restaurantListingsByCategory =
   Boolean(activeCategory) && activeCategory !== "all"

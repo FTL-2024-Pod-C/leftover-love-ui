@@ -12,7 +12,6 @@ const CartPage = () => {
   let { state } = useLocation();
 
   const [foodPantry, setFoodPantry] = useState(state.foodPantry);
-  console.log("food pantry is: ", state.foodPantry);
   const navigate = useNavigate();
 
 
@@ -24,7 +23,6 @@ const CartPage = () => {
 
   useEffect(() => {
     const tokenDecoded = jwtDecode(localStorage.getItem("token"));
-    console.log(tokenDecoded);
     setFoodPantryId(tokenDecoded.foodPantryId);
     // createRequest(foodPantryId, "pending")
   },[])
@@ -34,10 +32,8 @@ const CartPage = () => {
       food_pantry_id: foodPantryId, 
       status
     };
-    console.log(foodPantryId);
     const url = `${import.meta.env.VITE_BACKEND_URL}/requests`;
     const response = await axios.post(url, reqData);
-    console.log(response.data);
     setRequest(response.data);
     createRequestItems(response.data.id);
   }
@@ -56,20 +52,15 @@ const CartPage = () => {
     setShoppingCart({});
 
   }
-
-  console.log(shoppingCart);
   
   const cartItems = Object.keys(shoppingCart).filter((item) => shoppingCart[item] > 0);
 
   const handleClose = () => {
-    console.log('Close button clicked');
     // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };
 
   const handleDelete = async (listingId) => {
-    console.log("shoppinf cart", shoppingCart);
-    console.log("listing id: ", listingId)
     setShoppingCart({...shoppingCart, [`${listingId}`]: 0});
   }
   

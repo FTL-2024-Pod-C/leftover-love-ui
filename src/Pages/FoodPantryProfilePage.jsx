@@ -6,12 +6,10 @@ import {useNavigate, useLocation} from "react-router-dom"
 const FoodPantryProfilePage = () => {
   // get the state that was passed through
   let { state } = useLocation();
-  console.log(state);
   const [foodPantry, setFoodPantry] = useState(state.foodPantry);
   const navigate = useNavigate();
 
   const handleClose = () => {
-    console.log('Close button clicked');
     // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };

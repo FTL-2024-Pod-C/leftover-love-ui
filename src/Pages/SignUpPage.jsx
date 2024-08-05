@@ -40,17 +40,10 @@ const SignUpPage = () => {
             // if restaurant, post should go to restaurant endpoint
             // else food pantry
             if (userType === "restaurant") {
-                // console.log(name);
-                // console.log(email);
-                // console.log(username);
-                // console.log(password);
-                // console.log(userType);
                 // register the user
                 const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/restaurants`, {name, email, username, password});
-                console.log(response);
                 // login in the user
                 const loginResponse = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/restaurants/restaurantlogin`, {name, email, username, password});
-                console.log(loginResponse);
                 
                 // store token in local storage as token
                 localStorage.setItem("token", loginResponse.data.token);
@@ -58,10 +51,8 @@ const SignUpPage = () => {
             }
             else if (userType === "food") {
                 const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/foodpantries`, {name, email, username, password});
-                console.log(response);
                 // login in the user
                 const loginResponse = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/foodpantrylogin`, {name, email, username, password});
-                console.log(loginResponse);
                 
                 // store token in local storage as token
                 localStorage.setItem("token", loginResponse.data.token);

@@ -31,16 +31,14 @@ const RestaurantDashboard = () => {
   }, [idReceived]);
 
   useEffect(() => {
-    console.log("Listings updated:", listings);
+    
   }, [listings]);
   
 
   const fetchRestaurant = async () => {
     try {
       const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants/restaurantusername/${username}`;
-      console.log(url);
       const response = await axios.get(url);
-      console.log(response.data);
       setRestaurant(response.data);
       setIdReceived(true);
     }
@@ -55,11 +53,8 @@ const RestaurantDashboard = () => {
     try {
       if (restaurant.id) {
         const url = `${import.meta.env.VITE_BACKEND_URL}/listings/restaurant/${restaurant.id}`;
-        console.log(url);
         const response = await axios.get(url);
-        console.log(response.data);
         setListings(response.data);
-        // console.log("listings",listings);
       }
       else{
         console.log("No id, id is: ", restaurant.id)
@@ -75,9 +70,7 @@ const RestaurantDashboard = () => {
       if (restaurant.id) {
         const url = `${import.meta.env.VITE_BACKEND_URL}/requestitems/restaurant/${restaurant.id}`;
         const response = await axios.get(url);
-        console.log("response", response);
         setRequestItems(response.data);
-        console.log(requests);
       }
     }
     catch (error) {
@@ -89,9 +82,7 @@ const RestaurantDashboard = () => {
     try{
       const url = `${import.meta.env.VITE_BACKEND_URL}/requests`;
       const response = await axios.get(url);
-      console.log("response", response);
       setRequests(response.data);
-      console.log(requests);
     }
     catch (error) {
       console.error("Error fetching requests", error);
@@ -102,27 +93,12 @@ const RestaurantDashboard = () => {
     try{
       const url = `${import.meta.env.VITE_BACKEND_URL}/foodpantries`;
       const response = await axios.get(url);
-      console.log("response", response);
       setFoodPantries(response.data);
-      console.log(requests);
     }
     catch (error) {
       console.error("Error fetching requests", error);
     }
   }
-
-  // const addNewListing = async (newListing) => {
-  //   try {
-  //     console.log("in addNewListing")
-  //     const url = `${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}/listings`;
-  //     const response = await axios.post(url, newListing);
-  //     console.log(response.data);
-  //     setListings([...listings, response.data]);
-  //   }
-  //   catch (error) {
-  //     console.error("Error creating a new listing", error);
-  //   }
-  // }
 
   // need some kind of function to handleEditProfile
 

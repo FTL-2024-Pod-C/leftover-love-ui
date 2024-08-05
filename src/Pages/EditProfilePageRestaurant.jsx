@@ -17,13 +17,11 @@ const EditProfilePageRestaurant = () => {
 
   // get the state that was passed through
   let { state } = useLocation();
-  console.log(state);
   // set the restaurant user in order to not lose it as the user updates profile
   const [restaurant, setRestaurant] = useState(state.restaurant);
   const navigate = useNavigate();
   //function for updating profile
   const handleEditProfile = async (e) => {
-    console.log("Restaurant in the handleEditProfile is", restaurant)
 
     let updatedFields = {}
     if (name !== null && name !== '') updatedFields.name = name;
@@ -35,12 +33,10 @@ const EditProfilePageRestaurant = () => {
     
 
     try {
-      console.log("in handleEditProfile")
       // const restaurantId = 3;
       // e.preventDefault();
       // const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, updatedFields);
-      console.log(response.data);
     }
     catch (error) {
       console.error("Error updating profile page", error);
@@ -75,7 +71,6 @@ const EditProfilePageRestaurant = () => {
 
     try {
       const data = await s3.upload(params).promise();
-      console.log("File uploaded successfully:", data.Location);
       setImageUrl(data.Location); // stores the uploaded image URL
       alert("File uploaded successfully.");
 
@@ -99,7 +94,6 @@ const EditProfilePageRestaurant = () => {
   };
 
   const handleClose = () => {
-    console.log('Close button clicked');
     // Implement your navigation or other logic here
     navigate(`/restaurant-dashboard/${restaurant.username}`);
   };

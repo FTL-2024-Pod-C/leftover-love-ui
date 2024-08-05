@@ -16,13 +16,11 @@ const EditProfilePageFoodPantry = () => {
 
   // get the state that was passed through
   let { state } = useLocation();
-  console.log(state);
   // set the food pantry user in order to not lose it as the user updates profile
   const [foodPantry, setFoodPantry] = useState(state.foodPantry);
   const navigate = useNavigate();
   //function for updating profile
   const handleEditProfile = async (e) => {
-    console.log("Food pantry in the handleEditProfile is", foodPantry)
 
     let updatedFields = {}
     if (name !== null && name !== '') updatedFields.name = name;
@@ -34,11 +32,9 @@ const EditProfilePageFoodPantry = () => {
     
 
     try {
-      console.log("in handleEditProfile")
       // e.preventDefault();
       // const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/restaurants/${restaurant.id}`, {name, location, description, email, phone_number});
       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/${foodPantry.id}`, updatedFields);
-      console.log(response.data);
     }
     catch (error) {
       console.error("Error updating profile page", error);
@@ -73,7 +69,6 @@ const EditProfilePageFoodPantry = () => {
 
     try {
       const data = await s3.upload(params).promise();
-      console.log("File uploaded successfully:", data.Location);
       setImageUrl(data.Location); // stores the uploaded image URL
       alert("File uploaded successfully.");
 
@@ -89,7 +84,6 @@ const EditProfilePageFoodPantry = () => {
   const sendImageToBackend = async (imageUrl) => {
     try {
       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/${foodPantry.id}`, {profile_photo: imageUrl});
-      console.log('Profile photo updated successfully:', response.data);
 
     } catch (error) {
       console.error('Error updating profile photo:', error.message);
@@ -97,7 +91,6 @@ const EditProfilePageFoodPantry = () => {
   };
 
   const handleClose = () => {
-    console.log('Close button clicked');
     // Implement your navigation or other logic here
     navigate(`/food-dashboard/${foodPantry.username}`);
   };

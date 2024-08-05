@@ -10,7 +10,6 @@ const RestaurantCard = ({handleDeleteListing, id, name, quantity, unit, expirati
     handleDeleteListing(); // Notify parent component
   };
   
-  console.log(name);
   return (
     <div className="foodCardBox">
         <img className="foodCardImage" src={photo_url}
