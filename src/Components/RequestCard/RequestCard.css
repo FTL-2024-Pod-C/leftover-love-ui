@@ -36,3 +36,18 @@
 .requestCardName, .expirationDate {
     margin: 4px;
 }
+
+.acceptButton {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  align-items: center;
+  color: rgb(0,117,69);
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background-color: #fdffdb;
+  border: none;
+  border-radius: 15px;
+}
