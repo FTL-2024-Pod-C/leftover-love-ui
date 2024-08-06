@@ -41,7 +41,7 @@ const RequestCard = ({ listings, quantity, request, id, requestItem, foodPantrie
           justifyContent: 'center',
           alignItems: 'center', 
           overflow: 'hidden',  
-          border: '1px solid #ccc',
+          // border: '1px solid #ccc',
           objectFit: 'cover' }}
       />
       <div className="requestCardDetails">
@@ -49,7 +49,7 @@ const RequestCard = ({ listings, quantity, request, id, requestItem, foodPantrie
         <h4 className="requestCardQuantity">Quantity Requested: {quantity} {listing.unit}</h4>
         <h4 className="requestCardFoodPantry">Requested By: {foodPantry.name}</h4>
         <h4 className="requestDate">Requested On: {formatDate(request.date)}</h4>
-        <h4 className="expirationDate">Current Status: {status}</h4>
+        {/* <h4 className="expirationDate">Current Status: {status}</h4> */}
         <button className="acceptButton" onClick={handleAcceptRequest}>Accept Request</button>
       </div>
     </div>

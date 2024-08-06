@@ -45,6 +45,22 @@
     transition: background-color 0.3s ease;
 }
 
+.incrementButtons:hover {
+    animation: bubble 0.7s ease-out;
+}
+
+@keyframes bubble {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .quantityControl input {
   width: 60px;
   text-align: center;
