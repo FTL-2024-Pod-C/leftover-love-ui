@@ -1,5 +1,6 @@
 import React from 'react'
 import RestaurantInfoCard from '../RestaurantInfoCard/RestaurantInfoCard';
+import "./AllRestaurantsItem.css"
 
 const AllRestaurantsItem = ({allRestaurants}) => {
   return (
@@ -13,6 +14,7 @@ const AllRestaurantsItem = ({allRestaurants}) => {
           email={restaurant.email}
           phone_number={restaurant.phone_number}
           profile_photo={restaurant.profile_photo}
+          description={restaurant.description}
         />
       ))}
     </div>

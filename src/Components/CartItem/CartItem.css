@@ -24,6 +24,13 @@
     justify-content: space-between;
     margin: 20px;
     color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+.cartItemBox:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .requestButton {
@@ -45,7 +52,13 @@
     color: #fdffdb;
     border: none;
     border-radius: 15px;
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    opacity: 1; /* Fully opaque by default */
 
+}
+
+.requestButton:hover {
+    opacity: 0.9; /* Fade to 50% opacity on hover */
 }
 
 .cartHeader {
@@ -71,4 +84,21 @@
     background-color: #fdffdb;
     border: none;
     border-radius: 15px;
+}
+
+.deleteItemButton:hover {
+    animation: bubble 0.7s ease-out;
+}
+  
+@keyframes bubble {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  
 }

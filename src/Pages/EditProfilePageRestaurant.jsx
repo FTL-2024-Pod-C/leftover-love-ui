@@ -212,7 +212,7 @@ const EditProfilePageRestaurant = () => {
           <button className='save-button' 
           onClick={()=> {
             handleEditProfile();
-              navigate(`/food-dashboard/${foodPantry.username}`); 
+              navigate(`/restaurant-dashboard/${restaurant.username}`); 
           }}>SAVE</button>
         </div>
 

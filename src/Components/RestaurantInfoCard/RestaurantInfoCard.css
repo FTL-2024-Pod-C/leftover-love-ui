@@ -4,6 +4,16 @@
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
+  background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
+  border-radius: 8px;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+.restaurantCardBox:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .restaurantBoxDetails {
@@ -13,23 +23,20 @@
     flex-direction: column;
     border-radius: 8px;
     padding: 10px;
-    color: #004715;
+    color: white;
   }
 
   .restaurantBoxName {
-    color: #004715;
     font-size: 20px;
     margin-bottom: 0px;
   }
 
   .restaurantBoxLocation {
-    color: #004715;
     font-size: 15px;
     margin-bottom: 0px;
   }
 
   .restaurantBoxContact {
-    color: #004715;
     font-size: 15px;
     margin-bottom: 0px;
   }
