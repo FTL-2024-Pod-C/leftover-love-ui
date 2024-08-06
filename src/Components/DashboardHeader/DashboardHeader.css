@@ -19,4 +19,10 @@
     color: #fdffdb;
     border: none;
     border-radius: 15px;
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    opacity: 1; /* Fully opaque by default */
+}
+
+.logout-btn:hover {
+    opacity: 0.9; /* Fade to 50% opacity on hover */
 }

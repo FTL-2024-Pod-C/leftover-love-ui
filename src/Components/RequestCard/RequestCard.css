@@ -10,44 +10,65 @@
     flex-direction: column;
     color: white;
     border-radius: 8px;
-    border: 2px solid black;
     display: inline-block;
-    width: auto;
-    max-width: 300px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    border-radius: 8px;
     padding: 10px;
     margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s; 
   }
+
+.requestCardBox:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.requestCardImage {
+  border-radius: 8px;
+}
 
 .requestCardDetails{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+    font-size: 18px;
 }
 
-.requestCardName, .expirationDate {
-    margin: 4px;
-}
+/* .requestCardName, .expirationDate {
+    margin: 1px;
+} */
 
 .acceptButton {
   font-family: Georgia, 'Times New Roman', Times, serif;
   align-items: center;
   color: rgb(0,117,69);
   font-size: 20px;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   background-color: #fdffdb;
   border: none;
-  border-radius: 15px;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.acceptButton:hover {
+  animation: bubble 0.7s ease-out;
+}
+
+@keyframes bubble {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+
 }
