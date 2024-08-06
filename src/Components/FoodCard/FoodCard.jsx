@@ -26,7 +26,7 @@ const FoodCard = ({listingId, name, expiration_date, restaurantName, quantity, u
                 justifyContent: 'center',
                 alignItems: 'center', 
                 overflow: 'hidden',  
-                border: '1px solid #ccc',
+                // border: '1px solid #ccc',
                 objectFit: 'cover' }}
         />
         <div className="foodCardDetails">
@@ -36,11 +36,11 @@ const FoodCard = ({listingId, name, expiration_date, restaurantName, quantity, u
             <h4 className="quantity">{quantity} {unit}</h4>
         </div>
         <div className="quantityControl">
-            <button onClick={handleDecrement}>-</button>
+            <button className="incrementButtons" onClick={handleDecrement}>-</button>
             <input 
                 value={shoppingCart[`${listingId}`]} 
             />
-            <button onClick={handleIncrement}>+</button>
+            <button className="incrementButtons" onClick={handleIncrement}>+</button>
         </div>
     </div>
   );

@@ -21,7 +21,7 @@ const RestaurantCard = ({handleDeleteListing, id, name, quantity, unit, expirati
               justifyContent: 'center',
               alignItems: 'center', 
               overflow: 'hidden',  
-              border: '1px solid #ccc',
+              // border: '1px solid #ccc',
               objectFit: 'cover' }}
             />
         <div className="foodCardDetails">
