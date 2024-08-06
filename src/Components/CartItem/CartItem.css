@@ -19,7 +19,7 @@
 
 .cartItemBox {
     display: flex;
-    background-color: #004715;
+    background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
     border-radius: 8px;
     justify-content: space-between;
     margin: 20px;
@@ -27,23 +27,48 @@
 }
 
 .requestButton {
-    height: 50px;
     width: 150px;
     padding: 5px 10px;
-    font-size: 25px;
-    text-align: center;
-    color: #fdffdb;
-    background-color: #004715;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 4px;
     margin-left: 10px;
     margin-top: 20px;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(0, 117, 69);
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fdffdb;
+    border: none;
+    border-radius: 15px;
 
 }
 
 .cartHeader {
     margin-left: 15px;
     font-size: 30px;
-    color: #004715;
+    background: radial-gradient(circle, rgba(0,117,69,1) 64%, rgba(120,152,74,1) 100%);
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.deleteItemButton {
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 117, 69);
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #fdffdb;
+    border: none;
+    border-radius: 15px;
 }

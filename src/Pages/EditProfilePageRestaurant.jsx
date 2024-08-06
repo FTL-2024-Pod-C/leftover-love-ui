@@ -101,7 +101,8 @@ const EditProfilePageRestaurant = () => {
           </button>
         }
       />
-    <div className='edit-form'>
+      <div className='edit-profile-page'>
+     <div className='edit-form'>
       <TextField
         id="update-name" 
         margin="normal"
@@ -169,10 +170,21 @@ const EditProfilePageRestaurant = () => {
 
 
     <div className="aws">
-        <div className="photo-form">
-          <input type="file" onChange={handleFileChange} />
-          <button onClick={uploadFile}>Upload</button>
-        </div>
+        <div className="listing-img">
+        <input
+            type="file"
+            onChange={handleFileChange}
+            className="file-input"
+            id="file-input"
+          />
+          <div className='file-upload-btn'>
+          <label htmlFor="file-input" className="custom-file-label">
+            Choose File
+          </label>
+          <button className="upload-btn" onClick={uploadFile}>Upload</button>
+      </div>
+    </div>
+
         {imageUrl && (
           <div style={{ 
           width: '300px', 
@@ -196,11 +208,15 @@ const EditProfilePageRestaurant = () => {
         )}
         </div>
 
-    <button className='save-button' 
-        onClick={()=> {
-          handleEditProfile();
-            navigate(`/restaurant-dashboard/${restaurant.username}`); 
-        }}>SAVE</button>
+    <div className='class'>
+          <button className='save-button' 
+          onClick={()=> {
+            handleEditProfile();
+              navigate(`/food-dashboard/${foodPantry.username}`); 
+          }}>SAVE</button>
+        </div>
+
+        </div>
     </>
   )
 }

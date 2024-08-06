@@ -2,18 +2,20 @@ import React from 'react'
 import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
 import './AddListingPage.css'
+// import AWS from 'aws-sdk';
 import {useNavigate, useLocation} from "react-router-dom"
 import {useState} from "react";
 import MenuItem from '@mui/material/MenuItem';
 import axios from "axios";
 
+//const  AddListingPage = ({restaurant}) => {
 const  AddListingPage = () => {
 
     // get the state that was passed through
     let { state } = useLocation();
 
     // all AWS s3 bucket stuff
-    const [file, setFile] = useState(null);
+  const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -101,6 +103,7 @@ const  AddListingPage = () => {
     const [description, setDescription] = useState("");
     const [expirationDate, setExpirationDate] = useState("");
     const [category, setCategory] = useState("");
+    // const [photoURL, setPhotoURL] = useState("");
     const [imageUrl, setImageUrl] = useState("");
 
     const addListing = () => {
@@ -141,11 +144,23 @@ const handleClose = () => {
 
     <div className='update-listings-page'>
     <div className='updatelistings'>
-    <div className="listing-img">
-        <div>
-          <input type="file" onChange={handleFileChange} />
-          <button onClick={uploadFile}>Upload</button>
-        </div>
+
+    <div className="aws">
+        <div className="listing-img">
+        <input
+            type="file"
+            onChange={handleFileChange}
+            className="file-input"
+            id="file-input"
+          />
+          <div className='file-upload-btn'>
+          <label htmlFor="file-input" className="custom-file-label">
+            Choose File
+          </label>
+          <button className="upload-btn" onClick={uploadFile}>Upload</button>
+      </div>
+    </div>
+
         {imageUrl && (
           <div style={{ 
           width: '300px', 
@@ -154,6 +169,7 @@ const handleClose = () => {
           justifyContent: 'center',
           alignItems: 'center', 
           overflow: 'hidden', 
+        //   borderRadius: '50%', 
           border: '1px solid #ccc' }}>
           <img
             src={imageUrl}
@@ -242,11 +258,14 @@ const handleClose = () => {
             }}
             onChange={(e)=> setExpirationDate(e.target.value)}
         />
+        {/* <Link to="/restaurant-dashboard/:username"> */}
         <button className='dashboardButton' 
         onClick={()=> {
             addListing();
             navigate(`/restaurant-dashboard/${restaurant.username}`); 
+            // addListing();
             }}>Add Listing</button>
+        {/* </Link> */}
     </div>
 </div>
 </div>

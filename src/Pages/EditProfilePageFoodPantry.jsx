@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./EditProfilePageRestaurant"
 import Header from '../Components/Header/Header';
 import TextField from '@mui/material/TextField';
 import {useNavigate, useLocation} from "react-router-dom"
@@ -27,8 +28,6 @@ const EditProfilePageFoodPantry = () => {
     if (description !== null && description !== '') updatedFields.description = description;
     if (email !== null && email !== '') updatedFields.email = email;
     if (phone_number !== null && phone_number !== '') updatedFields.phone_number = phone_number;
-
-    
 
     try {
       const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/foodpantries/${foodPantry.id}`, updatedFields);
@@ -101,6 +100,7 @@ const EditProfilePageFoodPantry = () => {
           </button>
         }
       />
+      <div className='edit-profile-page'>
     <div className='edit-form'>
       <TextField
         id="update-name" 
@@ -168,10 +168,21 @@ const EditProfilePageFoodPantry = () => {
 
 
     <div className="aws">
-        <div className='photo-form'>
-          <input type="file" onChange={handleFileChange} />
-          <button onClick={uploadFile}>Upload</button>
-        </div>
+      <div className="listing-img">
+          <input
+            type="file"
+            onChange={handleFileChange}
+            className="file-input"
+            id="file-input"
+          />
+          <div className='file-upload-btn'>
+          <label htmlFor="file-input" className="custom-file-label">
+            Choose File
+          </label>
+          <button className="upload-btn" onClick={uploadFile}>Upload</button>
+      </div>
+    </div>
+
         {imageUrl && (
           <div style={{ 
           width: '300px', 
@@ -194,12 +205,22 @@ const EditProfilePageFoodPantry = () => {
         </div>
         )}
         </div>
+       
+
+        <div className='class'>
+          <button className='save-button' 
+          onClick={()=> {
+            handleEditProfile();
+              navigate(`/food-dashboard/${foodPantry.username}`); 
+          }}>SAVE</button>
+        </div>
+
+        </div>
+
+
+
         
-      <button className='save-button' 
-        onClick={()=> {
-          handleEditProfile();
-            navigate(`/food-dashboard/${foodPantry.username}`); 
-        }}>SAVE</button>
+      
 
     </>
   )
